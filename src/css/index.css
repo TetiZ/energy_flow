@@ -7,3 +7,6 @@
 /* Utils */
 
 @import url(./utils/variables.css);
+
+/* Layout */
+@import url(./layout/header.css);
