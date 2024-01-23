@@ -7,7 +7,6 @@
 /* Utils */
 
 @import url(./utils/variables.css);
-@import url(./utils/visually-hidden.css);
 
 /* Layout */
 @import url(./layout/header.css);
