@@ -1,4 +1,28 @@
 .footer-section {
-  background-image: url(../../img/footer/footer-bg-mob.png);
+  background-image: url(/img/footer/footer-bg-mob.png);
   border-radius: 30px;
+}
+
+.footer-logo {
+  /* Box model */
+  margin-bottom: 8px;
+  /* typography */
+  /* color: var(--main-text-color); */
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.sm-list {
+  margin-bottom: 40px;
+}
+
+.footer-text-accent {
+  color: rgba(246, 246, 246, 0.3);
+  font-size: 32px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
 }
