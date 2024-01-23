@@ -1,3 +1,4 @@
 .footer-section {
-  background-image: url(./img/footer/footer-bg-mob.png);
+  background-image: url(../../img/footer/footer-bg-mob.png);
+  border-radius: 30px;
 }
