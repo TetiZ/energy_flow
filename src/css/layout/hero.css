@@ -1,12 +1,24 @@
 .section-hero {
-  width: 335px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0, auto;
+  display: flex;
+  flex-direction: column;
+
 }
 
+.background-container {
+  height: 387px;
+  position: relative;
+  background-image: url(../img/hero/image\ 2.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.container-hero {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
 @media screen and (min-width: 768px) {
-  .hero {
+  .section-hero {
     width: 736px;
     padding-left: 14px;
     padding-right: 14px;
@@ -14,10 +26,6 @@
   }
 }
 
-.container-home {
-  height: 387px;
-  flex-shrink: 0;
-}
 .link-energi-flow {
   color: #1b1b1b;
   width: 86px;
@@ -26,7 +34,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 18px; /* 112.5% */
+  line-height: 18px;
   letter-spacing: -0.32px;
 }
 
@@ -47,22 +55,26 @@
     justify-content: center;
   }
 }
+.position-teg {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
 .hero-teg-list {
   display: flex;
-  padding: 4px 10px;
+
   justify-content: center;
-  align-items: center;
-  width: 141px;
-  align-items: center;
   align-content: center;
-  gap: 4px;
+  row-gap: 4px;
+  column-gap: 4px;
   flex-wrap: wrap;
+  width: calc((100% - 0px) / 2);
 }
 
 @media screen and (min-width: 768px) {
   .hero-text-list {
     flex-wrap: wrap;
-    width: calc((100% - 8px) / 2);
+
     gap: 8px;
     width: 196px;
   }
@@ -71,7 +83,7 @@
   list-style: none;
   border-radius: 30px;
   border: 1px solid rgba(246, 246, 246, 0.3);
-  color: #1b1b1b;
+  color: #f6f6f6;
   font-family: 'DM Sans';
   font-size: 12px;
   font-style: normal;
@@ -81,6 +93,8 @@
   padding-right: 10px;
   padding-top: 4px;
   padding-bottom: 4px;
+
+  display: flex;
 }
 @media screen and (min-width: 768px) {
   .hero-list-iteam {
@@ -96,6 +110,9 @@
   flex-shrink: 0;
   border-radius: 30px;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -111,7 +128,7 @@
   font-size: 56px;
   font-style: normal;
   font-weight: 400;
-  line-height: 50px; /* 89.286% */
+  line-height: 50px;
   letter-spacing: -1.12px;
   margin-bottom: 20px;
 }
