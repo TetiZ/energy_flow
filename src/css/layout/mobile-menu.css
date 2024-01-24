@@ -21,15 +21,14 @@
     display: none;
   }
 }
-
 .mobile-menu.is-open {
-  /* transform: translate(0); */
+  transform: translate(0);
 }
 .mobile-menu-logo {
   color: #f6f6f6;
   font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -0.32px;
+  line-height: 1.125;
+  letter-spacing: -0.02px;
 }
 .mobile-menu-top {
   display: flex;
@@ -82,7 +81,6 @@
   border-radius: 10px;
   border: 1px solid rgba(246, 246, 246, 0.2);
 }
-.link-icon {
-  padding: 8px;
+.menu-link-icon {
   fill: #f6f6f6;
 }
