@@ -13,7 +13,7 @@ html {
 
 @media screen and (min-width: 375px) {
   .container {
-    width: 375px;
+    width: 335px;
     margin: 0 auto;
     border-radius: 30px;
   }
