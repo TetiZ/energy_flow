@@ -1,0 +1,150 @@
+.ssection-hero {
+  width: 335px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0, auto;
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    width: 736px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin: 0, auto;
+  }
+}
+
+.container-home {
+  height: 387px;
+  flex-shrink: 0;
+}
+.link-energi-flow {
+  color: #1b1b1b;
+  width: 86px;
+  height: 18px;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 112.5% */
+  letter-spacing: -0.32px;
+}
+
+@media screen and (min-width: 768px) {
+  .link-energi-flow {
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: -0.56px;
+    height: 28px;
+    width: 150px;
+  }
+  .container-home {
+    display: flex;
+  }
+  .home-container-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.hero-teg-list {
+  display: flex;
+  padding: 4px 10px;
+  justify-content: center;
+  align-items: center;
+  width: 141px;
+  align-items: center;
+  align-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-text-list {
+    flex-wrap: wrap;
+    width: calc((100% - 8px) / 2);
+    gap: 8px;
+    width: 196px;
+  }
+}
+.hero-list-iteam {
+  list-style: none;
+  border-radius: 30px;
+  border: 1px solid rgba(246, 246, 246, 0.3);
+  color: #1b1b1b;
+  font-family: 'DM Sans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+@media screen and (min-width: 768px) {
+  .hero-list-iteam {
+    padding-left: 16px;
+    padding-right: 16px;
+    line-height: 24px;
+    font-size: 16px;
+  }
+}
+
+.hero-container-text {
+  height: 365px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-container-text {
+    height: 900px;
+    border-radius: 0px 50px 50px 50px;
+  }
+}
+.hero-title {
+  color: #1b1b1b;
+
+  font-family: 'DM Sans';
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px; /* 89.286% */
+  letter-spacing: -1.12px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .hero-title {
+    font-size: 98px;
+    line-height: 95px;
+    letter-spacing: -1.96px;
+    width: 424px;
+    margin-bottom: 25px;
+  }
+}
+
+.title-span {
+  font-style: italic;
+  color: #7e847f;
+}
+
+.hero-text {
+  color: #1b1b1b;
+  width: 295px;
+  height: 56px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.14px;
+}
+@media screen and (min-width: 768px) {
+  .hero-text {
+    width: 396px;
+    height: 72px;
+    line-height: 24px;
+    font-size: 18px;
+  }
+}
