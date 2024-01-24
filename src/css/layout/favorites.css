@@ -16,7 +16,7 @@ background-color:rgba(232, 232, 232, 1);
     justify-content: space-between;
 }
 .workout{
-    display: inline;
+    display: flex;
     width: 76px;
     height: 26px;
     background-color:rgba(126, 132, 127, 1);
