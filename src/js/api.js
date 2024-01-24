@@ -155,3 +155,46 @@ export async function equipment(event) {
 }
 
 // equipment------------------------------------------------------------
+
+
+// Функція для отримання цитати з backend'а-----------------------------
+async function getQuoteFromBackend() {
+    try {
+    const response = await fetch('https://energyflow.b.goit.study/api/quote');
+    const data = await response.json();
+    return data;
+    } catch (error) {
+    console.error('Error getting quote from backend', error);
+    return null;
+    }
+}
+
+// Функція для оновлення блоку з цитатою--------------------------------
+export async function updateQuoteBlock() {
+
+    const storedQuote = localStorage.getItem('quote');
+    const storedDate = localStorage.getItem('quoteDate');
+    const currentDate = new Date().toDateString();
+
+    if (storedQuote && storedDate === currentDate) {
+
+    return JSON.parse(storedQuote);
+    } else {
+
+    const quoteData = await getQuoteFromBackend();
+
+    if (quoteData) {
+
+        localStorage.setItem('quote', JSON.stringify(quoteData));
+        localStorage.setItem('quoteDate', currentDate);
+        return quoteData;
+    }
+    }
+}
+
+// ось так виглядає імпорт функції після then уже робите потрібні вам операції замість console.log()
+
+// import { updateQuoteBlock } from 'шлях до api файла'
+
+// updateQuoteBlock()
+//     .then(result => console.log(result));
