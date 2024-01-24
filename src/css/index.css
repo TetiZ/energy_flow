@@ -3,6 +3,7 @@
 @import url(./base/common.css);
 @import url(./base/container.css);
 @import url(./base/section.css);
+@import url(./base/reset.css);
 
 /* Utils */
 
@@ -11,3 +12,8 @@
 /* Layout */
 @import url(./layout/header.css);
 @import url(./layout/mobile-menu.css);
+@import url(./layout/hero.css);
+@import url(./layout/footer.css);
+@import url(./layout/quote.css);
+@import url(./layout/110.css);
+@import url(./layout/exercises-filters.css);
