@@ -1,13 +1,6 @@
-.footer-container {
-  background-image: url(/img/footer/footer-bg-mob.png);
-  border-radius: 30px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .footer-logo {
   /* Box model */
-  margin-bottom: 8px;
+  margin-bottom: 9px;
   /* typography */
   color: var(--secondary-text-color);
   font-size: 16px;
@@ -97,4 +90,7 @@
 
 .copywrite-text {
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
 }

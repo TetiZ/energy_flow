@@ -8,6 +8,34 @@ body {
   letter-spacing: 0.02em;
 }
 
+/* sm */
+.sm-list {
+  display: flex;
+  gap: 12px;
+  line-height: 0;
+}
+
+.sm-list-item {
+  /* Box model */
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Visual */
+  background-color: transparent;
+  border-radius: 10px;
+  border: 1px solid rgba(246, 246, 246, 0.2);
+}
+
+.sm-icon {
+  fill: var(--secondary-text-color);
+}
+
+.sm-link {
+}
+
 /* FONTS */
 
 /* dm-sans-regular - latin */

@@ -1,4 +1,27 @@
 .section {
-    padding-top: 16px;
-    padding-bottom: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-section {
+  background-image: url(/img/footer/footer-bg-mob.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .footer-section {
+    background-image: url(/img/footer/footer-bg-tablet.png);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer-section {
+    background-image: url(img/footer/footer-bg-desktop.png);
+  }
 }
