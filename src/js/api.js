@@ -3,7 +3,7 @@
 
 
 
-// те що нижче виділене крапками нижче як має працювати у потрібному файлі ця функція на потрібно поставити айдішки на img і при кліку на них відповідна айді abs виводить усі можливі вправи де target element є abs ознайомтесь з json кодом нижче
+// те що нижче виділене крапками те як має працювати у потрібному файлі ця функція нам потрібно поставити айдішки на img і при кліку на них відповідна айді abs виводить усі можливі вправи де target element є abs ознайомтесь з json кодом нижче
 
 // 0:
 //     bodyPart: "waist"
@@ -23,31 +23,32 @@
 
 //...............................................................
 
-// import { fetchData } from 'шлях до api файла';
+// import { musclesGroup } from 'шлях до api файла';
 
 // const button = document.querySelector('.buttons');
-// це був просто список (ul) кнопок у моєму тестовому репозиторії а вже в цьому списку знаходились елементи з айдішкасми мязів
+// це був просто список (ul) кнопок у моєму тестовому репозиторії а вже в цьому списку знаходились елементи з айдішками мязів
 
 
 // button.addEventListener('click', async (event) => {
 //     event.preventDefault();
 
 //     try {
-//         const results = await fetchData(event);
+//         const results = await musclesGroup(event);
 //         // You can now work with the 'results' variable here
 
 //     } catch (error) {
-//         console.error('Error in fetchData:', error);
+//         console.error('Error in musclesGroup:', error);
 //     }
 // });
 //...............................................................
+
+
+// muscleGroup---------------------------------------------------------
 
 export async function musclesGroup(event) {
     let currentPage = 1;
     const limit = 8;
     let searchQuery = '';
-    let allHits = [];
-    let isFirstLoad = true;
 
     try {
         searchQuery = encodeURIComponent(event.target.id);
@@ -77,48 +78,80 @@ export async function musclesGroup(event) {
     }
 }
 
-const url = 'https://energyflow.b.goit.study/api/exercises';
-let currentPage = 1;
-let totalPages = 1;
-const perPage = 10;
-const allData = [];
+// muscleGroup---------------------------------------------------------
 
 
-async function searchBodyPart() {
+// bodyPart------------------------------------------------------------
+export async function bodyPart(event) {
+    let currentPage = 1;
+    const limit = 8;
+    let searchQuery = '';
+
     try {
-        while (currentPage <= totalPages) {
-            const params = new URLSearchParams({ page: currentPage, perPage });
+        searchQuery = encodeURIComponent(event.target.id);
+        console.log(searchQuery);
 
-            const response = await fetch(`${url}?${params}`);
+        const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchQuery}&page=${currentPage}&limit=${limit}`;
+        const response = await fetch(url);
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-            const data = await response.json();
-            totalPages = data.totalPages;
-
-
-            const relevantObjects = data.results.filter(obj => obj.bodyPart === 'waist');  // replace '' with what you search 
-            allData.push(...relevantObjects);
-
-            currentPage++;
-            console.log(currentPage);
+        if (response.status !== 200) {
+            throw new Error('Failed to fetch data. Please try again later.');
         }
-        return allData;
+
+        const resultPromise = response.json();
+        const results = await resultPromise;
+
+        console.log(results);
+
+        if (results.length === 0) {
+            throw new Error('No data found. Please try a different search term.');
+        }
+
+        return results;
+
     } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-        throw error; 
+        console.error('Error fetching data:', error);
+        throw error;
     }
 }
 
-searchBodyPart()
-    .then(data => {
-        console.log(data)
-    })
-    .catch(error => {
-        console.error('Error outside fetchAllData function:', error);
-    });
+
+// логіка додавання функції bodyPart в інший файл така сама як muscleGroup
+// bodyPart------------------------------------------------------------
 
 
+// equipment------------------------------------------------------------
+export async function equipment(event) {
+    let currentPage = 1;
+    const limit = 8;
+    let searchQuery = '';
 
+    try {
+        searchQuery = encodeURIComponent(event.target.id);
+        console.log(searchQuery);
+
+        const url = `https://energyflow.b.goit.study/api/exercises?equipment=${searchQuery}&page=${currentPage}&limit=${limit}`;
+        const response = await fetch(url);
+
+        if (response.status !== 200) {
+            throw new Error('Failed to fetch data. Please try again later.');
+        }
+
+        const resultPromise = response.json();
+        const results = await resultPromise;
+
+        console.log(results);
+
+        if (results.length === 0) {
+            throw new Error('No data found. Please try a different search term.');
+        }
+
+        return results;
+
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
+}
+
+// equipment------------------------------------------------------------
