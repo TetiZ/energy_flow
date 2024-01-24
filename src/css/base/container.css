@@ -16,6 +16,7 @@ html {
     .container {
         width: 375px;
         margin: 0 auto;
+        border-radius: 30px;
     }
 }
 
@@ -24,6 +25,7 @@ html {
         width: 768px;
         padding-left: 16px;
         padding-right: 16px;
+        border-radius: 50px;
     }
 }
 
@@ -32,11 +34,13 @@ html {
         width: 1120px;
         padding-left: 16px;
         padding-right: 16px;
+        border-radius: 50px;
     }
 }
 
 @media screen and (min-width: 1440px) {
     .container {
         width: 1280px;
+        border-radius: 50px;
     }
 }
