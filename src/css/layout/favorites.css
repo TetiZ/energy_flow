@@ -5,6 +5,8 @@ background-color:rgba(232, 232, 232, 1);
 .list {
     background-color: rgba(255, 255, 255, 1);
     padding: 16px;
+    width: 295px;
+    height: 165px;
 }
 
 .topic {
@@ -15,11 +17,38 @@ background-color:rgba(232, 232, 232, 1);
     display: flex;
     justify-content: space-between;
 }
+
+.nav-list-item{
+display: flex;
+}
+
 .workout{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
     width: 76px;
     height: 26px;
     background-color:rgba(126, 132, 127, 1);
     color: aliceblue;
     border-radius: 15px;
+}
+
+.bike {
+    margin-top: 25px;
+}
+
+.air-bike {
+    font-size: 20px;
+}
+
+.char-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    column-gap: 16px;
+}
+
+.char-item {
+    font-size: 12px;
 }
