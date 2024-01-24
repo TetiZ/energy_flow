@@ -88,7 +88,7 @@ export async function bodyPart(event) {
     let searchQuery = '';
 
     try {
-        searchQuery = encodeURIComponent(event.target.id);
+        searchQuery = encodeURIComponent(input.value.trim());
         console.log(searchQuery);
 
         const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchQuery}&page=${currentPage}&limit=${limit}`;
