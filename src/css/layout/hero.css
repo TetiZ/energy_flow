@@ -11,10 +11,13 @@
 }
 
 .background-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 387px;
-  position: relative;
   background-image: url(../img/hero/image\ 2.png);
   background-repeat: no-repeat;
+  margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
   .background-container {
@@ -32,9 +35,10 @@
 }
 
 .container-hero {
+  width: 335px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
   padding-top: 20px;
 }
 @media screen and (min-width: 768px) {
@@ -52,43 +56,15 @@
   }
 }
 
-.link-energi-flow {
-  color: #1b1b1b;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 18px;
-  letter-spacing: -0.32px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-@media screen and (min-width: 768px) {
-  .link-energi-flow {
-    font-size: 28px;
-    line-height: 28px;
-    letter-spacing: -0.56px;
-    height: 28px;
-    width: 150px;
-    top: 44px;
-    left: 32px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .container-hero {
     display: flex;
   }
   .hero-container-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 60px 20px;
   }
 }
 .position-teg {
-  position: absolute;
-  bottom: 20px;
-  left: 10px;
 }
 @media screen and (min-width: 768px) {
   .position-teg {
@@ -162,8 +138,7 @@
   height: 365px;
   flex-shrink: 0;
   border-radius: 30px;
-  /* background: #fff; */
-  background: #f6f6f6;
+  background: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -192,7 +167,6 @@
   line-height: 50px;
   letter-spacing: -1.12px;
   margin-bottom: 20px;
-  margin-left: 20px;
 }
 @media screen and (min-width: 768px) {
   .hero-title {
@@ -220,14 +194,14 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  letter-spacing: -0.14px;
+  letter-spacing: -0.01em;
 }
 @media screen and (min-width: 768px) {
   .hero-text {
     width: 396px;
     height: 72px;
-    line-height: 24px;
+    line-height: 1.28;
     font-size: 18px;
-    letter-spacing: -0.18px;
+    letter-spacing: -0.18em;
   }
 }
