@@ -43,30 +43,3 @@ html {
     border-radius: 50px;
   }
 }
-
-.container {
-  width: 375px;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1120px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .container {
-    width: 1280px;
-  }
-}
