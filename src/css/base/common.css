@@ -49,3 +49,14 @@
         url('../fonts/dm-sans-v14-latin-700.ttf') format('truetype');
     /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
 }
+
+body {
+    font-weight: 500;
+    font-family: DM Sans, sans-serif;
+    font-size: 16px;
+    color: var(--black:);
+    background-color: var(--white);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin: 0;
+}
