@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 // функція musclesGroup() для того щоб знайти мязи що на першій кнопці Muscles у exercises
 
 
@@ -26,6 +26,8 @@
 // import { fetchData } from 'шлях до api файла';
 
 // const button = document.querySelector('.buttons');
+// це був просто список (ul) кнопок у моєму тестовому репозиторії а вже в цьому списку знаходились елементи з айдішкасми мязів
+
 
 // button.addEventListener('click', async (event) => {
 //     event.preventDefault();
@@ -74,7 +76,7 @@ export async function musclesGroup(event) {
         throw error;
     }
 }
-=======
+
 const url = 'https://energyflow.b.goit.study/api/exercises';
 let currentPage = 1;
 let totalPages = 1;
@@ -119,4 +121,4 @@ searchBodyPart()
     });
 
 
->>>>>>> Stashed changes
+
