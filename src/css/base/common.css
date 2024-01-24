@@ -3,7 +3,7 @@ body {
   font-family: DM Sans, sans-serif;
   font-size: 16px;
   color: var(--main-text-color);
-  background-color: var(--white);
+  background-color: var(--secondary-text-color);
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
@@ -31,11 +31,21 @@ body {
 
 .sm-icon {
   fill: var(--secondary-text-color);
+  width: 20px;
+  height: 20px;
 }
 
-.sm-link {
-}
+@media screen and (min-width: 768px) {
+  .sm-list-item {
+    width: 44px;
+    height: 44px;
+  }
 
+  .sm-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
 /* FONTS */
 
 /* dm-sans-regular - latin */
