@@ -32,14 +32,14 @@ https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css
       <ul class="list">
           <li class="list-item">
             <ul class="nav-list">
-              <li>
+              <li class="nav-list-item">
       <span class="workout">WORKOUT</span>
       <svg class="basket-icon" width="30" height="30">
         <use href="/energy_flow/assets/icons-86e1254d.svg#icon-trash"></use>
       </svg>
               </li>
       
-              <li>
+              <li class="nav-list-item">
       <a href="#" class="arrow-link">
               <span class="start-link">Start</span>
                   <svg class="arrow-icon" width="14" height="14">
@@ -48,21 +48,24 @@ https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css
             </a>
               </li>
             </ul>
-            <svg class="arrow-icon" width="14" height="14">
-              <use href="/energy_flow/assets/icons-86e1254d.svg#icon-running-man"></use>
-            </svg>
-            <span>Air bike</span>
-            <ul>
+            <div class="bike">
+              <svg class="arrow-icon" width="14" height="14">
+                <use href="/energy_flow/assets/icons-86e1254d.svg#icon-running-man"></use>
+              </svg>
+              <span class="air-bike">Air bike</span>
+            </div>
+            
+            <ul class="char-list">
               <li>
-      <span>Burned calories:</span>
+      <span class="char-item">Burned calories:${}</span>
               </li>
       
               <li>
-      <span>Body part:</span>
+      <span class="char-item">Body part:${}</span>
               </li>
       
               <li>
-      <span>Target:</span>
+      <span class="char-item">Target: ${}</span>
               </li>
             </ul>
           </li>
