@@ -16,7 +16,7 @@
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
-.heder-nav {
+.heder-nav-list {
   display: none;
 }
 .heder-link-list {
@@ -44,7 +44,7 @@
     line-height: 1;
     letter-spacing: -0.02em;
   }
-  .heder-nav {
+  .heder-nav-list {
     display: flex;
     align-items: center;
     gap: 16px;

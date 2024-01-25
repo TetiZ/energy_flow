@@ -25,7 +25,7 @@
   transform: translate(0);
 }
 .mobile-menu-logo {
-  color: var(--main-text-color);
+  color: var(--secondary-text-color);
   font-weight: 700;
   line-height: 1.125;
   letter-spacing: -0.02px;
@@ -39,7 +39,7 @@
   border: initial;
 }
 .mobile-close-icon {
-  stroke: var(--main-text-color);
+  stroke: var(--secondary-text-color);
 }
 .mobile-menu-nav {
 }
@@ -50,7 +50,7 @@
   row-gap: 22px;
 }
 .mobile-menu-nav-list-item {
-  color: var(--main-text-color);
+  color: var(--secondary-text-color);
 }
 .active-menu-nav-list-item {
   display: inline-flex;
@@ -82,5 +82,5 @@
   border: 1px solid rgba(246, 246, 246, 0.2);
 }
 .menu-link-icon {
-  fill: var(--main-text-color);
+  fill: var(--secondary-text-color);
 }
