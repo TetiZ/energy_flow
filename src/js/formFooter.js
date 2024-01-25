@@ -1,25 +1,51 @@
+const form = document.querySelector('.subs-form');
+const allUserDataKey = 'all-users-data';
 
+form.addEventListener('input', saveToStorage);
 
-document.addEventListener('DOMContentLoaded', function () {
-    const subscriptionForm = document.querySelector('#subscriptionForm');
+function saveToStorage(e) {
+  e.preventDefault();
 
-    subscriptionForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+  const emailInput = form.querySelector('.subs-input');
+  const email = emailInput.value.trim();
 
-        const emailValue = subscriptionForm.querySelector('[name="email"]').value.trim();
+  const providedData = JSON.stringify({ email });
 
-        const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-        if (!emailPattern.test(emailValue)) {
-            alert('Invalid email address');
-            return;
-        }
+  const storageKey = 'user-email';
+  localStorage.setItem(storageKey, providedData);
+}
 
-        const storedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
-        
-        storedEmails.push(emailValue);
+window.addEventListener('load', fillFormFields);
 
-        localStorage.setItem('subscribedEmails', JSON.stringify(storedEmails));
+function fillFormFields(e) {
+  e.preventDefault();
 
-        subscriptionForm.querySelector('[name="email"]').value = '';
-    });
-});
+  const inStorage = localStorage.getItem('user-email');
+
+  if (inStorage) {
+    const storedData = JSON.parse(inStorage);
+    form.querySelector('.subs-input').value = storedData.email;
+  } else {
+    form.querySelector('.subs-input').value = '';
+  }
+  localStorage.removeItem('user-email');
+}
+
+form.addEventListener('submit', submitHandler);
+
+function submitHandler(e) {
+  e.preventDefault();
+
+  const inStorage = localStorage.getItem('user-email');
+  const emailInput = form.querySelector('.subs-input');
+
+  if (inStorage) {
+    const storedData = JSON.parse(inStorage);
+    console.log(storedData);
+  } else {
+    const currentEmail = emailInput.value.trim();
+    console.log({ email: currentEmail });
+  }
+
+  form.reset();
+}
