@@ -4,5 +4,5 @@ import('./js/exersises');
 import('./js/formFooter');
 import('./js/quote');
 import('./js/pop-ups')
-import('./js/header')
 
+import('./js/header')
