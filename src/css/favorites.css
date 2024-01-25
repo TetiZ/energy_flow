@@ -10,11 +10,10 @@
 @import url(./utils/variables.css);
 
 /* Layout */
-@import url(./layout/header.css);
+
+@import url(./layout/header-favorites.css);
+@import url(./layout/favorites.css);
 @import url(./layout/mobile-menu.css);
-@import url(./layout/hero.css);
-@import url(./layout/footer.css);
 @import url(./layout/quote.css);
 @import url(./layout/daily-norm.css);
-@import url(./layout/exercises-filters.css);
 @import url(./layout/pop-ups.css);
