@@ -38,7 +38,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  width: calc((100% - 4px) / 2);
+  width: 141px;
 }
 
 .hero-container-text {
@@ -78,12 +78,16 @@
     height: 900px;
     width: 248px;
     margin-right: 0;
+    margin-bottom: unset;
     background-image: url(../img/hero/Img-tablet.png);
+    padding: 64px 20px;
   }
 
   .hero-teg-list {
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
-    width: calc((100% - 8px) / 2);
+    width: 196px;
   }
 
   .hero-list-item {
@@ -92,7 +96,7 @@
   }
 
   .hero-container-text {
-    width: 424px;
+    width: 488px;
     padding: 231px 32px 192px;
     border-radius: 0px 50px 50px 50px;
   }
@@ -104,24 +108,34 @@
   }
 
   .hero-text {
+    width: 396px;
     font-size: 18px;
-    letter-spacing: -0.18em;
   }
 }
 
 /* ================DECKTOP================= */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
+  .container-hero {
+    width: 1408px;
+  }
   .background-container {
-    height: 884px;
-    width: 100%;
+    width: 704px;
     background-image: url(../img/hero/img-desctop.png);
+    padding: 52px 58px;
   }
-  .position-teg {
-    bottom: 32px;
-    left: 48px;
-  }
+
   .hero-container-text {
-    height: 884px;
+    max-height: 884px;
+    width: 704px;
+  }
+
+  .hero-text {
+    width: 528px;
+    font-size: 18px;
+  }
+
+  .hero-text-list {
+    width: 196px;
   }
 }
