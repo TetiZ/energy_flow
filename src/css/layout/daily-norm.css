@@ -14,10 +14,10 @@
     display: flex;
     flex-direction: column;
     width: 335px;
-        min-height: 272px;
+        min-height: 269px;
     border-radius: 30px;
     background-color: #1B1B1B;
-    padding: 40px 20px;
+    padding: 40px 20px 40px 20px;
     margin: 0 auto;
 
 }
@@ -66,21 +66,20 @@ padding-left: 50px;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: 18px;
+        line-height: 1.28;
 
         padding-bottom: 14px;
 }
 
 .min-text {
     width: 245px;
-        height: 127px;
-    color: rgba(246, 246, 246, 0.60);
     color: rgba(246, 246, 246, 0.60);
         font-family: "DM Sans";
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: 18px;
+        line-height: 1.28;
+        letter-spacing: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -92,6 +91,7 @@ padding-left: 50px;
         .min-box {
             width: 736px;
                 height: 302px;
+                padding: 65px 64px 96px 64px;
         }
 
     .min-img {
@@ -100,13 +100,29 @@ padding-left: 50px;
         border-radius: 50px;
     }
 
+    .min-text-box {
+        padding-left: 50px;
+    }
+
         .min-text-title {
 padding-bottom: 25px;
+color: rgba(246, 246, 246, 0.60);
+    font-family: "DM Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.28;
         }
 
         .min-text {
             width: 526px;
                 height: 97px;
+                color: rgba(246, 246, 246, 0.60);
+                    font-family: "DM Sans";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 1.5;
         }
 }
 
@@ -118,6 +134,7 @@ padding-bottom: 25px;
         .min-box {
             width: 704px;
                 height: 302px;
+                padding: 64px 65px 64px 64px;
         }
 
  .min-img {
