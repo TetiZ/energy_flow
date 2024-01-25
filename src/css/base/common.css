@@ -8,6 +8,10 @@ body {
   letter-spacing: 0.02em;
 }
 
+svg {
+  flex-shrink: 0;
+}
+
 /* sm */
 .sm-list {
   display: flex;
