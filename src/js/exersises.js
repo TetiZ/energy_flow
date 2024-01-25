@@ -206,15 +206,12 @@ exerciseForm.addEventListener('submit', async function(event) {
 
         console.log(results);
 
-    if (results.length === 0) {
-            throw new Error({
-                title: 'No Results',
-                message: 'No images found. Please try a different search term.',
-            });
-        }
-
-
-        
+        if (results.length === 0) {
+            console.log(results.length);
+            
+            cardList.insertAdjacentHTML('beforeend', "<li><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>");
+            pageCounter.style.display = "none"
+        }else{
 
         cardList.innerHTML = results.reduce((html, result) => html + `
         <li class="exercise-parts">
@@ -255,7 +252,7 @@ exerciseForm.addEventListener('submit', async function(event) {
                 </ul>
             </div>
             </li>
-        `, '');
+        `, '');}
     } catch (error) {
         console.error('Error:', error);
     }
@@ -269,7 +266,6 @@ pageCounter.addEventListener('click', async (event) => {
     limit = 8
 
     try {
-
         const localSearch = JSON.parse(localStorage.getItem('searchInput'));
         searchInput = localSearch.searchInput
         
@@ -283,8 +279,7 @@ pageCounter.addEventListener('click', async (event) => {
         const resultPromise = response.json();
         const data = await resultPromise;
         const results = data.results
-
-        console.log(results);  
+        console.log(results.length);  
 
         cardList.innerHTML = results.reduce((html, result) => html + `
         <li class="exercise-parts">
