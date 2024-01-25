@@ -1,0 +1,33 @@
+.section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  width: 335px;
+  background-image: url(/img/footer/footer-bg-mob.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .section {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .footer-section {
+    width: 736px;
+    background-image: url(/img/footer/footer-bg-tablet.png);
+    background-size: cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer-section {
+    width: 1408px;
+    background-image: url(/img/footer/footer-bg-desktop.png);
+  }
+}
