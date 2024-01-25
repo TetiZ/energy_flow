@@ -1,0 +1,15 @@
+/* Base */
+
+@import url(./base/common.css);
+@import url(./base/container.css);
+@import url(./base/section.css);
+@import url(./base/reset.css);
+
+/* Utils */
+
+@import url(./utils/variables.css);
+
+/* Layout */
+
+@import url(./layout/header-favorites.css);
+@import url(./layout/favorites.css);
