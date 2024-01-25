@@ -360,3 +360,7 @@
     width: 348px;
   }
 }
+
+.exercise-input{
+  display: none;
+}

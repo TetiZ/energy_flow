@@ -45,13 +45,17 @@
 
 // muscleGroup---------------------------------------------------------
 
+
+
 export async function musclesGroup(event) {
     let currentPage = 1;
     const limit = 8;
     let searchQuery = '';
 
     try {
-        searchQuery = encodeURIComponent(event.target.id);
+        searchQuery = event.target.id;
+
+        localStorage.setItem('searchQuery', JSON.stringify({searchQuery}));
 
         const url = `https://energyflow.b.goit.study/api/exercises?muscles=${searchQuery}&page=${currentPage}&limit=${limit}`;
         const response = await fetch(url);
@@ -68,7 +72,6 @@ export async function musclesGroup(event) {
         }
 
         return results;
-
     } catch (error) {
         console.error('Error fetching data:', error);
         throw error;
