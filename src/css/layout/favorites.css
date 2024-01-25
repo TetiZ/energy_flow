@@ -1,12 +1,11 @@
 .favorites {
 background-color:rgba(232, 232, 232, 1);
-}
 
-.list {
-    background-color: rgba(255, 255, 255, 1);
-    padding: 16px;
-    width: 295px;
-    height: 165px;
+/* flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 14px;
+    margin-bottom: 32px; */
 }
 
 .favorites-title {
@@ -18,80 +17,79 @@ background-color:rgba(232, 232, 232, 1);
     line-height: 32px;
     letter-spacing: -0.02em;
 }
-.nav-list {
+
+.favorites-part-container {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-}
+    flex-direction: column;
+    height: 100%;
+    padding: 16px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #fff;
+  }
+  
+  .favorites-part-button {
 
-.nav-list-item{
-display: flex;
-}
-
-.workout{
+    top: 16px;
+    right: 16px;
+    color: #1b1b1b;
+    font-family: 'DM Sans';
+    font-size: 14px;
+    line-height: 1.29;
+  }
+  
+  .favorites-part-name {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
-    width: 76px;
-    height: 26px;
-    background-color:rgba(126, 132, 127, 1);
-    color: aliceblue;
-    border-radius: 15px;
-}
-
-.bike {
-    margin-top: 25px;
-}
-
-.favorites-exercises-name {
-    color: rgba(27, 27, 27, 1);
-    font-family: 'DM sans';
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
-}
-
-.char-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 16px;
-    column-gap: 16px;
-}
-
-.char-item {
-    font-size: 12px;
-}
-
-.favorites-pages-counter {
-    display: flex;
-    gap: 8px;
-    width: 92px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 16px;
+    height: 24px;
+    margin-bottom: 2px;
   }
   
-  .favorites-number-button {
-    color: rgba(27, 27, 27, 0.4);
+  .favorites-part-icon {
+    border-radius: 100%;
+    background-color: #7e847f;
+  }
+  
+  .favorites-name-text {
+    color: #1b1b1b;
     font-family: 'DM Sans';
     font-size: 20px;
-    line-height: 1.6;
-    letter-spacing: 0.8px;
-    border: none;
-    background-color: transparent;
+    line-height: 1;
+  }
+  .favorites-describe {
+    height: 18px;
+    display: flex;
+    gap: 4px;
   }
   
-  .favorites-number-button:hover,
-  .favorites-number-button:focus {
-    display: flex;
-    padding: 0px 12px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 18px;
-    color: #1b1b1b;
-    border: 1px solid #1b1b1b;
+  .favorites-describe-category {
+    color: rgba(27, 27, 27, 0.4);
+    font-family: 'DM Sans';
+    font-size: 12px;
+    line-height: 1.5;
   }
-
-  .arrow-link {
-    overflow: visible;
+  
+  .favorites-describing {
+    color: #1b1b1b;
+    font-family: 'DM Sans';
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .favorites-describes-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 16px;
+    column-gap: 16px;
+    row-gap: 6px;
+  }
+  .favorites-head-container {
+    display: flex;
+    gap: 16px;
+    margin-bottom:25px;
   }
