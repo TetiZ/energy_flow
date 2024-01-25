@@ -9,9 +9,14 @@ background-color:rgba(232, 232, 232, 1);
     height: 165px;
 }
 
-.topic {
-    margin-top: 40px;
+.favorites-title {
     margin-bottom: 20px;
+    color: rgba(27, 27, 27, 1);
+    font-family: 'DM sans';
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: -0.02em;
 }
 .nav-list {
     display: flex;
@@ -38,8 +43,12 @@ display: flex;
     margin-top: 25px;
 }
 
-.air-bike {
+.favorites-exercises-name {
+    color: rgba(27, 27, 27, 1);
+    font-family: 'DM sans';
     font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 .char-list {
@@ -52,3 +61,37 @@ display: flex;
 .char-item {
     font-size: 12px;
 }
+
+.favorites-pages-counter {
+    display: flex;
+    gap: 8px;
+    width: 92px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .favorites-number-button {
+    color: rgba(27, 27, 27, 0.4);
+    font-family: 'DM Sans';
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.8px;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .favorites-number-button:hover,
+  .favorites-number-button:focus {
+    display: flex;
+    padding: 0px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 18px;
+    color: #1b1b1b;
+    border: 1px solid #1b1b1b;
+  }
+
+  .arrow-link {
+    overflow: visible;
+  }
