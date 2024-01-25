@@ -5,36 +5,36 @@ html {
 
 .container {
   min-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding: 40px 20px;
   border-radius: 30px;
 }
 
-.footer-container {
-  width: 335px;
-  padding: 20px;
-  margin: 0 auto;
+@media screen and (max-width: 767px) {
+  .footer-container {
+    width: 335px;
+    padding: 20px;
+  }
 }
 
 @media screen and (min-width: 375px) {
   .container {
     width: 335px;
-    margin: 0 auto;
-    border-radius: 30px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    width: 736px;
     padding-left: 16px;
     padding-right: 16px;
     border-radius: 50px;
   }
 
   .footer-container {
-    width: 768px;
+    /* Visual */
+    border-radius: 30px;
+    padding: unset;
   }
 }
 
@@ -49,11 +49,7 @@ html {
 
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1280px;
+    width: 1408px;
     border-radius: 50px;
-  }
-
-  .footer-container {
-    width: 1440px;
   }
 }
