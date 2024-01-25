@@ -15,5 +15,7 @@
 @import url(./layout/hero.css);
 @import url(./layout/footer.css);
 @import url(./layout/quote.css);
-@import url(./layout/110.css);
+@import url(./layout/daily-norm.css);
 @import url(./layout/exercises-filters.css);
+@import url(./layout/favorites.css);
+@import url(./layout/pop-ups.css);
