@@ -1,25 +1,55 @@
 
+const form = document.querySelector('.subs-form');
 
-document.addEventListener('DOMContentLoaded', function () {
-    const subscriptionForm = document.querySelector('#subscriptionForm');
+form.addEventListener('input', saveToStorage);
+form.addEventListener('submit', submitHandler);
 
-    subscriptionForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+function saveToStorage(e) {
+  e.preventDefault();
 
-        const emailValue = subscriptionForm.querySelector('[name="email"]').value.trim();
+  const emailInput = form.querySelector('.subs-input');
+  const email = emailInput.value.trim();
 
-        const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-        if (!emailPattern.test(emailValue)) {
-            alert('Invalid email address');
-            return;
-        }
+  if (!isValidEmail(email)) {
+    return;
+  }
 
-        const storedEmails = JSON.parse(localStorage.getItem('subscribedEmails')) || [];
-        
-        storedEmails.push(emailValue);
+  const providedData = JSON.stringify({ email: email });
 
-        localStorage.setItem('subscribedEmails', JSON.stringify(storedEmails));
+  const storageKey = 'subscription-form-state';
+  localStorage.setItem(storageKey, providedData);
+}
 
-        subscriptionForm.querySelector('[name="email"]').value = '';
-    });
-});
+function isValidEmail(email) {
+  const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+  return emailPattern.test(email);
+}
+
+window.addEventListener('load', fillFormFields);
+
+function fillFormFields(e) {
+  e.preventDefault();
+
+  const inStorage = localStorage.getItem('subscription-form-state');
+
+  if (inStorage) {
+    const storedData = JSON.parse(inStorage);
+    form.querySelector('.subs-input').value = storedData.email;
+  } else {
+    form.querySelector('.subs-input').value = '';
+  }
+}
+
+function submitHandler(e) {
+  e.preventDefault();
+
+  const inStorage = localStorage.getItem('subscription-form-state');
+  const emailInput = form.querySelector('.subs-input');
+
+  if (inStorage) {
+    const storedData = JSON.parse(inStorage);
+    console.log(storedData);
+  } else {
+    console.log({ email: emailInput.value.trim() });
+  }
+}
