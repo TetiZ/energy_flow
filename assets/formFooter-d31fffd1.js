@@ -1,0 +1,2 @@
+document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector("#subscriptionForm");e.addEventListener("submit",function(r){r.preventDefault();const t=e.querySelector('[name="email"]').value.trim();if(!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(t)){alert("Invalid email address");return}const a=JSON.parse(localStorage.getItem("subscribedEmails"))||[];a.push(t),localStorage.setItem("subscribedEmails",JSON.stringify(a)),e.querySelector('[name="email"]').value=""})});
+//# sourceMappingURL=formFooter-d31fffd1.js.map
