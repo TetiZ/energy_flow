@@ -12,7 +12,6 @@ const exercise = document.querySelectorAll('.exercise-button')
 
 
 let currentPage ;
-let searchQuery = '';
 let searchInput = '';
 let allResults = [];
 let limit;
@@ -94,9 +93,8 @@ pageCounter.addEventListener('click', async (event) => {
     const clickedPage = event.target.textContent;
     currentPage = clickedPage
     console.log(currentPage);
-    limit = 8
-
-    try {
+    limit = 8;
+  try {
         const localSearch = JSON.parse(localStorage.getItem('searchQuery'));
         const searchQuery = localSearch.searchQuery
         console.log(searchQuery);
@@ -198,12 +196,14 @@ exerciseForm.addEventListener('submit', async function(event) {
     cardList.innerHTML = '';
 
     try {
-    const submitedValue = exerciseInput.value
-    const data = await bodyPart(submitedValue)
+        const submitedValue = exerciseInput.value
+        const data = await bodyPart(submitedValue)
         const results = data.results;
-        console.log(results);
 
-    if (results.length === 0) {
+        allResults = [...results];
+
+        console.log(results);
+      if (results.length === 0) {
             throw new Error({
                 title: 'No Results',
                 message: 'No images found. Please try a different search term.',
@@ -291,7 +291,6 @@ pageCounter.addEventListener('click', async (event) => {
                     </span>
                 <button class="exercise-part-button">Start</button>
                 </div>
-
                 <!-- <svg class="exercise-btn-icon">
                 <use href="../img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
