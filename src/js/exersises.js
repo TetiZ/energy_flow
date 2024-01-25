@@ -198,9 +198,12 @@ exerciseForm.addEventListener('submit', async function(event) {
     cardList.innerHTML = '';
 
     try {
-    const submitedValue = exerciseInput.value
-    const data = await bodyPart(submitedValue)
+        const submitedValue = exerciseInput.value
+        const data = await bodyPart(submitedValue)
         const results = data.results;
+
+        allResults = [...results];
+
         console.log(results);
 
     if (results.length === 0) {
@@ -260,12 +263,17 @@ exerciseForm.addEventListener('submit', async function(event) {
 });
 
 pageCounter.addEventListener('click', async (event) => {
+    const clickedPage = event.target.textContent;
+    currentPage = clickedPage
+
+    limit = 8
+
     try {
 
         const localSearch = JSON.parse(localStorage.getItem('searchInput'));
         searchInput = localSearch.searchInput
-        console.log(searchInput);
-        const url = `https://energyflow.b.goit.study/api/exercises?muscles=''&page=${currentPage}&limit=${limit}`;
+        
+        const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchInput}&page=${currentPage}&limit=${limit}`;
         const response = await fetch(url);
             
         if (response.status !== 200) {
