@@ -9,6 +9,7 @@ const exerciseForm = document.querySelector('.exercise-form')
 const exerciseInputButton = document.querySelector('.exercise-input-button')
 const exerciseInput = document.querySelector('.exercise-input')
 const exercise = document.querySelectorAll('.exercise-button')
+const exercisePartsList = document.querySelector('.exercise-parts-list')
 
 
 let currentPage ;
@@ -24,16 +25,12 @@ exerciseList.addEventListener('click', async (event) => {
     event.preventDefault();
     allResults = [];
     currentPage = 1;
-    cardList.innerHTML = '';
     try {
         const data = await musclesGroup(event);
         const results = data.results;
 
         allResults = [...results];
 
-        exerciseCards.forEach((card) => {
-            card.style.display = 'none';
-        });
 
         if (results.length === 0) {
             throw new Error({
@@ -42,16 +39,19 @@ exerciseList.addEventListener('click', async (event) => {
             });
         }
 
-
+        cardList.style.display = 'none'
+        exercisePartsList.style.display = 'flex';
         
 
-        cardList.innerHTML = results.reduce((html, result) => html + `
+        const rating = Math.round(results.rating)
+
+        exercisePartsList.innerHTML = results.reduce((html, result) => html + `
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${result.rating}</p>
+                    <p class="exercise-rating-number">${rating}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -113,13 +113,15 @@ pageCounter.addEventListener('click', async (event) => {
 
         console.log(results);  
         
-        cardList.innerHTML = results.reduce((html, result) => html + `
+        const rating = Math.round(results.rating)
+
+        exercisePartsList.innerHTML = results.reduce((html, result) => html + `
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${result.rating}</p>
+                    <p class="exercise-rating-number">${rating}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -170,19 +172,18 @@ exercise.forEach((elem) => {
         if (targetElement === 'Muscles') {
             exerciseInput.style.display = 'none';
             exerciseInputButton.style.display = 'none';
-            exerciseCards.forEach((card) => {
-                card.style.display = 'flex';
-            });
-            exerciseParts.forEach((parts) => {
-                parts.style.display = 'none';
-            });
+            exercisePartsList.style.display = 'none';
+            cardList.style.display = 'flex'
+
+        
             
         } else if (targetElement === 'Body parts') {
+            exercisePartsList.innerHTML = ''
             exerciseInput.style.display = 'flex';
             exerciseInputButton.style.display = 'flex';
-            exerciseCards.forEach((card) => {
-                card.style.display = 'none';
-            });
+            exercisePartsList.style.display = 'flex';
+            cardList.style.display = 'none'
+            pageCounter.style.display = 'none'
             try {
             } catch {
                 
@@ -195,7 +196,6 @@ exerciseForm.addEventListener('submit', async function(event) {
     event.preventDefault();
     allResults = [];
     currentPage = 1;
-    cardList.innerHTML = '';
 
     try {
         const submitedValue = exerciseInput.value
@@ -209,17 +209,21 @@ exerciseForm.addEventListener('submit', async function(event) {
         if (results.length === 0) {
             console.log(results.length);
             
-            cardList.insertAdjacentHTML('beforeend', "<li><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>");
+            
+            exercisePartsList.insertAdjacentHTML('beforeend', "<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>");
             pageCounter.style.display = "none"
+            return
         }else{
+        pageCounter.style.display = 'flex'
+        const rating = Math.round(results.rating)
 
-        cardList.innerHTML = results.reduce((html, result) => html + `
+        exercisePartsList.innerHTML = results.reduce((html, result) => html + `
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${result.rating}</p>
+                    <p class="exercise-rating-number">${rating}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -281,13 +285,15 @@ pageCounter.addEventListener('click', async (event) => {
         const results = data.results
         console.log(results.length);  
 
-        cardList.innerHTML = results.reduce((html, result) => html + `
+        const rating = Math.round(results.rating)
+
+        exercisePartsList.innerHTML = results.reduce((html, result) => html + `
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${result.rating}</p>
+                    <p class="exercise-rating-number">${rating}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
