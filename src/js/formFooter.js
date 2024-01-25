@@ -52,4 +52,8 @@ function submitHandler(e) {
   } else {
     console.log({ email: emailInput.value.trim() });
   }
+
+  localStorage.removeItem('subscription-form-state');
+  form.reset();
+
 }
