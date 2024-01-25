@@ -52,7 +52,6 @@ export async function musclesGroup(event) {
 
     try {
         searchQuery = encodeURIComponent(event.target.id);
-        console.log(searchQuery);
 
         const url = `https://energyflow.b.goit.study/api/exercises?muscles=${searchQuery}&page=${currentPage}&limit=${limit}`;
         const response = await fetch(url);
@@ -63,8 +62,6 @@ export async function musclesGroup(event) {
 
         const resultPromise = response.json();
         const results = await resultPromise;
-
-        console.log(results);
 
         if (results.length === 0) {
             throw new Error('No data found. Please try a different search term.');
