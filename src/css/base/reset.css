@@ -20,6 +20,10 @@ ol {
   padding-left: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
 a {
   color: currentColor;
   text-decoration: none;
@@ -33,4 +37,5 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  object-fit: cover;
 }

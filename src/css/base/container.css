@@ -1,42 +1,55 @@
 html {
-    scroll-behavior: smooth;
-    transition-duration: 3s;
+  scroll-behavior: smooth;
+  transition-duration: 3s;
 }
 
 .container {
-    min-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 50px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 767px) {
+  .footer-container {
+    width: 335px;
+    padding: 20px;
+  }
 }
 
 @media screen and (min-width: 375px) {
-    .container {
-        width: 375px;
-        margin: 0 auto;
-    }
+  .container {
+    width: 335px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .container {
-        width: 768px;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+  .container {
+    width: 736px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 50px;
+  }
+
+  .footer-container {
+    /* Visual */
+    border-radius: 30px;
+    padding: unset;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-    .container {
-        width: 1120px;
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+  .container {
+    width: 1120px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 50px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    .container {
-        width: 1280px;
-    }
+  .container {
+    width: 1408px;
+    border-radius: 50px;
+  }
 }
