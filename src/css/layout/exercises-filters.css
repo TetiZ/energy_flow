@@ -47,6 +47,8 @@
   color: #f6f6f6;
 }
 
+
+
 .exercise-input {
   display: inline-flex;
   width: calc(100% - 16px);
@@ -359,4 +361,12 @@
   .part-container {
     width: 348px;
   }
+}
+
+.exercise-input{
+  display: none;
+}
+
+.exercise-input-button{
+  display: none;
 }
