@@ -46,7 +46,6 @@
 // muscleGroup---------------------------------------------------------
 
 
-
 export async function musclesGroup(event) {
     let currentPage = 1;
     const limit = 8;
@@ -85,13 +84,16 @@ export async function musclesGroup(event) {
 export async function bodyPart(event) {
     let currentPage = 1;
     const limit = 8;
-    let searchQuery = '';
+    let searchInput = '';
 
     try {
-        searchQuery = encodeURIComponent(input.value.trim());
-        console.log(searchQuery);
+        searchInput = encodeURIComponent(event);
 
-        const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchQuery}&page=${currentPage}&limit=${limit}`;
+        localStorage.setItem('searchInput', JSON.stringify({ searchInput }));
+        
+        console.log(searchInput);
+
+        const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchInput}&page=${currentPage}&limit=${limit}`;
         const response = await fetch(url);
 
         if (response.status !== 200) {
