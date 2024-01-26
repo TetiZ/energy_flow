@@ -12,6 +12,7 @@ exPopClose.addEventListener('click', function () {
 
 ratingPopUpOpen.addEventListener('click', function () {
   ratingPopUpWindow.classList.toggle('is-open');
+  exPopUpWindow.classList.remove('is-open');
 });
 
 ratingPopUpClose.addEventListener('click', function () {
