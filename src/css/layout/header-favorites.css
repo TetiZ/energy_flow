@@ -31,7 +31,7 @@
 
 @media screen and (min-width: 768px) {
   .header-section {
-    padding-top: 56px;
+    padding-top: 40px;
   }
   .heder-items {
     padding-left: 32px;
@@ -96,9 +96,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .header-section {
-    padding-top: 40px;
-  }
   .heder-items {
     padding-left: 48px;
     padding-right: 48px;
@@ -107,6 +104,9 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .header-section {
+    top: 40px;
+  }
   .heder-items {
     width: 1408px;
   }
