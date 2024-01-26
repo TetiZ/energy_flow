@@ -226,16 +226,29 @@ li:last-child .pop-ex-rate-icon use {
   border-radius: 30px;
   background: #7e847f;
   border: none;
+  font-weight: 400;
   color: #f6f6f6;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.pop-add-fav:hover,
+.pop-add-fav:focus {
+  background-color: #5F6560;
+}
+
 .pop-rating-btn {
   background-color: transparent;
   border-radius: 30px;
   border: 1px solid #1b1b1b;
+  color: #1b1b1b;
+}
+
+.pop-rating-btn:hover,
+.pop-rating-btn:focus {
+  border: 1px solid #7E847F;
+  color: #7E847F;
 }
 
 .heart-icon {
@@ -277,6 +290,8 @@ li:last-child .pop-ex-rate-icon use {
     padding-bottom: 12px;
     display: flex;
     justify-content: center;
+    line-height: 1.28;
+    font-size: 14px;
   }
 
   .pop-rating-btn {
@@ -332,7 +347,7 @@ li:last-child .pop-ex-rate-icon use {
     padding-top: 12px;
     padding-bottom: 12px;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
   }
 
   .heart-icon {
