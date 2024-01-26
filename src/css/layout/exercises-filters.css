@@ -333,6 +333,7 @@
 .exercise-btn-icon {
   stroke: var(--main-text-color);
   fill: var(--white);
+  margin-left: 8px;
 }
 
 .part-container {
@@ -357,6 +358,7 @@
 .exercise-part-button {
   color: #1b1b1b;
   font-family: 'DM Sans';
+  display: flex;
   align-items: center;
   justify-content: center;
   border: none;
