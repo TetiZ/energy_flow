@@ -1,0 +1,353 @@
+.backdrop {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(27, 27, 27, 0.6); */
+  background: rgba(46, 47, 66, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.pop-up-rating {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f6f6f6;
+  padding: 20px 40px;
+  border-radius: 20px;
+}
+/*stars*/
+/*stars*/
+.pop-up-close-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  width: 24px;
+  top: 14px;
+  right: 14px;
+  background-color: transparent;
+  border: none;
+}
+.pop-up-close-btn-icon {
+  stroke: rgba(27, 27, 27, 1);
+  width: 24px;
+  height: 24px;
+}
+.pop-up-title-rating {
+  margin-bottom: 8px;
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 12px;
+  color: rgba(27, 27, 27, 0.4);
+}
+.pop-up-rating-value {
+  margin-right: 2px;
+  transform: translateY(10%);
+}
+.pop-up-stars-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+.pop-up-star-icon {
+  fill: rgba(27, 27, 27, 0.2);
+  width: 24px;
+  height: 24px;
+}
+.pop-up-input-email {
+  margin-bottom: 10px;
+  width: 246px;
+  height: 40px;
+  padding: 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(27, 27, 27, 0.4);
+}
+.pop-up-message {
+  resize: none;
+  padding: 14px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  width: 246px;
+  border: 1px solid rgba(27, 27, 27, 0.4);
+}
+.pop-up-send-btn {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 30px;
+  background: #7e847f;
+  border: none;
+  color: #f6f6f6;
+}
+
+.pop-up-send-btn:hover,
+.pop-up-send-btn:focus {
+  background: rgba(95, 101, 96, 1);
+}
+.pop-up-input-email,
+.pop-up-message {
+  outline: none;
+}
+/* <------------ exercises styles ------------> */
+
+.pop-ex-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  height: auto;
+}
+
+.pop-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999999999999;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.pop-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pop-ex-close-btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 14px;
+  right: 14px;
+  background-color: transparent;
+  border: none;
+}
+
+.pop-ex-close-btn-icon {
+  stroke: #1b1b1b;
+  width: 24px;
+  height: 24px;
+}
+
+.img-ex {
+  border-radius: 12px;
+}
+
+.pop-exercise-name {
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.pop-ex-stars-list {
+  display: flex;
+  gap: 2px;
+}
+
+li:not(:last-child) .pop-ex-rate-icon use {
+  fill: #eea10c;
+}
+
+li:last-child .pop-ex-rate-icon use {
+  fill: rgba(27, 27, 27, 0.2);
+}
+
+.decorate-elem {
+  border: none;
+  height: 1px;
+  stroke-width: 1px;
+  background-color: rgba(27, 27, 27, 0.2);
+  margin: 10px 0;
+}
+
+.pop-ex-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.value {
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 12px;
+  color: rgba(27, 27, 27, 0.4);
+}
+
+.label {
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  display: flex;
+}
+
+.pop-desc-exercise {
+  color: rgba(27, 27, 27, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.pop-add-fav {
+  border-radius: 30px;
+  background: #7e847f;
+  border: none;
+  color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pop-rating-btn {
+  background-color: transparent;
+  border-radius: 30px;
+  border: 1px solid #1b1b1b;
+}
+
+.heart-icon {
+  stroke: #f6f6f6;
+  fill: transparent;
+  margin-left: 6px;
+}
+
+@media screen and (max-width: 767px) {
+  .pop-ex-modal {
+    min-width: 335px;
+    height: auto;
+    padding: 14px;
+  }
+
+  .pop-exercises-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 26px;
+    margin-bottom: 20px;
+  }
+
+  .pop-desc-exercise {
+    margin-bottom: 40px;
+    height: 125px;
+  }
+
+  .pop-btns-container {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .pop-add-fav {
+    padding-left: 83px;
+    padding-right: 83px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .pop-rating-btn {
+    padding-left: 107px;
+    padding-right: 107px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 26px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pop-ex-modal {
+    width: 716px;
+    height: auto;
+    display: flex;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+  }
+
+  .pop-ex-close-btn {
+    top: 16px;
+    right: 16px;
+  }
+
+  .pop-exercises-img {
+    margin-right: 24px;
+    width: 270px;
+    height: 259px;
+  }
+
+  .pop-ex-content-container {
+    flex: 1;
+  }
+
+  .pop-btns-container {
+    gap: 7px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pop-desc-exercise {
+    margin-bottom: 32px;
+    height: 108px;
+  }
+
+  .pop-add-fav,
+  .pop-rating-btn {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .heart-icon {
+    margin-left: 8px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .pop-ex-modal {
+    min-width: 732px;
+  }
+
+  .pop-exercises-img {
+    margin-right: 40px;
+  }
+
+  .pop-btns-container {
+    justify-content: space-between;
+  }
+}

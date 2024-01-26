@@ -3,8 +3,11 @@
     <symbol id="icon-burger-menu" viewBox="0 0 64 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M56 20.667H8M56 10H8"/>
     </symbol>
+    <symbol id="icon-search" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667S20.558 3.999 14.667 3.999 4 8.775 4 14.666s4.776 10.667 10.667 10.667zM28 28l-5.8-5.8"/>
+    </symbol>
     <symbol id="icon-arrow-right" viewBox="0 0 32 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.9714" d="m15 28 13-13m0 0L15 2m13 13H2"/>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="m15 28 13-13m0 0L15 2m13 13H2"/>
     </symbol>
     <symbol id="icon-dumbell" viewBox="0 0 32 32">
       <path d="M7.36 9.143H5.44c-.532 0-.96.459-.96 1.029v4.457h-.96c-.176 0-.32.154-.32.343v2.057c0 .188.144.343.32.343h.96v4.457c0 .57.428 1.028.96 1.028h1.92c.532 0 .96-.459.96-1.028V10.172c0-.57-.428-1.029-.96-1.029zm21.12 5.486h-.96v-4.457c0-.57-.428-1.029-.96-1.029h-1.92c-.532 0-.96.459-.96 1.029v11.657c0 .57.428 1.028.96 1.028h1.92c.532 0 .96-.459.96-1.028v-4.457h.96c.176 0 .32-.154.32-.343v-2.057c0-.189-.144-.343-.32-.343zM21.44 6.4h-1.92c-.532 0-.96.459-.96 1.029v7.2h-5.12v-7.2c0-.57-.428-1.029-.96-1.029h-1.92c-.532 0-.96.459-.96 1.029v17.143c0 .57.428 1.029.96 1.029h1.92c.532 0 .96-.459.96-1.029v-7.2h5.12v7.2c0 .57.428 1.029.96 1.029h1.92c.532 0 .96-.459.96-1.029V7.429c0-.57-.428-1.029-.96-1.029z"/>
@@ -38,6 +41,12 @@
     </symbol>
     <symbol id="icon-close" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M24 8 8 24M8 8l16 16"/>
+    </symbol>
+    <symbol id="icon-search" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6667" d="M14.667 25.333c5.891 0 10.667-4.776 10.667-10.667S20.558 3.999 14.667 3.999 4 8.775 4 14.666s4.776 10.667 10.667 10.667zM28 28l-5.8-5.8"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="m15 28 13-13m0 0L15 2m13 13H2"/>
     </symbol>
   </defs>
 </svg>
