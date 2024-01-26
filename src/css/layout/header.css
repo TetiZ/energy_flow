@@ -1,13 +1,16 @@
+
 .header-section {
   width: 100%;
   position: absolute;
   top: 40px;
+  padding: 0 20px;
 }
 .heder-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+
 }
 .heder-logo {
   color: var(--black);
@@ -61,7 +64,8 @@
     gap: 12px;
   }
   .heder-nav-link {
-    color: var(--secondary-text-color);
+    color: var(--main-text-color);
+
   }
   .heder-nav-link-active {
     display: flex;
@@ -71,6 +75,7 @@
     border-radius: 30px;
     background-color: var(--white);
     color: var(--main-text-color);
+
   }
   .heder-link-item {
     width: 44px;
@@ -95,18 +100,14 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .heder-items {
-    padding: 0 48px;
-    width: 736px;
-  }
-}
 
 @media screen and (min-width: 1440px) {
   .header-section {
     top: 40px;
+    padding: 0 48px;
   }
   .heder-items {
     width: 1408px;
   }
 }
+
