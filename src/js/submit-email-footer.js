@@ -22,7 +22,7 @@ async function postEmail(userEmail) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: userEmail }), // Оновлено поле з emails nа email
+        body: JSON.stringify({ email: userEmail }),
       }
     );
     if (!response.ok) {
