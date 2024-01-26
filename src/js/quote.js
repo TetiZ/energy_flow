@@ -1,43 +1,47 @@
-// Функція для отримання цитати з backend'а
-async function getQuoteFromBackend() {
-  try {
-    const response = await fetch('https://energyflow.b.goit.study/api/quote');
-    const data = response.json();
-    console.log("Отримані дані з API:", data); // Додано логування
-    return data;
-  } catch (error) {
-    console.error('Error getting quote from backend', error);
-    return null;
+// Визначаємо константу для збереження ключа у localStorage 
+const QUOTE_KEY = 'quote';
+const AUTHOR_KEY = 'author';
+
+
+const storedDate = localStorage.getItem('date');
+const currentDate = new Date().toDateString();
+
+if (storedDate === currentDate) {  
+  const storedQuote = localStorage.getItem(QUOTE_KEY);
+  const storedAuthor = localStorage.getItem(AUTHOR_KEY);
+  console.log(`Збережена цитата: ${storedQuote} - ${storedAuthor}`);
+} else {  
+  async function fetchData() {
+    try {
+      const response = await fetch('https://energyflow.b.goit.study/api/quote');
+      if (response.ok) {
+        const data = await response.json();       
+        const quote = data.quote;
+        const author = data.author;
+
+        localStorage.setItem(QUOTE_KEY, quote);
+        localStorage.setItem(AUTHOR_KEY, author || 'автор невідомий'); // Зберігаємо значення "автор невідомий", якщо автор не доступний
+
+        console.log(`Нова цитата: ${quote} - ${author || 'автор невідомий'}`);
+
+        displayQuote({ quote, author: author || 'автор невідомий' });  
+      } else {
+        throw new Error('Помилка запиту до сервера!');
+      }
+    } catch (error) {      
+      console.error(error);
+    }
   }
+  fetchData();
 }
-
-
-const quoteText = document.querySelector('.quote-text');
-const quoteAuthor = document.querySelector('.quote-author');
 
 // Функція для відображення цитати
 function displayQuote(quoteData) {
+  const quoteText = document.querySelector('.quote-text'); 
+  const quoteAuthor = document.querySelector('.quote-author');
+
   if (quoteData) {
     quoteText.textContent = quoteData.quote;
     quoteAuthor.textContent = quoteData.author;
   }
 }
-
-// Функція для перевірки і отримання цитати
-async function checkAndFetchQuote() {
-  const today = new Date().toISOString().split('T')[0];
-  const storedQuote = JSON.parse(localStorage.getItem('quoteData'));
-
-  if (!storedQuote || storedQuote.date !== today) {
-    const newQuoteData = await getQuoteFromBackend();
-    if (newQuoteData) {
-      localStorage.setItem('quoteData', JSON.stringify({ ...newQuoteData, date: today }));
-      displayQuote(newQuoteData);
-    }
-  } else {
-    displayQuote(storedQuote);
-  }
-}
-
-// Викликаємо функцію при завантаженні сторінки
-document.addEventListener('DOMContentLoaded', checkAndFetchQuote);
