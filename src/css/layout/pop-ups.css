@@ -285,6 +285,7 @@ li:last-child .pop-ex-rate-icon use {
     margin-bottom: 26px;
   }
 }
+
 @media screen and (min-width: 768px) {
   .pop-ex-modal {
     width: 716px;
