@@ -224,6 +224,8 @@ li:last-child .pop-ex-rate-icon use {
     padding-right: 83px;
     padding-top: 12px;
     padding-bottom: 12px;
+    display: flex;
+    justify-content: center;
   }
 
   .pop-rating-btn {
