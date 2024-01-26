@@ -56,7 +56,13 @@ exerciseList.addEventListener('click', async event => {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button">Start</button>
+                <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button">Start   
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="../img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -135,7 +141,13 @@ pageCounter.addEventListener('click', async event => {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button">Start</button>
+               <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button">Start   
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="../img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -240,7 +252,13 @@ exerciseForm.addEventListener('submit', async function (event) {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button">Start</button>
+                <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button">Start   
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="../img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -319,7 +337,13 @@ pageCounter.addEventListener('click', async event => {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button">Start</button>
+              <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button">Start   
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="../img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">

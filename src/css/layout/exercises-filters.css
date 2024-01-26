@@ -330,6 +330,11 @@
   fill: #eea10c;
 }
 
+.exercise-btn-icon {
+  stroke: var(--main-text-color);
+  fill: var(--white);
+}
+
 .part-container {
   position: relative;
   display: flex;
@@ -532,7 +537,7 @@
 
 @media screen and (min-width: 1440px) {
   .exercise-container {
-    width: 1440px;
+    width: 1408px;
   }
   .exercise-cards-list {
     column-gap: 20px;
