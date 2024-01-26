@@ -87,7 +87,7 @@ export async function bodyPart(event) {
     let searchInput = '';
 
     try {
-        searchInput = encodeURIComponent(event);
+        searchInput = encodeURIComponent(event.toLowerCase());
 
         localStorage.setItem('searchInput', JSON.stringify({ searchInput }));
         
