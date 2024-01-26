@@ -1,0 +1,2 @@
+const n=document.querySelector(".pop-ex-close-btn"),e=document.querySelector(".pop-backdrop"),o=document.querySelector(".backdrop"),t=document.querySelector(".pop-rating-btn"),c=document.querySelector(".pop-up-close-btn");n.addEventListener("click",function(){e.classList.remove("is-open")});t.addEventListener("click",function(){o.classList.toggle("is-open"),e.classList.remove("is-open")});c.addEventListener("click",function(){o.classList.remove("is-open")});
+//# sourceMappingURL=pop-ups-7ad7c9c1.js.map
