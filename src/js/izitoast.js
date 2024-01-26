@@ -40,3 +40,52 @@ ratingBtn.addEventListener('click', function () {
     icon: 'fas fa-star', 
   });
 });
+
+
+const infoStyles = `
+  .iziToast.iziToast-info {
+    background-color: #2196F3; /* колір фону */
+    color: #fff; /* колір тексту */
+  }
+`;
+
+const successStyles = `
+  .iziToast.iziToast-success {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+`;
+
+const titleStyles = `
+  .iziToast-title {
+    font-weight: bold;
+  }
+`;
+
+const buttonStyles = `
+  .iziToast-buttons .iziToast-icon {
+    border: 2px solid #fff;
+  }
+
+  .iziToast-buttons .iziToast-icon:hover {
+    background-color: #fff;
+    color: #2196F3;
+  }
+`;
+
+const closeStyles = `
+  .iziToast-buttons .iziToast-close {
+    color: #fff;
+    border: 2px solid #fff;
+  }
+
+  .iziToast-buttons .iziToast-close:hover {
+    background-color: #fff;
+    color: #4CAF50;
+  }
+`;
+
+const styleSheet = document.createElement('style');
+styleSheet.type = 'text/css';
+styleSheet.innerText = infoStyles + successStyles + titleStyles + buttonStyles + closeStyles;
+document.head.appendChild(styleSheet);
