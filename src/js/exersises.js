@@ -1,3 +1,6 @@
+import '../css/layout/pop-ups.css';
+import '../css/layout/exercises-filters.css';
+
 import { bodyPart, equipment, musclesGroup } from './api.js';
 
 const exerciseList = document.querySelector('.exercise-cards-list');
