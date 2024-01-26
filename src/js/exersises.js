@@ -40,8 +40,6 @@ exerciseList.addEventListener('click', async event => {
     cardList.style.display = 'none';
     exercisePartsList.style.display = 'flex';
 
-    const rating = Math.round(results.rating);
-
     exercisePartsList.innerHTML = results.reduce(
       (html, result) =>
         html +
@@ -51,7 +49,9 @@ exerciseList.addEventListener('click', async event => {
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${rating}</p>
+                    <p class="exercise-rating-number">${Math.round(
+                      result.rating
+                    )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -71,7 +71,9 @@ exerciseList.addEventListener('click', async event => {
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${result.burnedCalories} / ${result.time}</p>
+                    <p class="exercise-describing">${result.burnedCalories} / ${
+          result.time
+        }</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
@@ -126,7 +128,9 @@ pageCounter.addEventListener('click', async event => {
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${rating}</p>
+                    <p class="exercise-rating-number">${Math.round(
+                      result.rating
+                    )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -146,7 +150,9 @@ pageCounter.addEventListener('click', async event => {
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${result.burnedCalories} / ${result.time}</p>
+                    <p class="exercise-describing">${result.burnedCalories} / ${
+          result.time
+        }</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
@@ -227,7 +233,9 @@ exerciseForm.addEventListener('submit', async function (event) {
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${rating}</p>
+                    <p class="exercise-rating-number">${Math.round(
+                      result.rating
+                    )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -247,7 +255,9 @@ exerciseForm.addEventListener('submit', async function (event) {
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${result.burnedCalories} / ${result.time}</p>
+                    <p class="exercise-describing">${result.burnedCalories} / ${
+            result.time
+          }</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
@@ -302,7 +312,9 @@ pageCounter.addEventListener('click', async event => {
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${rating}</p>
+                    <p class="exercise-rating-number">${Math.round(
+                      result.rating
+                    )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -322,7 +334,9 @@ pageCounter.addEventListener('click', async event => {
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${result.burnedCalories} / ${result.time}</p>
+                    <p class="exercise-describing">${result.burnedCalories} / ${
+          result.time
+        }</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
