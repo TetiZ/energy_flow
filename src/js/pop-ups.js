@@ -1,6 +1,6 @@
 // const popAddFavButton = document.querySelector('.pop-add-fav');
-const exPopClose = document.querySelector('.pop-close-btn');
-const exPopUpWindow = document.querySelector('.backdrop-ex');
+const exPopClose = document.querySelector('.pop-ex-close-btn');
+const exPopUpWindow = document.querySelector('.pop-backdrop');
 
 const ratingPopUpOpen = document.querySelector('.pop-rating-btn');
 const ratingPopUpWindow = document.querySelector('.backdrop');
