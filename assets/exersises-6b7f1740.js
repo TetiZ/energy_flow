@@ -179,4 +179,4 @@ import{musclesGroup as w,bodyPart as $}from"./api-f9182e38.js";const S=document.
             </div>
             </li>
         `,"")}catch(e){console.error("Error:",e)}});
-//# sourceMappingURL=exersises-8e966304.js.map
+//# sourceMappingURL=exersises-6b7f1740.js.map
