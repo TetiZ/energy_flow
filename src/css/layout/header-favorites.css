@@ -1,12 +1,12 @@
 .header-section {
-  padding-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 38px;
 }
 .heder-items {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
-  
 }
 .heder-logo {
   color: var(--black);
@@ -32,7 +32,8 @@
 
 @media screen and (min-width: 768px) {
   .header-section {
-    padding-top: 40px;
+    padding-top: 48px;
+    padding-bottom: 80px;
   }
   .heder-items {
     padding-left: 32px;
@@ -63,7 +64,6 @@
   }
   .heder-nav-link {
     color: var(--main-text-color);
-
   }
   .heder-nav-link-active {
     display: flex;
@@ -73,7 +73,6 @@
     border-radius: 30px;
     background-color: var(--white);
     color: var(--main-text-color);
-
   }
   .heder-link-item {
     width: 44px;
@@ -100,8 +99,8 @@
 
 @media screen and (min-width: 1440px) {
   .header-section {
-    top: 40px;
-    padding: 0 48px;
+    padding-top: 40px;
+    padding-bottom: 64px;
   }
   .heder-items {
     padding-left: 48px;
