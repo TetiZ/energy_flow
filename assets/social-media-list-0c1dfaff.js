@@ -1,34 +1,34 @@
-document.querySelector(".sm-list");document.querySelector(".heder-link-list");const a="heder-link-list",s="heder-link-item",e="heder-link",l="heder-link-icon",i=`<li class="${s}">
+const l="heder-link-list",i=l,s="heder-link-item",a="heder-link",e="heder-link-icon",c=`<li class="${s}">
             <a
-              class="${e}"
+              class="${a}"
               href="https://www.facebook.com/goITclub/"
               target="_blank"
             >
-              <svg class="${l}" aria-label="facebook icon">
+              <svg class="${e}" aria-label="facebook icon">
                 <use href="./img/icons.svg#icon-facebook"></use>
               </svg>
             </a>
           </li>
           <li class="${s}">
             <a
-              class="${e}"
+              class="${a}"
               href="https://www.instagram.com/goitclub/"
               target="_blank"
             >
-              <svg class="${l}" aria-label="instagram icon">
+              <svg class="${e}" aria-label="instagram icon">
                 <use href="./img/icons.svg#icon-instagram"></use>
               </svg>
             </a>
           </li>
           <li class="${s}">
             <a
-              class="${e}"
+              class="${a}"
               href="https://www.youtube.com/c/GoIT"
               target="_blank"
             >
-              <svg class="${l}" aria-label="youtube icon">
+              <svg class="${e}" aria-label="youtube icon">
                 <use href="./img/icons.svg#icon-youtube"></use>
               </svg>
             </a>
-          </li>`;document.querySelector(`.${a}`).innerHTML=i;
-//# sourceMappingURL=social-media-list-ed7c47c9.js.map
+          </li>`;document.querySelector(`.${i}`).innerHTML=c;
+//# sourceMappingURL=social-media-list-0c1dfaff.js.map
