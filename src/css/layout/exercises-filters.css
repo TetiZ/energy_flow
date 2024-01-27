@@ -451,7 +451,7 @@
 
   .no-result{
     padding-top: 222px;
-    padding-bottom: 585px;
+    padding-bottom: 320px;
   }
 
   .exercise-section {
@@ -548,10 +548,6 @@
 /* Desktop Styles */
 
 @media screen and (min-width: 1440px) {
-  .no-result{
-  padding-top: 217px;
-  padding-bottom: 350px;
-  }
   .exercise-container {
     width: 1408px;
   }
