@@ -7,3 +7,5 @@ import('./js/pop-ups');
 import('./js/header');
 
 import('./js/basiclightbox');
+import('./js/page-after-switch');
+

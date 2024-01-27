@@ -12,7 +12,7 @@
   justify-content: flex-end;
   width: 335px;
   height: 385px;
-  background-image: url(../img/hero/image\ 2.png);
+  background-image: url(/src/img/hero/hero-bg-mob.png);
   background-repeat: no-repeat;
   padding: 20px 10px;
   margin: 0 auto 20px auto;
@@ -79,7 +79,7 @@
     width: 248px;
     margin-right: 0;
     margin-bottom: unset;
-    background-image: url(../img/hero/Img-tablet.png);
+    background-image: url(/src/img/hero/hero-bg-tablet.png);
     padding: 64px 20px;
   }
 
@@ -121,7 +121,7 @@
   }
   .background-container {
     width: 704px;
-    background-image: url(../img/hero/img-desctop.png);
+    background-image: url(/src/img/hero/hero-bg-desc.png);
     padding: 52px 58px;
   }
 

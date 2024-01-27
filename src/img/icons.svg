@@ -48,5 +48,6 @@
     <symbol id="icon-arrow-right" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="m15 28 13-13m0 0L15 2m13 13H2"/>
     </symbol>
+
   </defs>
 </svg>
