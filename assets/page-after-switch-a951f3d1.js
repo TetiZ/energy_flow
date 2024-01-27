@@ -1,0 +1,2 @@
+const t=window.location.pathname,n=document.querySelectorAll(".heder-nav-link"),a=document.querySelectorAll(".mobile-menu-nav-list-item");document.addEventListener("DOMContentLoaded",i());function i(){n.forEach(e=>{e.classList.remove("heder-nav-link-active")}),a.forEach(e=>{e.classList.remove("active-menu-nav-list-item")}),n.forEach(e=>{e.getAttribute("href")===t&&e.classList.add("heder-nav-link-active")}),a.forEach(e=>{e.getAttribute("href")===t&&e.classList.add("active-menu-nav-list-item")})}
+//# sourceMappingURL=page-after-switch-a951f3d1.js.map
