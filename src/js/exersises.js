@@ -18,7 +18,6 @@ const spanTitle = document.querySelector('.exercise-title-span')
 const exerciseBtn = document.querySelector('.exercise-part-button')
 const popModal = document.querySelector('.is-open')
 
-
 let currentPage ;
 let searchQuery = '';
 let searchInput = '';
@@ -40,10 +39,10 @@ exerciseList.addEventListener('click', async (event) => {
     event.preventDefault();
     allResults = [];
   currentPage = 1;
-  
+
     try {
       const data = await musclesGroup(event);
-      
+
       const results = data.results;
       console.log(results);
       allResults = [...results];
@@ -57,21 +56,20 @@ exerciseList.addEventListener('click', async (event) => {
     for (let i = 0; i < 8; i++) {
       console.log(currentId);
       currentId++;
-    } 
+    }
 
-      
         if (results.length === 0) {
             throw new Error({
                 title: 'No Results',
                 message: 'No images found. Please try a different search term.',
             });
       }
-        
+
         spanTitle.style.visibility = 'visible'
         cardList.style.display = 'none'
         exercisePartsList.style.display = 'flex';
         spanLog.style.visibility = 'visible'
-        
+
         exercisePartsList.innerHTML = results.reduce((html, result, currentId) => html + `
         <li class="exercise-parts">
             <div class="part-container">
@@ -85,7 +83,7 @@ exerciseList.addEventListener('click', async (event) => {
                     </span>
 
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
-                <button class="exercise-part-button"  id='${currentId}'>Start   
+                <button class="exercise-part-button"  id='${currentId}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="/img/icons.svg#icon-arrow-right"></use>
                 </svg>
@@ -130,18 +128,17 @@ pageCounter.addEventListener('click', async (event) => {
     console.log(currentPage);
     limit = 8
 
-
 try {
         const localSearch = JSON.parse(localStorage.getItem('searchQuery'));
         const searchQuery = localSearch.searchQuery
         console.log(searchQuery);
         const url = `https://energyflow.b.goit.study/api/exercises?muscles=${searchQuery}&page=${currentPage}&limit=${limit}`;
         const response = await fetch(url);
-            
+
         if (response.status !== 200) {
           throw new Error('Failed to fetch data. Please try again later.');
   }
-  
+
   const resultPromise = response.json();
   const data = await resultPromise;
   const results = data.results
@@ -155,7 +152,7 @@ try {
   for (let i = 0; i < 8; i++) {
     console.log(paginationId);
     paginationId++;
-  }  
+  }
 
         exercisePartsList.innerHTML = results.reduce((html, result, paginationId) => html + `
         <li class="exercise-parts">
@@ -200,10 +197,8 @@ try {
         } catch (error) {
             console.error('Error:', error);
         }
-    
+
 });
-
-
 
 exercise.forEach((elem) => {
     elem.addEventListener('click', (event) => {
@@ -219,8 +214,6 @@ exercise.forEach((elem) => {
           spanLog.style.visibility = 'hidden'
           spanTitle.style.visibility = 'hidden'
 
-        
-            
         } else if (targetElement === 'Body parts') {
             spanLog.style.visibility = 'hidden'
             exercisePartsList.innerHTML = ''
@@ -268,15 +261,12 @@ exerciseForm.addEventListener('submit', async function(event) {
         spanLog.style.visibility = 'visible'
         pageCounter.style.display = 'flex'
 
-  
-
 inputId = 0;
 
 for (let i = 0; i < 8; i++) {
     console.log(inputId);
     inputId++;
 }
-
 
         exercisePartsList.innerHTML = results.reduce((html, result, inputId) => html + `
         <li class="exercise-parts">
@@ -333,10 +323,10 @@ pageCounter.addEventListener('click', async (event) => {
     try {
         const localSearch = JSON.parse(localStorage.getItem('searchInput'));
         searchInput = localSearch.searchInput
-        
+
         const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchInput}&page=${currentPage}&limit=${limit}`;
         const response = await fetch(url);
-            
+
         if (response.status !== 200) {
             throw new Error('Failed to fetch data. Please try again later.');
             }
@@ -344,10 +334,9 @@ pageCounter.addEventListener('click', async (event) => {
         const resultPromise = response.json();
         const data = await resultPromise;
         const results = data.results
-      console.log(results.length);  
-      
-      sessionStorage.setItem('data', JSON.stringify({ results }))
+      console.log(results.length);
 
+      sessionStorage.setItem('data', JSON.stringify({ results }))
 
   inputPagination = 0;
 
@@ -491,8 +480,7 @@ exercisePartsList.addEventListener('click', async (event) => {
 
   const dataStorage = JSON.parse(sessionStorage.getItem('data'))
   console.log(dataStorage);
-  
-  
+
   if (event.target.tagName != "BUTTON") {
     return
   }
@@ -502,5 +490,3 @@ exercisePartsList.addEventListener('click', async (event) => {
     popUp(data)
   }
 })
-
-
