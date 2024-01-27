@@ -1,0 +1,37 @@
+
+.iziToast {
+    font-family: 'Arial', sans-serif;
+}
+
+.iziToast.info {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.iziToast.success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.iziToast.error {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.iziToast-image {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.iziToast-title,
+.iziToast-message {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.iziToast-close {
+    font-size: 16px;
+    color: #fff;
+}
