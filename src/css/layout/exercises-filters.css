@@ -444,8 +444,7 @@
 /* Tablet Styles */
 
 @media screen and (min-width: 768px) {
-
-  .no-result{
+  .no-result {
     padding-top: 222px;
     padding-bottom: 320px;
   }
@@ -465,7 +464,7 @@
     line-height: 1.09;
   }
 
-  .exercise-log-span{
+  .exercise-log-span {
     font-size: 44px;
     line-height: 1.09;
   }
@@ -538,7 +537,6 @@
   .exercise-describes-list {
     margin-top: 0;
   }
-  
 }
 
 /* Desktop Styles */
@@ -579,36 +577,31 @@
   display: none;
 }
 
-
 .no-result {
-  color: #1B1B1B;
+  color: #1b1b1b;
   text-align: center;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; 
+  line-height: 24px;
   letter-spacing: -0.18px;
   padding-top: 164px;
   padding-bottom: 320px;
 }
 
-
-
 .no-result-span {
-} 
-
-  color: rgba(27, 27, 27, 0.50);
+  color: rgba(27, 27, 27, 0.5);
   text-align: center;
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px; 
+  line-height: 24px;
   letter-spacing: -0.18px;
 }
 
-.exercise-log-span{
+.exercise-log-span {
   color: #1b1b1b;
   font-family: 'DM Sans';
   font-size: 32px;
@@ -619,15 +612,14 @@
   visibility: hidden;
 }
 
-.exercise-title-span{
+.exercise-title-span {
   visibility: hidden;
-  color: rgba(27, 27, 27, 0.50);
+  color: rgba(27, 27, 27, 0.5);
 
-  font-family: "DM Sans";
+  font-family: 'DM Sans';
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.4px;
 }
-
