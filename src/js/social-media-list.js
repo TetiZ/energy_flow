@@ -1,11 +1,12 @@
-const smListFooter = document.querySelector('.sm-list');
-const smListHeader = document.querySelector('.heder-link-list');
-const isHeader = true; // Задайте значение true, если рендерите в хедер, и false, если в футер
+const renderInHeader = true;
 
-const listClass = isHeader ? 'heder-link-list' : 'sm-list';
-const itemClass = isHeader ? 'heder-link-item' : 'sm-list-item';
-const linkClass = isHeader ? 'heder-link' : 'sm-link';
-const iconClass = isHeader ? 'heder-link-icon' : 'sm-icon';
+const headerListClass = 'heder-link-list';
+const footerListClass = 'sm-list';
+
+const listClass = renderInHeader ? headerListClass : footerListClass;
+const itemClass = renderInHeader ? 'heder-link-item' : 'sm-list-item';
+const linkClass = renderInHeader ? 'heder-link' : 'sm-link';
+const iconClass = renderInHeader ? 'heder-link-icon' : 'sm-icon';
 
 const listElements = `<li class="${itemClass}">
             <a
