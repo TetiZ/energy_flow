@@ -1,43 +1,51 @@
 <body>
-    <section class="favorites container">
-      <h2 class="favorites-title">Favorites</h2>
+  <section class="favorites container">
+    <h2 class="favorites-title">Favorites</h2>
 
-      <ul class="favorites-parts-list">
-        <li class="favorites-parts">
-          <div class="favorites-part-container">
-            <div class="favorites-head-container">
-              <span class="favorites-badge">WORKOUT</span>
-              
-                <svg class="favorites-icon-basket" width="18" height="18">
-                  <use href="../img/icons.svg#icon-trash"></use>
-                </svg>
-            
-              <button class="favorites-part-button">Start</button>
-            </div>
-
-            <!-- <svg class="exercise-btn-icon">
-              <use href="../img/icons.svg#icon-arrow-right"></use>
-            </svg> -->
-            <span class="favorites-part-name">
-              <svg class="favorites-part-icon" width="24" height="24">
-                <use href="../img/icons.svg#icon-running-man"></use>
+    <ul class="exercise-parts-list">
+      <li class="exercise-parts">
+        <div class="part-container">
+          <div class="exercise-head-container">
+            <span class="exercise-badge">WORKOUT</span>
+            <button class="exercise-trash-button">
+              <svg class="exercise-trash-icon" width="16" height="16">
+                <use href="/img/icons.svg#icon-trash"></use>
               </svg>
-              <p class="favorites-name-text">Air bike</p>
-            </span>
-            <ul class="favorites-describes-list">
-              <li class="favorites-describe">
-                <p class="favorites-describe-category">Burned calories:</p>
-                <p class="favorites-describing">312 / 3 min</p>
-              </li>
-              <li class="favorites-describe">
-                <p class="favorites-describe-category">Body part:</p>
-                <p class="favorites-describing">Waist</p>
-              </li>
-              <li class="favorites-describe">
-                <p class="favorites-describe-category">Target:</p>
-                <p class="favorites-describing">Abs</p>
-              </li>
-            </ul>
+            </button>
+            <a
+              class="exercise-part-link"
+              href="../partials/pop-up-exersise-card.html"
+            >
+              <button class="exercise-part-button">
+                Start
+                <svg class="exercise-btn-icon" width="14" height="14">
+                  <use href="/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+              </button>
+            </a>
           </div>
-        </li>
-      </ul>
+          <span class="exercise-part-name">
+            <svg class="exercise-part-icon" width="24" height="24">
+              <use href="/img/icons.svg#icon-running-man"></use>
+            </svg>
+            <p class="exercise-name-text">Air bike</p>
+          </span>
+          <ul class="exercise-describes-list">
+            <li class="exercise-describe">
+              <p class="exercise-describe-category">Burned calories:</p>
+              <p class="exercise-describing">312 / 3 min</p>
+            </li>
+            <li class="exercise-describe">
+              <p class="exercise-describe-category">Body part:</p>
+              <p class="exercise-describing">Waist</p>
+            </li>
+            <li class="exercise-describe">
+              <p class="exercise-describe-category">Target:</p>
+              <p class="exercise-describing">Abs</p>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+</body>
