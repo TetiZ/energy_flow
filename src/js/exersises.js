@@ -56,24 +56,24 @@ exerciseList.addEventListener('click', async event => {
                       result.rating
                     )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="../img/icons.svg#icon-star"></use>
+                        <use href="/img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button">Start   
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="../img/icons.svg#icon-arrow-right"></use>
+                <use href="/img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="../img/icons.svg#icon-arrow-right"></use>
+                <use href="/img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="../img/icons.svg#icon-running-man"></use>
+                    <use href="/img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${result.name}</p>
                 </span>

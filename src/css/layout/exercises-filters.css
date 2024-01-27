@@ -15,8 +15,6 @@
 }
 
 .exercise-title {
-  color: #1b1b1b;
-  font-family: 'DM Sans';
   font-size: 32px;
   font-weight: 400;
   line-height: 1;
@@ -39,8 +37,6 @@
   border: none;
   border-radius: 30px;
   background: #f6f6f6;
-  color: #1b1b1b;
-  font-family: 'DM Sans';
   font-size: 14px;
   line-height: 1.29;
 }
@@ -68,8 +64,6 @@
   gap: 10px;
   border-radius: 30px;
   background: #f6f6f6;
-  color: #1b1b1b;
-  font-family: 'DM Sans';
   font-size: 14px;
   line-height: 1.29;
   border: none;
@@ -124,7 +118,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/biceps.png),
+    url(/img/exercises-filters/biceps.png),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -136,7 +130,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/abductors.jpg),
+    url(/img/exercises-filters/abductors.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -148,7 +142,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/abs.jpg),
+    url(/img/exercises-filters/abs.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -160,7 +154,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/adductors.jpg),
+    url(/img/exercises-filters/adductors.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -172,7 +166,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/calves.jpg),
+    url(/img/exercises-filters/calves.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -184,7 +178,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/cardiovascular-system.jpg),
+    url(/img/exercises-filters/cardiovascular-system.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -196,7 +190,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/delts.jpg),
+    url(/img/exercises-filters/delts.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -208,7 +202,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/forearms.jpg),
+    url(/img/exercises-filters/forearms.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -220,7 +214,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/glutes.jpg),
+    url(/img/exercises-filters/glutes.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -232,7 +226,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/hamstrings.jpg),
+    url(/img/exercises-filters/hamstrings.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -244,7 +238,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/lats.jpg),
+    url(/img/exercises-filters/lats.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -256,7 +250,7 @@
       rgba(16, 16, 16, 0.7) 0%,
       rgba(16, 16, 16, 0.7) 100%
     ),
-    url(../img/exercises-filters/levator-scapulae.jpg),
+    url(/img/exercises-filters/levator-scapulae.jpg),
     lightgray -16.825px -9.156px / 128.765% 116.922% no-repeat;
   background-size: cover;
   background-position: center;
@@ -265,7 +259,6 @@
 .exercise-card-title {
   color: #f6f6f6;
   text-align: center;
-  font-family: 'DM Sans';
   font-size: 20px;
   line-height: 1;
   pointer-events: none;
@@ -273,7 +266,6 @@
 
 .exercise-category {
   color: rgba(246, 246, 246, 0.4);
-  font-family: 'DM Sans';
   font-size: 12px;
   line-height: 1.5;
   pointer-events: none;
@@ -307,7 +299,6 @@
   border-radius: 15px;
   background: #7e847f;
   color: #f6f6f6;
-  font-family: 'DM Sans';
   font-size: 12px;
   font-weight: 500;
 }
@@ -320,14 +311,23 @@
 }
 
 .exercise-rating-number {
-  color: #1b1b1b;
-  font-family: 'DM Sans';
   font-size: 12px;
   line-height: 1.5;
 }
 
 .exercise-rating-icon {
   fill: #eea10c;
+}
+
+.exercise-trash-button {
+  width: 16px;
+  border: none;
+  background-color: transparent;
+}
+
+.exercise-trash-icon {
+  fill: none;
+  stroke: #1b1b1b;
 }
 
 .exercise-btn-icon {
@@ -356,8 +356,6 @@
 }
 
 .exercise-part-button {
-  color: #1b1b1b;
-  font-family: 'DM Sans';
   display: flex;
   align-items: center;
   justify-content: center;
@@ -382,8 +380,6 @@
 }
 
 .exercise-name-text {
-  color: #1b1b1b;
-  font-family: 'DM Sans';
   font-size: 20px;
   line-height: 1;
 }
@@ -411,8 +407,6 @@
 }
 
 .exercise-describing {
-  color: #1b1b1b;
-  font-family: 'DM Sans';
   font-size: 12px;
   line-height: 1.5;
 }
@@ -573,8 +567,8 @@
   display: none;
 }
 
-.no-result {
+/* .no-result {
 }
 
 .no-result-span {
-}
+} */
