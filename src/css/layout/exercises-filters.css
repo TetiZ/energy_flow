@@ -444,6 +444,12 @@
 /* Tablet Styles */
 
 @media screen and (min-width: 768px) {
+
+  .no-result{
+    padding-top: 222px;
+    padding-bottom: 320px;
+  }
+
   .exercise-section {
     padding-left: 16px;
     padding-right: 16px;
@@ -455,6 +461,11 @@
   }
 
   .exercise-title {
+    font-size: 44px;
+    line-height: 1.09;
+  }
+
+  .exercise-log-span{
     font-size: 44px;
     line-height: 1.09;
   }
@@ -527,6 +538,7 @@
   .exercise-describes-list {
     margin-top: 0;
   }
+  
 }
 
 /* Desktop Styles */
@@ -567,8 +579,55 @@
   display: none;
 }
 
-/* .no-result {
+
+.no-result {
+  color: #1B1B1B;
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; 
+  letter-spacing: -0.18px;
+  padding-top: 164px;
+  padding-bottom: 320px;
 }
 
+
+
 .no-result-span {
-} */
+} 
+
+  color: rgba(27, 27, 27, 0.50);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; 
+  letter-spacing: -0.18px;
+}
+
+.exercise-log-span{
+  color: #1b1b1b;
+  font-family: 'DM Sans';
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  visibility: hidden;
+}
+
+.exercise-title-span{
+  visibility: hidden;
+  color: rgba(27, 27, 27, 0.50);
+
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.4px;
+}
+

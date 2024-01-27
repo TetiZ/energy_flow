@@ -51,7 +51,7 @@ export async function musclesGroup(event) {
     const limit = 8;
     let searchQuery = '';
 
-    try {
+    try {   
         searchQuery = event.target.id;
 
         localStorage.setItem('searchQuery', JSON.stringify({searchQuery}));
@@ -87,7 +87,7 @@ export async function bodyPart(event) {
     let searchInput = '';
 
     try {
-        searchInput = encodeURIComponent(event);
+        searchInput = encodeURIComponent(event.toLowerCase());
 
         localStorage.setItem('searchInput', JSON.stringify({ searchInput }));
         
