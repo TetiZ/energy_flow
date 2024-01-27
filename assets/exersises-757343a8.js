@@ -11,7 +11,7 @@ import{musclesGroup as L,bodyPart as O}from"./api-8d58433a.js";const E=document.
                     </span>
 
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
-                <button class="exercise-part-button"  id='${c}'>Start   
+                <button class="exercise-part-button"  id='${c}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="/img/icons.svg#icon-arrow-right"></use>
                 </svg>
@@ -241,4 +241,4 @@ import{musclesGroup as L,bodyPart as O}from"./api-8d58433a.js";const E=document.
     </div>
   </div>
 `}a.addEventListener("click",async e=>{e.preventDefault();const r=e.target.id;console.log(r);const i=JSON.parse(sessionStorage.getItem("data"));if(console.log(i),e.target.tagName=="BUTTON"&&r==r){const s=i.results[r];console.log(s),B(s)}});
-//# sourceMappingURL=exersises-b7511190.js.map
+//# sourceMappingURL=exersises-757343a8.js.map
