@@ -16,7 +16,18 @@ const spanLog = document.querySelector('.exercise-log-span')
 const spanTitle = document.querySelector('.exercise-title-span')
 
 const exerciseBtn = document.querySelector('.exercise-part-button')
-const popModal = document.querySelector('.is-open')
+
+const popAddFavButton = document.querySelector('.pop-add-fav');
+const exPopClose = document.querySelector('.pop-ex-close-btn');
+const exPopUpWindow = document.querySelector('.pop-backdrop');
+
+const ratingPopUpWindow = document.querySelector('.backdrop');
+const ratingPopUpOpen = document.querySelector('.pop-rating-btn');
+const ratingPopUpClose = document.querySelector('.pop-up-close-btn');
+
+const popExerciseInfo = document.querySelector('.pop-ex-info');
+const popModal = document.querySelector('.modal123');
+const popBackdrop = document.querySelector('.pop-backdrop.is-open')
 
 let currentPage ;
 let searchQuery = '';
@@ -44,7 +55,6 @@ exerciseList.addEventListener('click', async (event) => {
       const data = await musclesGroup(event);
 
       const results = data.results;
-      console.log(results);
       allResults = [...results];
       spanTitle.innerHTML = ''
       spanTitle.textContent = `${results[0].target}`
@@ -54,7 +64,6 @@ exerciseList.addEventListener('click', async (event) => {
     currentId = 0;
 
     for (let i = 0; i < 8; i++) {
-      console.log(currentId);
       currentId++;
     }
 
@@ -143,14 +152,12 @@ try {
   const data = await resultPromise;
   const results = data.results
 
-  console.log(results);
 
   sessionStorage.setItem('data', JSON.stringify({ results }))
 
   paginationId = 0;
 
   for (let i = 0; i < 8; i++) {
-    console.log(paginationId);
     paginationId++;
   }
 
@@ -165,7 +172,13 @@ try {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button" id=${paginationId}>Start</button>
+                    <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button"  id='${paginationId}'>Start
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -246,7 +259,6 @@ exerciseForm.addEventListener('submit', async function(event) {
       allResults = [...results];
       sessionStorage.setItem('data', JSON.stringify({ results }))
 
-      console.log(results);
 
       if (results.length === 0) {
             exercisePartsList.innerHTML=''
@@ -264,7 +276,6 @@ exerciseForm.addEventListener('submit', async function(event) {
 inputId = 0;
 
 for (let i = 0; i < 8; i++) {
-    console.log(inputId);
     inputId++;
 }
 
@@ -279,7 +290,13 @@ for (let i = 0; i < 8; i++) {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button" id='${inputId}'>Start</button>
+                <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button"  id='${inputId}'>Start
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -341,7 +358,6 @@ pageCounter.addEventListener('click', async (event) => {
   inputPagination = 0;
 
 for (let i = 0; i < 8; i++) {
-    console.log(inputPagination);
     inputPagination++;
 }
 
@@ -356,7 +372,13 @@ for (let i = 0; i < 8; i++) {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button" id='${inputPagination}'>Start</button>
+                    <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button"  id='${inputPagination}'>Start
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -390,8 +412,10 @@ for (let i = 0; i < 8; i++) {
         }
 });
 
+const modal = document.querySelector('.modal123')
 function popUp(data) {
-    exercisePartsList.innerHTML = `<div class="pop-backdrop is-open">
+  modal.innerHTML = `
+    <div class="pop-backdrop is-open">
     <div class="pop-ex-modal">
       <button class="pop-ex-close-btn">
         <svg
@@ -473,20 +497,66 @@ function popUp(data) {
 `;
 }
 
+localStorage.removeItem('exercises')
+
+let allfav = [];
+
+function dataToStorage(data) {
+  const clickHandler = (event) => {
+    console.log(event.target);
+    console.log(popAddFavButton);
+    if (popAddFavButton) {
+      const localData = JSON.parse(localStorage.getItem('exercises')) || [];
+      console.log(123);
+
+      localData.push(data);
+      localStorage.setItem('exercises', JSON.stringify(localData));
+      
+      allfav = [...localData];
+
+      popModal.removeEventListener('click', clickHandler);
+    }else{
+      return
+    }
+  };
+
+  popModal.addEventListener('click', clickHandler);
+}
+
+
+
+
 exercisePartsList.addEventListener('click', async (event) => {
+  
   event.preventDefault()
   const currentId = event.target.id
-  console.log(currentId);
-
+  
   const dataStorage = JSON.parse(sessionStorage.getItem('data'))
-  console.log(dataStorage);
 
   if (event.target.tagName != "BUTTON") {
     return
   }
   if (currentId == currentId) {
-    const data = dataStorage.results[currentId]
-    console.log(data);
+    const data = dataStorage.results[currentId];
+
     popUp(data)
+
+    dataToStorage(data)
   }
+
+  
+
+  popModal.addEventListener('click', (event) => {
+  
+  console.log(event.target);
+  if (event.target.tagName == "BUTTON" || "SVG" || "USE") {
+  
+  if (exPopClose) {
+    modal.innerHTML = ''
+    }
+    }
+  })
+
+
+
 })
