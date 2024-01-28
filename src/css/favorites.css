@@ -12,9 +12,9 @@
 /* Layout */
 
 @import url(./layout/header-favorites.css);
-@import url(./layout/favorites.css);
 @import url(./layout/mobile-menu.css);
 @import url(./layout/quote.css);
 @import url(./layout/daily-norm-favorites.css);
 @import url(./layout/pop-ups.css);
 @import url(./layout/exercises-filters.css);
+@import url(./layout/favorites-cards.css);
