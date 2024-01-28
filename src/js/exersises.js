@@ -612,12 +612,7 @@ console.log(savedCards);
 const favList = document.querySelector('.fav-list');
 const favoritesPage = document.querySelector('#Favorites');
 
-favoritesPage.addEventListener('click', renderCardsFromStorage);
-
 function renderCardsFromStorage(e) {
-  const savedCards = JSON.parse(localStorage.getItem('exercises'));
-  console.log(savedCards);
-
   favList.innerHTML = savedCards
     .map(
       ({ bodyPart, name, target, burnedCalories }) => `
@@ -668,3 +663,5 @@ function renderCardsFromStorage(e) {
     )
     .join('');
 }
+
+renderCardsFromStorage();
