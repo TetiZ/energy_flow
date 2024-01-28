@@ -31,6 +31,13 @@ async function postEmail(userEmail) {
     }
     const data = await response.json();
     console.log('Дані успішно відправлені', data);
+
+    iziToast.success({
+      title: 'We are excited to have you on board!',
+      message:
+        'Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being.',
+      position: 'center',
+    });
   } catch (error) {
     console.error('Помилка при відправленні даних', error);
   }
