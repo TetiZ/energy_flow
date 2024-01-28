@@ -1,0 +1,44 @@
+.iziToast {
+    font-family: 'Arial', sans-serif;
+    max-width: 400px;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.iziToast.info {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.iziToast.success {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+.iziToast.error {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.iziToast-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+.iziToast-title,
+.iziToast-message {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.iziToast-close {
+    font-size: 16px;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+}

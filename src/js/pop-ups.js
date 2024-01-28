@@ -22,6 +22,58 @@ ratingPopUpClose.addEventListener('click', function () {
 });
 
 
+const ratingStarsWrapper = document.querySelectorAll('.rating-stars-wrapper');
+if (ratingStarsWrapper.length > 0) {
+  initRatings();
+}
+
+function initRatings() {
+  let ratingActive, ratingValue;
+  for (let index = 0; index < ratingStarsWrapper.length; index++) {
+    const rating = ratingStarsWrapper[index];
+    initRating(rating);
+  }
+
+  function initRating(rating) {
+    initRatingVars(rating);
+
+    setRatingActiveWidth();
+
+    if (rating.classList.contains('rating-set')) {
+      setRating(rating);
+    }
+  }
+
+  function initRatingVars(rating) {
+    ratingActive = rating.querySelector('.rating-stars-line-active');
+    ratingValue = rating.querySelector('.pop-up-rating-value');
+  }
+
+  function setRatingActiveWidth(index = ratingValue.innerHTML) {
+    const ratingActiveWidth = index / 0.05;
+    ratingActive.style.width = `${ratingActiveWidth}%`;
+  }
+
+  function setRating(rating) {
+    const ratingItems = rating.querySelectorAll('.rating-stars-item');
+    for (let index = 0; index < ratingItems.length; index++) {
+      const ratingItem = ratingItems[index];
+      ratingItem.addEventListener('mouseenter', function (evt) {
+        initRatingVars(rating);
+        setRatingActiveWidth(ratingItem.value);
+      });
+      ratingItem.addEventListener('mouseleave', function (evt) {
+        setRatingActiveWidth();
+      });
+      ratingItem.addEventListener('click', function (evt) {
+        initRatingVars(rating);
+        ratingValue.innerHTML = index + 1;
+        setRatingActiveWidth();
+      });
+    }
+  }
+}
+
 const addToFavoriteKey = 'exercise-card';
 const exerciseCardValue = '';
 
@@ -30,3 +82,4 @@ popAddFavButton.addEventListener('click', sendToFav);
 function sendToFav() {
   localStorage.setItem(addToFavoriteKey, exerciseCardValue);
 }
+

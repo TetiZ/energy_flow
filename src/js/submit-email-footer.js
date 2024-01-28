@@ -42,14 +42,6 @@ form.addEventListener('submit', async e => {
   if (userEmail) {
     try {
       await postEmail(userEmail);
-      iziToast.success({
-        title: 'Thank You!',
-        message:
-          'We are excited to have you on board! Thank you for subscribing to new exercises on Energy Flow. You have just taken a significant step towards improving your fitness and well-being.',
-        position: 'topRight',
-        icon: 'fas fa-info-circle',
-        close: false,
-      });
       localStorage.removeItem(localStorageKey);
       form.reset();
     } catch (error) {

@@ -1,3 +1,11 @@
+.footer-section {
+  width: 335px;
+  background-image: url(/img/footer/footer-bg-mob.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30px;
+}
+
 .footer-first-half-wrapper {
   display: flex;
   flex-direction: column;
@@ -99,6 +107,12 @@
 }
 
 @media screen and (min-width: 768px) {
+  .footer-section {
+    width: 736px;
+    background-image: url(/img/footer/footer-bg-tablet.png);
+    background-size: cover;
+  }
+
   .footer-main-wrapper {
     display: flex;
     justify-content: space-between;
@@ -145,6 +159,11 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .footer-section {
+    width: 1408px;
+    background-image: url(/img/footer/footer-bg-desktop.png);
+  }
+
   .footer-first-half-wrapper {
     margin-right: 156px;
   }
@@ -174,5 +193,30 @@
   }
   .copywrite-wrapper {
     font-size: 14px;
+  }
+}
+
+/* ##### Background image x2 ##### */
+@media screen and (min-resolution: 192dpi) and (max-width: 767px),
+  screen and (min-resolution: 2dppx) and (max-width: 767px),
+  screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
+  .collection-section {
+    background-image: url(/src/img/footer/footer-bg-mob@2x.png);
+  }
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolution: 2dppx) and (min-width: 768px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
+  .collection-section {
+    background-image: url(/src/img/footer/footer-bg-tablet@2x.png);
+  }
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+  screen and (min-resolution: 2dppx) and (min-width: 1440px),
+  screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
+  .collection-section {
+    background-image: url(/src/img/footer/footer-bg-desktop@2x.png);
   }
 }

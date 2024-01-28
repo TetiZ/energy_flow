@@ -5,8 +5,6 @@ const AUTHOR_KEY = 'author';
 
 const storedDate = localStorage.getItem('date');
 const currentDate = new Date().toDateString();
-console.log(currentDate);
-console.log(storedDate);
 
 if (storedDate === currentDate) {
   const storedQuote = localStorage.getItem(QUOTE_KEY);
