@@ -8,11 +8,10 @@ function setHomePageActive() {
 }
 
 function setActivePage(pageId) {
-  window.removeEventListener('load', setHomePageActive);
-
   if (pageId === 'Home') {
     homePage.classList.add('heder-nav-link-active');
   } else if (pageId === 'Favorites') {
+    window.removeEventListener('load', setHomePageActive);
     homePage.classList.remove('heder-nav-link-active');
     favoritesPage.classList.add('heder-nav-link-active');
   }
