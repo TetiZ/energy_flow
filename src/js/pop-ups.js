@@ -72,12 +72,3 @@ function initRatings() {
     }
   }
 }
-
-const addToFavoriteKey = 'exercise-card';
-const exerciseCardValue = '';
-
-popAddFavButton.addEventListener('click', sendToFav);
-
-function sendToFav() {
-  localStorage.setItem(addToFavoriteKey, exerciseCardValue);
-}
