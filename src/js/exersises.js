@@ -2,7 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import { bodyPart, equipment, musclesGroup } from './api.js';
-// import '../css/layout/pop-ups.css';
+
 const exerciseList = document.querySelector('.exercise-cards-list');
 const cardList = document.querySelector('.exercise-cards-list');
 
@@ -19,8 +19,6 @@ const spanLog = document.querySelector('.exercise-log-span');
 const spanTitle = document.querySelector('.exercise-title-span');
 
 const exerciseBtn = document.querySelector('.exercise-part-button');
-
-const popModal = document.querySelector('.is-open');
 
 const popAddFavButton = document.querySelector('.pop-add-fav');
 const exPopClose = document.querySelector('.pop-ex-close-btn');
@@ -60,9 +58,6 @@ exerciseList.addEventListener('click', async event => {
     const data = await musclesGroup(event);
 
     const results = data.results;
-
-    console.log(results);
-
     allResults = [...results];
     spanTitle.innerHTML = '';
     spanTitle.textContent = `${results[0].target}`;
@@ -170,18 +165,6 @@ pageCounter.addEventListener('click', async event => {
     const resultPromise = response.json();
     const data = await resultPromise;
     const results = data.results;
-
-
-    console.log(results);
-
-    sessionStorage.setItem('data', JSON.stringify({ results }));
-
-    paginationId = 0;
-
-    for (let i = 0; i < 8; i++) {
-      console.log(paginationId);
-      paginationId++;
-    }
 
     sessionStorage.setItem('data', JSON.stringify({ results }));
 
@@ -298,32 +281,6 @@ exerciseForm.addEventListener('submit', async function (event) {
     allResults = [...results];
     sessionStorage.setItem('data', JSON.stringify({ results }));
 
-
-    console.log(results);
-
-    if (results.length === 0) {
-      exercisePartsList.innerHTML = '';
-      console.log(results.length);
-      exercisePartsList.insertAdjacentHTML(
-        'beforeend',
-        "<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"
-      );
-      pageCounter.style.display = 'none';
-      return;
-    } else {
-      spanTitle.innerHTML = '';
-      spanTitle.textContent = `${results[0].bodyPart}`;
-      spanTitle.style.visibility = 'visible';
-      spanLog.style.visibility = 'visible';
-      pageCounter.style.display = 'flex';
-
-      inputId = 0;
-
-      for (let i = 0; i < 8; i++) {
-        console.log(inputId);
-        inputId++;
-      }
-
     if (results.length === 0) {
       exercisePartsList.innerHTML = '';
       console.log(results.length);
@@ -403,44 +360,6 @@ exerciseForm.addEventListener('submit', async function (event) {
         `,
         ''
       );
-
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-});
-
-pageCounter.addEventListener('click', async event => {
-  const clickedPage = event.target.textContent;
-  currentPage = clickedPage;
-
-  limit = 8;
-
-  try {
-    const localSearch = JSON.parse(localStorage.getItem('searchInput'));
-    searchInput = localSearch.searchInput;
-
-    const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchInput}&page=${currentPage}&limit=${limit}`;
-    const response = await fetch(url);
-
-    if (response.status !== 200) {
-      throw new Error('Failed to fetch data. Please try again later.');
-    }
-
-    const resultPromise = response.json();
-    const data = await resultPromise;
-    const results = data.results;
-    console.log(results.length);
-
-    sessionStorage.setItem('data', JSON.stringify({ results }));
-
-    inputPagination = 0;
-
-    for (let i = 0; i < 8; i++) {
-      console.log(inputPagination);
-      inputPagination++;
-    }
-
     }
   } catch (error) {
     console.error('Error:', error);
@@ -541,9 +460,6 @@ pageCounter.addEventListener('click', async event => {
 
 const modal = document.querySelector('.modal123');
 function popUp(data) {
-
-  exercisePartsList.innerHTML = `<div class="pop-backdrop is-open">
-
   modal.innerHTML = `
     <div class="pop-backdrop is-open">
     <div class="pop-ex-modal">
@@ -626,6 +542,7 @@ function popUp(data) {
   </div>
 `;
 }
+
 let allfav = [];
 
 function dataToStorage(data) {
@@ -668,12 +585,6 @@ exercisePartsList.addEventListener('click', async event => {
   }
   if (currentId == currentId) {
     const data = dataStorage.results[currentId];
-
-    console.log(data);
-    popUp(data);
-  }
-});
-
 
     popUp(data);
 
