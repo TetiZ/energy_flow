@@ -481,8 +481,8 @@ function popUp(data) {
 
       <div class="pop-ex-content-container">
         <h2 class="pop-exercise-name">${data.name}</h2>
+        <p class="pop-ex-current-rating">${data.rating}</p>
         <ul class="pop-ex-stars-list">
-          <p class="pop-ex-current-rating">${data.rating}</p>
             <li>
               <svg
                 class="pop-ex-rate-icon"
@@ -631,7 +631,7 @@ function renderCardsFromStorage(e) {
           <svg class="exercise-part-icon" width="24" height="24">
             <use href="./img/icons.svg#icon-running-man"></use>
           </svg>
-          <p class="exercise-name-text">${name}</p> <!-- Исправлено: обернуто в ${name} -->
+          <p class="exercise-name-text">${name}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
