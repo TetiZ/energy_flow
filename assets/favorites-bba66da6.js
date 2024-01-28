@@ -43,4 +43,4 @@
       </div>
     </li>
   `).join("")}t();
-//# sourceMappingURL=favorites-96977ed8.js.map
+//# sourceMappingURL=favorites-bba66da6.js.map

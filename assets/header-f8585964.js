@@ -1,2 +1,0 @@
-const t=document.querySelector("#Home"),i=document.querySelector("#Favorites");function n(e){t.classList.remove("heder-nav-link-active"),i.classList.remove("heder-nav-link-active"),e==="Home"?t.classList.add("heder-nav-link-active"):e==="Favorites"&&i.classList.add("heder-nav-link-active")}n(a());document.addEventListener("click",function(e){if(e.target.tagName==="A"){const o=a();n(o)}});function a(){const e=window.location.pathname;return e.includes("/index.html")?"Home":e.includes("/favorites.html")?"Favorites":"Home"}
-//# sourceMappingURL=header-f8585964.js.map
