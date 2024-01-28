@@ -6,8 +6,6 @@ const ratingPopUpWindow = document.querySelector('.backdrop');
 const ratingPopUpOpen = document.querySelector('.pop-rating-btn');
 const ratingPopUpClose = document.querySelector('.pop-up-close-btn');
 
-const popExerciseInfo = document.querySelector('.pop-ex-info')
-
 exPopClose.addEventListener('click', function () {
   exPopUpWindow.classList.remove('is-open');
 });
@@ -73,13 +71,3 @@ function initRatings() {
     }
   }
 }
-
-const addToFavoriteKey = 'exercise-card';
-const exerciseCardValue = '';
-
-popAddFavButton.addEventListener('click', sendToFav);
-
-function sendToFav() {
-  localStorage.setItem(addToFavoriteKey, exerciseCardValue);
-}
-
