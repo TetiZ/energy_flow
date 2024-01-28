@@ -5,7 +5,7 @@
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="/img/icons.svg#icon-trash"></use>
+              <use href="./img/icons.svg#icon-trash"></use>
             </svg>
           </button>
           <a
@@ -15,14 +15,14 @@
             <button class="exercise-part-button">
               Start
               <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
               </svg>
             </button>
           </a>
         </div>
         <span class="exercise-part-name">
           <svg class="exercise-part-icon" width="24" height="24">
-            <use href="/img/icons.svg#icon-running-man"></use>
+            <use href="./img/icons.svg#icon-running-man"></use>
           </svg>
           <p class="exercise-name-text">${i}</p> 
         </span>
@@ -43,4 +43,4 @@
       </div>
     </li>
   `).join("")}t();
-//# sourceMappingURL=favorites-ad5b6cc4.js.map
+//# sourceMappingURL=favorites-59989569.js.map
