@@ -1,15 +1,8 @@
 const homePage = document.querySelector('#Home');
 const favoritesPage = document.querySelector('#Favorites');
 
-window.addEventListener('load', setHomePageActive);
-
-function setHomePageActive() {
-  homePage.classList.add('heder-nav-link-active');
-  window.removeEventListener('load', setHomePageActive);
-}
-
 function setActivePage(pageId) {
-  if (pageId === 'Home') {
+  if (!pageId || pageId === 'Home' || pageId === '/') {
     homePage.classList.add('heder-nav-link-active');
   } else if (pageId === 'Favorites') {
     homePage.classList.remove('heder-nav-link-active');
