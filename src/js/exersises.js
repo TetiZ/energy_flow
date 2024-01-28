@@ -631,7 +631,7 @@ function renderCardsFromStorage(e) {
           <svg class="exercise-part-icon" width="24" height="24">
             <use href="./img/icons.svg#icon-running-man"></use>
           </svg>
-          <p class="exercise-name-text">${name}</p> <!-- Исправлено: обернуто в ${name} -->
+          <p class="exercise-name-text">${name}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
