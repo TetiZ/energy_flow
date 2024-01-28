@@ -12,16 +12,70 @@ https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/favorites.css" />
+    <link rel="stylesheet" href="./css/layout/daily-norm-favorites.css" />
   </head>
   <body>
     <!-- Iryna -->
     <load src="./partials/header.html" />
 
-    <!-- Liza -->
-    <load src="./partials/quote.html" />
+    <div class="fav-desktop-container">
+      <div class="quote-box-text">
+        <div class="quote-box">
+          <div class="quote-runner-svg">
+            <svg width="34" height="32">
+              <use
+                class="runner-svg"
+                href="./img/icons.svg#icon-running-man"
+              ></use>
+            </svg>
+          </div>
 
-    <!-- Liza -->
-    <load src="./partials/110.html" />
+          <div class="quote-inverted-commas-svg">
+            <svg width="34" height="32">
+              <use
+                class="inverted-commas-svg"
+                href="./img/icons.svg#icon-inverted-commas"
+              ></use>
+            </svg>
+          </div>
+
+          <h2 class="quote-title">Quote of the day</h2>
+        </div>
+
+        <p class="quote-text">
+          <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo fugit
+        delectus quos expedita. Doloremque eos fugiat totam dicta architecto
+        possimus quis praesentium ab, ea exercitationem quod, error veniam
+        perspiciatis minus? -->
+        </p>
+        <p class="quote-author"></p>
+      </div>
+
+      <div class="fav-container">
+        <img
+          class="fav-img"
+          srcset="
+        ./img/favorites/tab-fav-sport-girl.png    704w,
+        ./img/favorites/tab-fav-sport-girl-2x.png 1408w,
+          ./img/favorites/tab-fav-sport-girl.png 736w,
+          ./img/favorites/tab-fav-sport-girl-2x.png  1472w,
+          ./img/favorites/mob-fav-sport-girl.png  335w
+          ./img/favorites/mob-fav-sport-girl-2x.png   670w,
+        "
+          src="./img/favorites/mob-fav-sport-girl.png"
+          sizes="(min-width:
+      1440px) 704px, (min-width: 768px) 736px, (max-width: 375px) 335px"
+          alt="sport girl"
+        />
+        <div class="fav-box">
+          <svg width="20" height="20">
+            <use class="fav-svg" href="./img/icons.svg#icon-dumbell"></use>
+          </svg>
+          <h2 class="fav-title">110 min</h2>
+          <p class="fav-text-title">Daily norm of sports</p>
+        </div>
+      </div>
+    </div>
 
     <!-- Iryna -->
     <load src="./partials/mobile-menu.html" />
