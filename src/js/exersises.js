@@ -92,25 +92,25 @@ exerciseList.addEventListener('click', async event => {
                       result.rating
                     )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="/img/icons.svg#icon-star"></use>
+                        <use href="./img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
 
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${currentId}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="/img/icons.svg#icon-running-man"></use>
+                    <use href="./img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${
                   result.name.substring(0, 24) + '...'
@@ -184,24 +184,24 @@ pageCounter.addEventListener('click', async event => {
                       result.rating
                     )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="../img/icons.svg#icon-star"></use>
+                        <use href="./img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
                     <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${paginationId}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="../img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="../img/icons.svg#icon-running-man"></use>
+                    <use href="./img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${
                   result.name.substring(0, 24) + '...'
@@ -313,24 +313,24 @@ exerciseForm.addEventListener('submit', async function (event) {
                       result.rating
                     )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="../img/icons.svg#icon-star"></use>
+                        <use href="./img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${inputId}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="../img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="../img/icons.svg#icon-running-man"></use>
+                    <use href="./img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${
                   result.name.substring(0, 24) + '...'
@@ -406,24 +406,24 @@ pageCounter.addEventListener('click', async event => {
                       result.rating
                     )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="../img/icons.svg#icon-star"></use>
+                        <use href="./img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
                     <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${inputPagination}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="../img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="../img/icons.svg#icon-running-man"></use>
+                    <use href="./img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${
                   result.name.substring(0, 24) + '...'
@@ -612,7 +612,7 @@ function renderCardsFromStorage(e) {
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="/img/icons.svg#icon-trash"></use>
+              <use href="./img/icons.svg#icon-trash"></use>
             </svg>
           </button>
           <a
@@ -622,14 +622,14 @@ function renderCardsFromStorage(e) {
             <button class="exercise-part-button">
               Start
               <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="./img/icons.svg#icon-arrow-right"></use>
               </svg>
             </button>
           </a>
         </div>
         <span class="exercise-part-name">
           <svg class="exercise-part-icon" width="24" height="24">
-            <use href="/img/icons.svg#icon-running-man"></use>
+            <use href="./img/icons.svg#icon-running-man"></use>
           </svg>
           <p class="exercise-name-text">${name}</p> <!-- Исправлено: обернуто в ${name} -->
         </span>
