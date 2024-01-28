@@ -12,8 +12,8 @@ https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css
       rel="stylesheet"
     />
     
-    <script type="module" crossorigin src="/energy_flow/assets/main-9833c3bd.js"></script>
-    <link rel="stylesheet" href="/energy_flow/assets/favorites-fe2f0bb0.css">
+    <script type="module" crossorigin src="/energy_flow/assets/main-70622ccf.js"></script>
+    <link rel="stylesheet" href="/energy_flow/assets/favorites-7ec4b16d.css">
   </head>
   <body>
     <!-- Header / partials -->
@@ -244,47 +244,101 @@ https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css
     <section class="favorites container">
   <h2 class="favorites-title">Favorites</h2>
 
-  <ul class="exercise-parts-list fav-list">
-    <li class="exercise-parts">
-      <div class="part-container">
-        <div class="exercise-head-container">
-          <span class="exercise-badge">WORKOUT</span>
-          <button class="exercise-trash-button">
-            <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="/energy_flow/assets/icons-22e7f65d.svg#icon-trash"></use>
-            </svg>
-          </button>
-          >
-          <button class="exercise-part-button">
-            Start
-            <svg class="exercise-btn-icon" width="14" height="14">
-              <use href="/energy_flow/assets/icons-22e7f65d.svg#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="exercise-part-name">
-          <svg class="exercise-part-icon" width="24" height="24">
-            <use href="/energy_flow/assets/icons-22e7f65d.svg#icon-running-man"></use>
+  <ul class="exercise-parts-list fav-list"></ul>
+</section>
+
+    <section class="exercise-section section visually-hidden">
+  <div class="exercise-container">
+    <h2 class="exercise-title">
+      Exercises
+      <span class="exercise-log-span">/</span>
+      <span class="exercise-title-span"></span>
+    </h2>
+    <div class="exercise-tablet-container">
+      <ul class="exercise-pages-list">
+        <li class="exercise-page">
+          <button class="exercise-button">Muscles</button>
+        </li>
+        <li class="exercise-page">
+          <button class="exercise-button">Body parts</button>
+        </li>
+        <li class="exercise-page">
+          <button class="exercise-button">Equipment</button>
+        </li>
+      </ul>
+      <form class="exercise-form">
+        <input type="text" class="exercise-input" placeholder="Search" />
+        <button class="exercise-input-button" type="submit" value="Submit">
+          <svg class="exercise-btn-icon" width="18" height="18">
+            <use href="/energy_flow/assets/icons-22e7f65d.svg#icon-search"></use>
           </svg>
-          <p class="exercise-name-text">Air bike</p>
-        </div>
-        <ul class="exercise-describes-list">
-          <li class="exercise-describe">
-            <p class="exercise-describe-category">Burned calories:</p>
-            <p class="exercise-describing">312 / 3 min</p>
-          </li>
-          <li class="exercise-describe">
-            <p class="exercise-describe-category">Body part:</p>
-            <p class="exercise-describing">Waist</p>
-          </li>
-          <li class="exercise-describe">
-            <p class="exercise-describe-category">Target:</p>
-            <p class="exercise-describing">Abs</p>
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
+        </button>
+      </form>
+    </div>
+    <ul class="exercise-parts-list"></ul>
+    <ul class="exercise-cards-list">
+      <li id="biceps" class="exercise-card">
+        <p class="exercise-card-title">Biceps</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="abductors" class="exercise-card">
+        <p class="exercise-card-title">Abductors</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="abs" class="exercise-card">
+        <p class="exercise-card-title">Abs</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="adductors" class="exercise-card">
+        <p class="exercise-card-title">Adductors</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="calves" class="exercise-card">
+        <p class="exercise-card-title">Calves</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="cardiovascular_system" class="exercise-card">
+        <p class="exercise-card-title">Cardiovascular System</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="delts" class="exercise-card">
+        <p class="exercise-card-title">Delts</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="forearms" class="exercise-card">
+        <p class="exercise-card-title">Forearms</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="glutes" class="exercise-card">
+        <p class="exercise-card-title">Glutes</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="hamstrings" class="exercise-card">
+        <p class="exercise-card-title">Hamstrings</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="lats" class="exercise-card">
+        <p class="exercise-card-title">Lats</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+      <li id="levator_scapulae" class="exercise-card">
+        <p class="exercise-card-title">Levator Scapulae</p>
+        <p class="exercise-category">Muscles</p>
+      </li>
+    </ul>
+
+    <ul class="exercise-pages-counter">
+      <li class="exercise-page-number">
+        <button id="1" class="exercise-number-button">1</button>
+      </li>
+      <li class="exercise-page-number">
+        <button id="2" class="exercise-number-button">2</button>
+      </li>
+      <li class="exercise-page-number">
+        <button id="3" class="exercise-number-button">3</button>
+      </li>
+    </ul>
+  </div>
 </section>
 
 
