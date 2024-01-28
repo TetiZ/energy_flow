@@ -60,7 +60,9 @@ exerciseList.addEventListener('click', async event => {
     const results = data.results;
     allResults = [...results];
     spanTitle.innerHTML = '';
-    spanTitle.textContent = `${results[0].target}`;
+    spanTitle.textContent =
+      `${results[0].target}`.charAt(0).toUpperCase() +
+      `${results[0].target}`.slice(1);
 
     sessionStorage.setItem('data', JSON.stringify({ results }));
 
@@ -292,7 +294,9 @@ exerciseForm.addEventListener('submit', async function (event) {
       return;
     } else {
       spanTitle.innerHTML = '';
-      spanTitle.textContent = `${results[0].bodyPart}`;
+      spanTitle.textContent =
+        `${results[0].bodyPart}`.charAt(0).toUpperCase() +
+        `${results[0].bodyPart}`.slice(1);
       spanTitle.style.visibility = 'visible';
       spanLog.style.visibility = 'visible';
       pageCounter.style.display = 'flex';
