@@ -2,8 +2,7 @@ const homePage = document.querySelector('#Home');
 const favoritesPage = document.querySelector('#Favorites');
 
 document.addEventListener('DOMContentLoaded', function () {
-  const pageId = getPageIdFromUrl();
-  setActivePage(pageId);
+  homePage.classList.add('heder-nav-link-active');
 });
 
 function setActivePage(pageId) {
