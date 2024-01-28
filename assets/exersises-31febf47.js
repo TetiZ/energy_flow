@@ -189,7 +189,7 @@ import{musclesGroup as E,bodyPart as O}from"./api-8d58433a.js";const M=document.
           height="24"
           aria-label="close icon"
         >
-          <use href="../img/icons.svg#icon-close"></use>
+          <use href="./img/icons.svg#icon-close"></use>
         </svg>
       </button>
       <div class="pop-exercises-img">
@@ -211,7 +211,7 @@ import{musclesGroup as E,bodyPart as O}from"./api-8d58433a.js";const M=document.
                 width="18"
                 height="18"
                 aria-label="ratting">
-                <use href="../img/icons.svg#icon-star"></use>
+                <use href="./img/icons.svg#icon-star"></use>
               </svg>
             </li>
         </ul>
@@ -250,7 +250,7 @@ import{musclesGroup as E,bodyPart as O}from"./api-8d58433a.js";const M=document.
         <div class="pop-btns-container">
           <button class="pop-add-fav">
             Add to favorites<svg class="heart-icon" width="18" height="18">
-              <use href="../img/icons.svg#icon-heart"></use>
+              <use href="./img/icons.svg#icon-heart"></use>
             </svg>
           </button>
 
@@ -260,4 +260,4 @@ import{musclesGroup as E,bodyPart as O}from"./api-8d58433a.js";const M=document.
     </div>
   </div>
 `}localStorage.removeItem("exercises");function U(e){const t=i=>{if(console.log(i.target),console.log($),$){const s=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),s.push(e),localStorage.setItem("exercises",JSON.stringify(s)),[...s],S.removeEventListener("click",t)}else return};S.addEventListener("click",t)}c.addEventListener("click",async e=>{e.preventDefault();const t=e.target.id,i=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"){if(t==t){const s=i.results[t];H(s),U(s)}S.addEventListener("click",s=>{console.log(s.target),s.target.tagName=="BUTTON",C&&(q.innerHTML="")})}});
-//# sourceMappingURL=exersises-b57d7542.js.map
+//# sourceMappingURL=exersises-31febf47.js.map
