@@ -1,24 +1,24 @@
 import { bodyPart, equipment, musclesGroup } from './api.js';
-
+// import '../css/layout/pop-ups.css';
 const exerciseList = document.querySelector('.exercise-cards-list');
 const cardList = document.querySelector('.exercise-cards-list');
 
-const pageCounter = document.querySelector('.exercise-pages-counter')
-const exerciseForm = document.querySelector('.exercise-form')
+const pageCounter = document.querySelector('.exercise-pages-counter');
+const exerciseForm = document.querySelector('.exercise-form');
 
-const exerciseInputButton = document.querySelector('.exercise-input-button')
-const exerciseInput = document.querySelector('.exercise-input')
+const exerciseInputButton = document.querySelector('.exercise-input-button');
+const exerciseInput = document.querySelector('.exercise-input');
 
-const exercise = document.querySelectorAll('.exercise-button')
-const exercisePartsList = document.querySelector('.exercise-parts-list')
+const exercise = document.querySelectorAll('.exercise-button');
+const exercisePartsList = document.querySelector('.exercise-parts-list');
 
-const spanLog = document.querySelector('.exercise-log-span')
-const spanTitle = document.querySelector('.exercise-title-span')
+const spanLog = document.querySelector('.exercise-log-span');
+const spanTitle = document.querySelector('.exercise-title-span');
 
-const exerciseBtn = document.querySelector('.exercise-part-button')
-const popModal = document.querySelector('.is-open')
+const exerciseBtn = document.querySelector('.exercise-part-button');
+const popModal = document.querySelector('.is-open');
 
-let currentPage ;
+let currentPage;
 let searchQuery = '';
 let searchInput = '';
 let allResults = [];
@@ -33,23 +33,23 @@ let inputPagination = 0;
 localStorage.removeItem('searchInput');
 localStorage.removeItem('searchQuery');
 
-sessionStorage.removeItem('data')
+sessionStorage.removeItem('data');
 
-exerciseList.addEventListener('click', async (event) => {
-    event.preventDefault();
-    allResults = [];
+exerciseList.addEventListener('click', async event => {
+  event.preventDefault();
+  allResults = [];
   currentPage = 1;
 
-    try {
-      const data = await musclesGroup(event);
+  try {
+    const data = await musclesGroup(event);
 
-      const results = data.results;
-      console.log(results);
-      allResults = [...results];
-      spanTitle.innerHTML = ''
-      spanTitle.textContent = `${results[0].target}`
+    const results = data.results;
+    console.log(results);
+    allResults = [...results];
+    spanTitle.innerHTML = '';
+    spanTitle.textContent = `${results[0].target}`;
 
-      sessionStorage.setItem('data', JSON.stringify({ results }))
+    sessionStorage.setItem('data', JSON.stringify({ results }));
 
     currentId = 0;
 
@@ -58,25 +58,30 @@ exerciseList.addEventListener('click', async (event) => {
       currentId++;
     }
 
-        if (results.length === 0) {
-            throw new Error({
-                title: 'No Results',
-                message: 'No images found. Please try a different search term.',
-            });
-      }
+    if (results.length === 0) {
+      throw new Error({
+        title: 'No Results',
+        message: 'No images found. Please try a different search term.',
+      });
+    }
 
-        spanTitle.style.visibility = 'visible'
-        cardList.style.display = 'none'
-        exercisePartsList.style.display = 'flex';
-        spanLog.style.visibility = 'visible'
+    spanTitle.style.visibility = 'visible';
+    cardList.style.display = 'none';
+    exercisePartsList.style.display = 'flex';
+    spanLog.style.visibility = 'visible';
 
-        exercisePartsList.innerHTML = results.reduce((html, result, currentId) => html + `
+    exercisePartsList.innerHTML = results.reduce(
+      (html, result, currentId) =>
+        html +
+        `
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${Math.round(result.rating)}</p>
+                    <p class="exercise-rating-number">${Math.round(
+                      result.rating
+                    )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="/img/icons.svg#icon-star"></use>
                     </svg>
@@ -98,12 +103,16 @@ exerciseList.addEventListener('click', async (event) => {
                 <svg class="exercise-part-icon" width="24" height="24">
                     <use href="/img/icons.svg#icon-running-man"></use>
                 </svg>
-                <p class="exercise-name-text">${result.name.substring(0, 24) + "..."}</p>
+                <p class="exercise-name-text">${
+                  result.name.substring(0, 24) + '...'
+                }</p>
                 </span>
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${result.burnedCalories} / ${result.time}</p>
+                    <p class="exercise-describing">${result.burnedCalories} / ${
+          result.time
+        }</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
@@ -116,51 +125,58 @@ exerciseList.addEventListener('click', async (event) => {
                 </ul>
             </div>
             </li>
-        `, '');
-    } catch (error) {
-        console.error('Error:', error);
-    }
+        `,
+      ''
+    );
+  } catch (error) {
+    console.error('Error:', error);
+  }
 });
 
-pageCounter.addEventListener('click', async (event) => {
-    const clickedPage = event.target.textContent;
-    currentPage = clickedPage
-    console.log(currentPage);
-    limit = 8
+pageCounter.addEventListener('click', async event => {
+  const clickedPage = event.target.textContent;
+  currentPage = clickedPage;
+  console.log(currentPage);
+  limit = 8;
 
-try {
-        const localSearch = JSON.parse(localStorage.getItem('searchQuery'));
-        const searchQuery = localSearch.searchQuery
-        console.log(searchQuery);
-        const url = `https://energyflow.b.goit.study/api/exercises?muscles=${searchQuery}&page=${currentPage}&limit=${limit}`;
-        const response = await fetch(url);
+  try {
+    const localSearch = JSON.parse(localStorage.getItem('searchQuery'));
+    const searchQuery = localSearch.searchQuery;
+    console.log(searchQuery);
+    const url = `https://energyflow.b.goit.study/api/exercises?muscles=${searchQuery}&page=${currentPage}&limit=${limit}`;
+    const response = await fetch(url);
 
-        if (response.status !== 200) {
-          throw new Error('Failed to fetch data. Please try again later.');
-  }
+    if (response.status !== 200) {
+      throw new Error('Failed to fetch data. Please try again later.');
+    }
 
-  const resultPromise = response.json();
-  const data = await resultPromise;
-  const results = data.results
+    const resultPromise = response.json();
+    const data = await resultPromise;
+    const results = data.results;
 
-  console.log(results);
+    console.log(results);
 
-  sessionStorage.setItem('data', JSON.stringify({ results }))
+    sessionStorage.setItem('data', JSON.stringify({ results }));
 
-  paginationId = 0;
+    paginationId = 0;
 
-  for (let i = 0; i < 8; i++) {
-    console.log(paginationId);
-    paginationId++;
-  }
+    for (let i = 0; i < 8; i++) {
+      console.log(paginationId);
+      paginationId++;
+    }
 
-        exercisePartsList.innerHTML = results.reduce((html, result, paginationId) => html + `
+    exercisePartsList.innerHTML = results.reduce(
+      (html, result, paginationId) =>
+        html +
+        `
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${Math.round(result.rating)}</p>
+                    <p class="exercise-rating-number">${Math.round(
+                      result.rating
+                    )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -175,12 +191,16 @@ try {
                 <svg class="exercise-part-icon" width="24" height="24">
                     <use href="../img/icons.svg#icon-running-man"></use>
                 </svg>
-                <p class="exercise-name-text">${result.name.substring(0, 24) + "..."}</p>
+                <p class="exercise-name-text">${
+                  result.name.substring(0, 24) + '...'
+                }</p>
                 </span>
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${result.burnedCalories} / ${result.time}</p>
+                    <p class="exercise-describing">${result.burnedCalories} / ${
+          result.time
+        }</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
@@ -193,88 +213,96 @@ try {
                 </ul>
             </div>
             </li>
-        `, '');
-        } catch (error) {
-            console.error('Error:', error);
-        }
-
+        `,
+      ''
+    );
+  } catch (error) {
+    console.error('Error:', error);
+  }
 });
 
-exercise.forEach((elem) => {
-    elem.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetElement = event.target.textContent
-        localStorage.removeItem('searchInput')
-        localStorage.removeItem('searchQuery')
-        if (targetElement === 'Muscles') {
-          exerciseInput.style.display = 'none';
-          exerciseInputButton.style.display = 'none';
-          exercisePartsList.style.display = 'none';
-          cardList.style.display = 'flex'
-          spanLog.style.visibility = 'hidden'
-          spanTitle.style.visibility = 'hidden'
-
-        } else if (targetElement === 'Body parts') {
-            spanLog.style.visibility = 'hidden'
-            exercisePartsList.innerHTML = ''
-            exerciseInput.style.display = 'flex';
-          exerciseInputButton.style.display = 'flex';
-            exercisePartsList.style.display = 'flex';
-            cardList.style.display = 'none'
-          pageCounter.style.display = 'none'
-          spanTitle.style.visibility = 'hidden'
-        } else {
-          exerciseInput.style.display = 'none';
-          exerciseInputButton.style.display = 'none';
-          exercisePartsList.style.display = 'none';
-          spanLog.style.visibility = 'hidden'
-          spanTitle.style.visibility = 'hidden'
-        }
-    })
-})
-
-exerciseForm.addEventListener('submit', async function(event) {
+exercise.forEach(elem => {
+  elem.addEventListener('click', event => {
     event.preventDefault();
-    allResults = [];
-    currentPage = 1;
+    const targetElement = event.target.textContent;
+    localStorage.removeItem('searchInput');
+    localStorage.removeItem('searchQuery');
+    if (targetElement === 'Muscles') {
+      exerciseInput.style.display = 'none';
+      exerciseInputButton.style.display = 'none';
+      exercisePartsList.style.display = 'none';
+      cardList.style.display = 'flex';
+      spanLog.style.visibility = 'hidden';
+      spanTitle.style.visibility = 'hidden';
+    } else if (targetElement === 'Body parts') {
+      spanLog.style.visibility = 'hidden';
+      exercisePartsList.innerHTML = '';
+      exerciseInput.style.display = 'flex';
+      exerciseInputButton.style.display = 'flex';
+      exercisePartsList.style.display = 'flex';
+      cardList.style.display = 'none';
+      pageCounter.style.display = 'none';
+      spanTitle.style.visibility = 'hidden';
+    } else {
+      exerciseInput.style.display = 'none';
+      exerciseInputButton.style.display = 'none';
+      exercisePartsList.style.display = 'none';
+      spanLog.style.visibility = 'hidden';
+      spanTitle.style.visibility = 'hidden';
+    }
+  });
+});
 
-    try {
-        const submitedValue = exerciseInput.value
-        const data = await bodyPart(submitedValue)
-        const results = data.results;
+exerciseForm.addEventListener('submit', async function (event) {
+  event.preventDefault();
+  allResults = [];
+  currentPage = 1;
 
-      allResults = [...results];
-      sessionStorage.setItem('data', JSON.stringify({ results }))
+  try {
+    const submitedValue = exerciseInput.value;
+    const data = await bodyPart(submitedValue);
+    const results = data.results;
 
-      console.log(results);
+    allResults = [...results];
+    sessionStorage.setItem('data', JSON.stringify({ results }));
 
-      if (results.length === 0) {
-            exercisePartsList.innerHTML=''
-            console.log(results.length);
-            exercisePartsList.insertAdjacentHTML('beforeend', "<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>");
-            pageCounter.style.display = "none"
-            return
-      } else {
-        spanTitle.innerHTML = ''
-        spanTitle.textContent = `${results[0].bodyPart}`
-        spanTitle.style.visibility = 'visible'
-        spanLog.style.visibility = 'visible'
-        pageCounter.style.display = 'flex'
+    console.log(results);
 
-inputId = 0;
+    if (results.length === 0) {
+      exercisePartsList.innerHTML = '';
+      console.log(results.length);
+      exercisePartsList.insertAdjacentHTML(
+        'beforeend',
+        "<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"
+      );
+      pageCounter.style.display = 'none';
+      return;
+    } else {
+      spanTitle.innerHTML = '';
+      spanTitle.textContent = `${results[0].bodyPart}`;
+      spanTitle.style.visibility = 'visible';
+      spanLog.style.visibility = 'visible';
+      pageCounter.style.display = 'flex';
 
-for (let i = 0; i < 8; i++) {
-    console.log(inputId);
-    inputId++;
-}
+      inputId = 0;
 
-        exercisePartsList.innerHTML = results.reduce((html, result, inputId) => html + `
+      for (let i = 0; i < 8; i++) {
+        console.log(inputId);
+        inputId++;
+      }
+
+      exercisePartsList.innerHTML = results.reduce(
+        (html, result, inputId) =>
+          html +
+          `
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${Math.round(result.rating)}</p>
+                    <p class="exercise-rating-number">${Math.round(
+                      result.rating
+                    )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -289,12 +317,16 @@ for (let i = 0; i < 8; i++) {
                 <svg class="exercise-part-icon" width="24" height="24">
                     <use href="../img/icons.svg#icon-running-man"></use>
                 </svg>
-                <p class="exercise-name-text">${result.name.substring(0, 24) + "..."}</p>
+                <p class="exercise-name-text">${
+                  result.name.substring(0, 24) + '...'
+                }</p>
                 </span>
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${result.burnedCalories} / ${result.time}</p>
+                    <p class="exercise-describing">${result.burnedCalories} / ${
+            result.time
+          }</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
@@ -307,51 +339,58 @@ for (let i = 0; i < 8; i++) {
                 </ul>
             </div>
             </li>
-        `, '');}
-    } catch (error) {
-        console.error('Error:', error);
+        `,
+        ''
+      );
     }
-
+  } catch (error) {
+    console.error('Error:', error);
+  }
 });
 
-pageCounter.addEventListener('click', async (event) => {
-    const clickedPage = event.target.textContent;
-    currentPage = clickedPage
+pageCounter.addEventListener('click', async event => {
+  const clickedPage = event.target.textContent;
+  currentPage = clickedPage;
 
-    limit = 8
+  limit = 8;
 
-    try {
-        const localSearch = JSON.parse(localStorage.getItem('searchInput'));
-        searchInput = localSearch.searchInput
+  try {
+    const localSearch = JSON.parse(localStorage.getItem('searchInput'));
+    searchInput = localSearch.searchInput;
 
-        const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchInput}&page=${currentPage}&limit=${limit}`;
-        const response = await fetch(url);
+    const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchInput}&page=${currentPage}&limit=${limit}`;
+    const response = await fetch(url);
 
-        if (response.status !== 200) {
-            throw new Error('Failed to fetch data. Please try again later.');
-            }
+    if (response.status !== 200) {
+      throw new Error('Failed to fetch data. Please try again later.');
+    }
 
-        const resultPromise = response.json();
-        const data = await resultPromise;
-        const results = data.results
-      console.log(results.length);
+    const resultPromise = response.json();
+    const data = await resultPromise;
+    const results = data.results;
+    console.log(results.length);
 
-      sessionStorage.setItem('data', JSON.stringify({ results }))
+    sessionStorage.setItem('data', JSON.stringify({ results }));
 
-  inputPagination = 0;
+    inputPagination = 0;
 
-for (let i = 0; i < 8; i++) {
-    console.log(inputPagination);
-    inputPagination++;
-}
+    for (let i = 0; i < 8; i++) {
+      console.log(inputPagination);
+      inputPagination++;
+    }
 
-      exercisePartsList.innerHTML = results.reduce((html, result, inputPagination) => html + `
+    exercisePartsList.innerHTML = results.reduce(
+      (html, result, inputPagination) =>
+        html +
+        `
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${Math.round(result.rating)}</p>
+                    <p class="exercise-rating-number">${Math.round(
+                      result.rating
+                    )}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
@@ -366,12 +405,16 @@ for (let i = 0; i < 8; i++) {
                 <svg class="exercise-part-icon" width="24" height="24">
                     <use href="../img/icons.svg#icon-running-man"></use>
                 </svg>
-                <p class="exercise-name-text">${result.name.substring(0, 24) + "..."}</p>
+                <p class="exercise-name-text">${
+                  result.name.substring(0, 24) + '...'
+                }</p>
                 </span>
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${result.burnedCalories} / ${result.time}</p>
+                    <p class="exercise-describing">${result.burnedCalories} / ${
+          result.time
+        }</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
@@ -384,14 +427,16 @@ for (let i = 0; i < 8; i++) {
                 </ul>
             </div>
             </li>
-        `, '');
-        } catch (error) {
-            console.error('Error:', error);
-        }
+        `,
+      ''
+    );
+  } catch (error) {
+    console.error('Error:', error);
+  }
 });
 
 function popUp(data) {
-    exercisePartsList.innerHTML = `<div class="pop-backdrop is-open">
+  exercisePartsList.innerHTML = `<div class="pop-backdrop is-open">
     <div class="pop-ex-modal">
       <button class="pop-ex-close-btn">
         <svg
@@ -473,20 +518,21 @@ function popUp(data) {
 `;
 }
 
-exercisePartsList.addEventListener('click', async (event) => {
-  event.preventDefault()
-  const currentId = event.target.id
+exercisePartsList.addEventListener('click', async event => {
+  event.preventDefault();
+  const currentId = event.target.id;
   console.log(currentId);
 
-  const dataStorage = JSON.parse(sessionStorage.getItem('data'))
+  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
   console.log(dataStorage);
 
-  if (event.target.tagName != "BUTTON") {
-    return
+  if (event.target.tagName != 'BUTTON') {
+    return;
   }
   if (currentId == currentId) {
-    const data = dataStorage.results[currentId]
+    const data = dataStorage.results[currentId];
     console.log(data);
-    popUp(data)
+    popUp(data);
   }
-})
+});
+

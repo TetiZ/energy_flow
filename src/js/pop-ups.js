@@ -6,7 +6,7 @@ const ratingPopUpWindow = document.querySelector('.backdrop');
 const ratingPopUpOpen = document.querySelector('.pop-rating-btn');
 const ratingPopUpClose = document.querySelector('.pop-up-close-btn');
 
-const popExerciseInfo = document.querySelector('.pop-ex-info')
+const popExerciseInfo = document.querySelector('.pop-ex-info');
 
 exPopClose.addEventListener('click', function () {
   exPopUpWindow.classList.remove('is-open');
@@ -20,7 +20,6 @@ ratingPopUpOpen.addEventListener('click', function () {
 ratingPopUpClose.addEventListener('click', function () {
   ratingPopUpWindow.classList.remove('is-open');
 });
-
 
 const ratingStarsWrapper = document.querySelectorAll('.rating-stars-wrapper');
 if (ratingStarsWrapper.length > 0) {
@@ -67,7 +66,7 @@ function initRatings() {
       });
       ratingItem.addEventListener('click', function (evt) {
         initRatingVars(rating);
-        ratingValue.innerHTML = index + 1;
+        ratingValue.innerHTML = (index + 1).toFixed(1);
         setRatingActiveWidth();
       });
     }
@@ -82,4 +81,3 @@ popAddFavButton.addEventListener('click', sendToFav);
 function sendToFav() {
   localStorage.setItem(addToFavoriteKey, exerciseCardValue);
 }
-
