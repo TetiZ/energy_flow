@@ -481,8 +481,8 @@ function popUp(data) {
 
       <div class="pop-ex-content-container">
         <h2 class="pop-exercise-name">${data.name}</h2>
+        <p class="pop-ex-current-rating">${data.rating}</p>
         <ul class="pop-ex-stars-list">
-          <p class="pop-ex-current-rating">${data.rating}</p>
             <li>
               <svg
                 class="pop-ex-rate-icon"
