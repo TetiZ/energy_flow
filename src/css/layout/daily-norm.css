@@ -1,144 +1,144 @@
 .min-section {
-    padding-top: 10px;
-        padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .min-container {
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .min-box {
-    display: flex;
-    flex-direction: column;
-    width: 335px;
-        min-height: 269px;
-    border-radius: 30px;
-    background-color: #1B1B1B;
-    padding: 40px 20px 40px 20px;
-    margin: 0 auto;
-
+  display: flex;
+  flex-direction: column;
+  width: 335px;
+  min-height: 269px;
+  border-radius: 30px;
+  background-color: #1b1b1b;
+  padding: 40px 20px 40px 20px;
+  margin: 0 auto;
 }
 
 .min-img {
-    margin: 0 auto;
-    width: 335px;
-        height: 269px;
-    border-radius: 30px;
-        background: url(<path-to-image>), lightgray 6.659px 10.025px / 93.932% 155.972% no-repeat, #E8E8E8;
+  margin: 0 auto;
+  width: 335px;
+  height: 269px;
+  border-radius: 30px;
+  background: url(<path-to-image>),
+    lightgray 6.659px 10.025px / 93.932% 155.972% no-repeat, #e8e8e8;
 }
 
 .dumbell-svg-div {
-    width: 32px;
-        height: 32px;
-    border-radius: 50%;
-    background-color: rgba(246, 246, 246, 0.10);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(246, 246, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .dumbell-svg {
-    fill: #F6F6F6;
+  fill: #f6f6f6;
 }
 
 .min-svg-title {
-    display: flex;
-    flex-direction: row;
-    gap: 18px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  align-items: center;
 }
 
 .min-title {
-    color: #F6F6F6;
+  color: #f6f6f6;
 }
 
 .min-text-box {
-padding-left: 50px;
+  padding-left: 50px;
 }
 
 .min-text-title {
-    color: rgba(246, 246, 246, 0.60);
-        color: rgba(246, 246, 246, 0.60);
-        font-family: "DM Sans";
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.28;
+  color: rgba(246, 246, 246, 0.6);
+  color: rgba(246, 246, 246, 0.6);
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
 
-        padding-bottom: 14px;
+  padding-bottom: 14px;
 }
 
 .min-text {
-    width: 245px;
-    color: rgba(246, 246, 246, 0.60);
-        font-family: "DM Sans";
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 1.28;
-        letter-spacing: 0;
+  width: 245px;
+  color: rgba(246, 246, 246, 0.6);
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: 0;
 }
 
 @media screen and (min-width: 768px) {
-    .min-container {
-        padding-top: 8px;
-        padding-bottom: 8px;
-    }
+  .min-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 
-        .min-box {
-            width: 736px;
-                height: 302px;
-                padding: 65px 64px 96px 64px;
-        }
+  .min-box {
+    width: 736px;
+    height: 302px;
+    padding: 65px 64px 96px 64px;
+  }
 
-    .min-img {
-        width: 736px;
-            height: 302px;
-        border-radius: 50px;
-    }
+  .min-img {
+    width: 736px;
+    height: 302px;
+    border-radius: 50px;
+  }
 
-    .min-text-box {
-        padding-left: 50px;
-    }
+  .min-text-box {
+    padding-left: 50px;
+  }
 
-        .min-text-title {
-padding-bottom: 25px;
-color: rgba(246, 246, 246, 0.60);
-    font-family: "DM Sans";
+  .min-text-title {
+    padding-bottom: 25px;
+    color: rgba(246, 246, 246, 0.6);
+    font-family: 'DM Sans';
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 1.28;
-        }
+  }
 
-        .min-text {
-            width: 526px;
-                height: 97px;
-                color: rgba(246, 246, 246, 0.60);
-                    font-family: "DM Sans";
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 1.5;
-        }
+  .min-text {
+    width: 526px;
+    height: 97px;
+    color: rgba(246, 246, 246, 0.6);
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-.min-container {
-        flex-direction: row;
-    }
+  .min-container {
+    flex-direction: row;
+  }
 
-        .min-box {
-            width: 704px;
-                height: 302px;
-                padding: 64px 65px 64px 64px;
-        }
-
- .min-img {
+  .min-box {
     width: 704px;
-        height: 302px;
- }
+    height: 302px;
+    padding: 64px 65px 64px 64px;
+  }
+
+  .min-img {
+    width: 704px;
+    height: 302px;
+  }
 }
