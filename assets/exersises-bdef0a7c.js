@@ -6,25 +6,25 @@ import{i as E}from"./vendor-ad859c2f.js";import{musclesGroup as O,bodyPart as M}
                     <span class="exercise-part-rating">
                     <p class="exercise-rating-number">${Math.round(r.rating)}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="/img/icons.svg#icon-star"></use>
+                        <use href="../../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
 
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${a}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="../../img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="/img/icons.svg#icon-arrow-right"></use>
+                <use href="../../img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="/img/icons.svg#icon-running-man"></use>
+                    <use href="../../img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${r.name.substring(0,24)+"..."}</p>
                 </span>
@@ -52,24 +52,24 @@ import{i as E}from"./vendor-ad859c2f.js";import{musclesGroup as O,bodyPart as M}
                     <span class="exercise-part-rating">
                     <p class="exercise-rating-number">${Math.round(l.rating)}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="./img/icons.svg#icon-star"></use>
+                        <use href="../../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
                     <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${k}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="../../img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="../../img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-man"></use>
+                    <use href="../../img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${l.name.substring(0,24)+"..."}</p>
                 </span>
@@ -97,24 +97,24 @@ import{i as E}from"./vendor-ad859c2f.js";import{musclesGroup as O,bodyPart as M}
                     <span class="exercise-part-rating">
                     <p class="exercise-rating-number">${Math.round(a.rating)}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="./img/icons.svg#icon-star"></use>
+                        <use href="../../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${b}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="../../img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="../../img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-man"></use>
+                    <use href="../../img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${a.name.substring(0,24)+"..."}</p>
                 </span>
@@ -142,24 +142,24 @@ import{i as E}from"./vendor-ad859c2f.js";import{musclesGroup as O,bodyPart as M}
                     <span class="exercise-part-rating">
                     <p class="exercise-rating-number">${Math.round(n.rating)}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="./img/icons.svg#icon-star"></use>
+                        <use href="../../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
                     <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${l}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="../../img/icons.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="../../img/icons.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-man"></use>
+                    <use href="../../img/icons.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${n.name.substring(0,24)+"..."}</p>
                 </span>
@@ -189,7 +189,7 @@ import{i as E}from"./vendor-ad859c2f.js";import{musclesGroup as O,bodyPart as M}
           height="24"
           aria-label="close icon"
         >
-          <use href="./img/icons.svg#icon-close"></use>
+          <use href="../../img/icons.svg#icon-close"></use>
         </svg>
       </button>
       <div class="pop-exercises-img">
@@ -211,7 +211,7 @@ import{i as E}from"./vendor-ad859c2f.js";import{musclesGroup as O,bodyPart as M}
                 width="18"
                 height="18"
                 aria-label="ratting">
-                <use href="./img/icons.svg#icon-star"></use>
+                <use href="../../img/icons.svg#icon-star"></use>
               </svg>
             </li>
         </ul>
@@ -250,7 +250,7 @@ import{i as E}from"./vendor-ad859c2f.js";import{musclesGroup as O,bodyPart as M}
         <div class="pop-btns-container">
           <button class="pop-add-fav">
             Add to favorites<svg class="heart-icon" width="18" height="18">
-              <use href="./img/icons.svg#icon-heart"></use>
+              <use href="../../img/icons.svg#icon-heart"></use>
             </svg>
           </button>
 
@@ -260,4 +260,4 @@ import{i as E}from"./vendor-ad859c2f.js";import{musclesGroup as O,bodyPart as M}
     </div>
   </div>
 `}function J(s){const t=i=>{if(console.log(i.target),console.log($),$){const e=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),e.push(s),localStorage.setItem("exercises",JSON.stringify(e)),[...e],S.removeEventListener("click",t),E.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}else return};S.addEventListener("click",t)}c.addEventListener("click",async s=>{s.preventDefault();const t=s.target.id,i=JSON.parse(sessionStorage.getItem("data"));if(s.target.tagName=="BUTTON"){if(t==t){const e=i.results[t];U(e),J(e)}S.addEventListener("click",e=>{console.log(e.target),(e.target.tagName=="BUTTON"||e.target.tagName=="SVG"||e.target.tagName=="USE")&&H&&(q.innerHTML="")})}});
-//# sourceMappingURL=exersises-b0b56ab9.js.map
+//# sourceMappingURL=exersises-bdef0a7c.js.map
