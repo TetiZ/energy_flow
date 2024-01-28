@@ -160,7 +160,7 @@
 .pop-up-message {
   outline: none;
 }
-/* <------------ exercises styles ------------> */
+/* <------------ exercises styles - -----------> */
 
 .pop-ex-modal {
   position: absolute;
@@ -172,13 +172,14 @@
   background-color: var(--secondary-text-color);
   border-radius: 20px;
   height: auto;
+  pointer-events: none;
 }
 
 .pop-backdrop {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999999999999;
+  /* z-index: 99999999999999; */
   width: 100%;
   height: 100%;
   /* background: rgba(46, 47, 66, 0.4); */
@@ -208,6 +209,7 @@
   right: 14px;
   background-color: transparent;
   border: none;
+  pointer-events: auto;
 }
 
 .pop-ex-close-btn-icon {
@@ -286,6 +288,7 @@ li:last-child .pop-ex-rate-icon use {
   justify-content: center;
   transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     border 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
 }
 
 .pop-add-fav:hover,
@@ -294,12 +297,14 @@ li:last-child .pop-ex-rate-icon use {
 }
 
 .pop-rating-btn {
+  pointer-events: auto;
   background-color: transparent;
   border-radius: 30px;
   border: 1px solid #1b1b1b;
   color: var(--main-text-color);
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     border 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .pop-rating-btn:hover,

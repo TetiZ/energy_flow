@@ -16,7 +16,20 @@ const spanLog = document.querySelector('.exercise-log-span');
 const spanTitle = document.querySelector('.exercise-title-span');
 
 const exerciseBtn = document.querySelector('.exercise-part-button');
+
 const popModal = document.querySelector('.is-open');
+
+const popAddFavButton = document.querySelector('.pop-add-fav');
+const exPopClose = document.querySelector('.pop-ex-close-btn');
+const exPopUpWindow = document.querySelector('.pop-backdrop');
+
+const ratingPopUpWindow = document.querySelector('.backdrop');
+const ratingPopUpOpen = document.querySelector('.pop-rating-btn');
+const ratingPopUpClose = document.querySelector('.pop-up-close-btn');
+
+const popExerciseInfo = document.querySelector('.pop-ex-info');
+const popModal = document.querySelector('.modal123');
+const popBackdrop = document.querySelector('.pop-backdrop.is-open');
 
 let currentPage;
 let searchQuery = '';
@@ -44,7 +57,9 @@ exerciseList.addEventListener('click', async event => {
     const data = await musclesGroup(event);
 
     const results = data.results;
+
     console.log(results);
+
     allResults = [...results];
     spanTitle.innerHTML = '';
     spanTitle.textContent = `${results[0].target}`;
@@ -54,7 +69,6 @@ exerciseList.addEventListener('click', async event => {
     currentId = 0;
 
     for (let i = 0; i < 8; i++) {
-      console.log(currentId);
       currentId++;
     }
 
@@ -154,6 +168,7 @@ pageCounter.addEventListener('click', async event => {
     const data = await resultPromise;
     const results = data.results;
 
+
     console.log(results);
 
     sessionStorage.setItem('data', JSON.stringify({ results }));
@@ -162,6 +177,14 @@ pageCounter.addEventListener('click', async event => {
 
     for (let i = 0; i < 8; i++) {
       console.log(paginationId);
+      paginationId++;
+    }
+
+    sessionStorage.setItem('data', JSON.stringify({ results }));
+
+    paginationId = 0;
+
+    for (let i = 0; i < 8; i++) {
       paginationId++;
     }
 
@@ -181,7 +204,13 @@ pageCounter.addEventListener('click', async event => {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button" id=${paginationId}>Start</button>
+                    <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button"  id='${paginationId}'>Start
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -266,6 +295,7 @@ exerciseForm.addEventListener('submit', async function (event) {
     allResults = [...results];
     sessionStorage.setItem('data', JSON.stringify({ results }));
 
+
     console.log(results);
 
     if (results.length === 0) {
@@ -291,6 +321,28 @@ exerciseForm.addEventListener('submit', async function (event) {
         inputId++;
       }
 
+    if (results.length === 0) {
+      exercisePartsList.innerHTML = '';
+      console.log(results.length);
+      exercisePartsList.insertAdjacentHTML(
+        'beforeend',
+        "<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"
+      );
+      pageCounter.style.display = 'none';
+      return;
+    } else {
+      spanTitle.innerHTML = '';
+      spanTitle.textContent = `${results[0].bodyPart}`;
+      spanTitle.style.visibility = 'visible';
+      spanLog.style.visibility = 'visible';
+      pageCounter.style.display = 'flex';
+
+      inputId = 0;
+
+      for (let i = 0; i < 8; i++) {
+        inputId++;
+      }
+
       exercisePartsList.innerHTML = results.reduce(
         (html, result, inputId) =>
           html +
@@ -307,7 +359,13 @@ exerciseForm.addEventListener('submit', async function (event) {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button" id='${inputId}'>Start</button>
+                <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button"  id='${inputId}'>Start
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -342,6 +400,7 @@ exerciseForm.addEventListener('submit', async function (event) {
         `,
         ''
       );
+
     }
   } catch (error) {
     console.error('Error:', error);
@@ -379,6 +438,42 @@ pageCounter.addEventListener('click', async event => {
       inputPagination++;
     }
 
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+pageCounter.addEventListener('click', async event => {
+  const clickedPage = event.target.textContent;
+  currentPage = clickedPage;
+
+  limit = 8;
+
+  try {
+    const localSearch = JSON.parse(localStorage.getItem('searchInput'));
+    searchInput = localSearch.searchInput;
+
+    const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchInput}&page=${currentPage}&limit=${limit}`;
+    const response = await fetch(url);
+
+    if (response.status !== 200) {
+      throw new Error('Failed to fetch data. Please try again later.');
+    }
+
+    const resultPromise = response.json();
+    const data = await resultPromise;
+    const results = data.results;
+    console.log(results.length);
+
+    sessionStorage.setItem('data', JSON.stringify({ results }));
+
+    inputPagination = 0;
+
+    for (let i = 0; i < 8; i++) {
+      inputPagination++;
+    }
+
     exercisePartsList.innerHTML = results.reduce(
       (html, result, inputPagination) =>
         html +
@@ -395,7 +490,13 @@ pageCounter.addEventListener('click', async event => {
                         <use href="../img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                <button class="exercise-part-button" id='${inputPagination}'>Start</button>
+                    <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                <button class="exercise-part-button"  id='${inputPagination}'>Start
+                <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/img/icons.svg#icon-arrow-right"></use>
+                </svg>
+                </button>
+                </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
@@ -435,8 +536,13 @@ pageCounter.addEventListener('click', async event => {
   }
 });
 
+const modal = document.querySelector('.modal123');
 function popUp(data) {
+
   exercisePartsList.innerHTML = `<div class="pop-backdrop is-open">
+
+  modal.innerHTML = `
+    <div class="pop-backdrop is-open">
     <div class="pop-ex-modal">
       <button class="pop-ex-close-btn">
         <svg
@@ -445,7 +551,7 @@ function popUp(data) {
           height="24"
           aria-label="close icon"
         >
-          <use href="../img/icons.svg#icon-close"></use>
+          <use href="./img/icons.svg#icon-close"></use>
         </svg>
       </button>
       <div class="pop-exercises-img">
@@ -467,7 +573,7 @@ function popUp(data) {
                 width="18"
                 height="18"
                 aria-label="ratting">
-                <use href="../img/icons.svg#icon-star"></use>
+                <use href="./img/icons.svg#icon-star"></use>
               </svg>
             </li>
         </ul>
@@ -506,7 +612,7 @@ function popUp(data) {
         <div class="pop-btns-container">
           <button class="pop-add-fav">
             Add to favorites<svg class="heart-icon" width="18" height="18">
-              <use href="../img/icons.svg#icon-heart"></use>
+              <use href="./img/icons.svg#icon-heart"></use>
             </svg>
           </button>
 
@@ -518,6 +624,7 @@ function popUp(data) {
 `;
 }
 
+
 exercisePartsList.addEventListener('click', async event => {
   event.preventDefault();
   const currentId = event.target.id;
@@ -526,13 +633,122 @@ exercisePartsList.addEventListener('click', async event => {
   const dataStorage = JSON.parse(sessionStorage.getItem('data'));
   console.log(dataStorage);
 
+localStorage.removeItem('exercises');
+
+let allfav = [];
+
+function dataToStorage(data) {
+  const clickHandler = event => {
+    console.log(event.target);
+    console.log(popAddFavButton);
+    if (popAddFavButton) {
+      const localData = JSON.parse(localStorage.getItem('exercises')) || [];
+      console.log(123);
+
+      localData.push(data);
+      localStorage.setItem('exercises', JSON.stringify(localData));
+
+      allfav = [...localData];
+
+      popModal.removeEventListener('click', clickHandler);
+    } else {
+      return;
+    }
+  };
+
+  popModal.addEventListener('click', clickHandler);
+}
+
+exercisePartsList.addEventListener('click', async event => {
+  event.preventDefault();
+  const currentId = event.target.id;
+
+  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
+
   if (event.target.tagName != 'BUTTON') {
     return;
   }
   if (currentId == currentId) {
     const data = dataStorage.results[currentId];
+
     console.log(data);
     popUp(data);
   }
 });
 
+
+    popUp(data);
+
+    dataToStorage(data);
+  }
+
+  popModal.addEventListener('click', event => {
+    console.log(event.target);
+    if (event.target.tagName == 'BUTTON' || 'SVG' || 'USE') {
+      if (exPopClose) {
+        modal.innerHTML = '';
+      }
+    }
+  });
+});
+
+// FAVORITES
+
+const favList = document.querySelector('.fav-list');
+const favoritesPage = document.querySelector('#Favorites');
+
+favoritesPage.addEventListener('click', renderCardsFromStorage);
+
+function renderCardsFromStorage(e) {
+  const savedCards = JSON.parse(localStorage.getItem('exercises'));
+
+  favList.innerHTML = savedCards
+    .map(
+      ({ bodyPart, name, target, burnedCalories }) => `
+    <li class="exercise-parts">
+      <div class="part-container">
+        <div class="exercise-head-container">
+          <span class="exercise-badge">WORKOUT</span>
+          <button class="exercise-trash-button">
+            <svg class="exercise-trash-icon" width="16" height="16">
+              <use href="/img/icons.svg#icon-trash"></use>
+            </svg>
+          </button>
+          <a
+            class="exercise-part-link"
+            href="./partials/pop-up-exercise-card.html"
+          >
+            <button class="exercise-part-button">
+              Start
+              <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/img/icons.svg#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </a>
+        </div>
+        <span class="exercise-part-name">
+          <svg class="exercise-part-icon" width="24" height="24">
+            <use href="/img/icons.svg#icon-running-man"></use>
+          </svg>
+          <p class="exercise-name-text">${name}</p> <!-- Исправлено: обернуто в ${name} -->
+        </span>
+        <ul class="exercise-describes-list">
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Burned calories:</p>
+            <p class="exercise-describing">${burnedCalories} / 3 min</p>
+          </li>
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Body part:</p>
+            <p class="exercise-describing">${bodyPart}</p>
+          </li>
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Target:</p>
+            <p class="exercise-describing">${target}</p>
+          </li>
+        </ul>
+      </div>
+    </li>
+  `
+    )
+    .join('');
+}
