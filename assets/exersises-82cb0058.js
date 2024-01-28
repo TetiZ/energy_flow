@@ -203,8 +203,8 @@ import{musclesGroup as O,bodyPart as E}from"./api-8d58433a.js";const M=document.
 
       <div class="pop-ex-content-container">
         <h2 class="pop-exercise-name">${s.name}</h2>
+        <p class="pop-ex-current-rating">${s.rating}</p>
         <ul class="pop-ex-stars-list">
-          <p class="pop-ex-current-rating">${s.rating}</p>
             <li>
               <svg
                 class="pop-ex-rate-icon"
@@ -304,4 +304,4 @@ import{musclesGroup as O,bodyPart as E}from"./api-8d58433a.js";const M=document.
       </div>
     </li>
   `).join("")}
-//# sourceMappingURL=exersises-8e840fdc.js.map
+//# sourceMappingURL=exersises-82cb0058.js.map
