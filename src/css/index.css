@@ -10,6 +10,7 @@
 @import url(./utils/variables.css);
 
 /* Layout */
+@import url(./layout/izitoast.css);
 @import url(./layout/header.css);
 @import url(./layout/mobile-menu.css);
 @import url(./layout/hero.css);

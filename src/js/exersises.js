@@ -1,3 +1,6 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 import { bodyPart, equipment, musclesGroup } from './api.js';
 // import '../css/layout/pop-ups.css';
 const exerciseList = document.querySelector('.exercise-cards-list');
@@ -623,18 +626,6 @@ function popUp(data) {
   </div>
 `;
 }
-
-
-exercisePartsList.addEventListener('click', async event => {
-  event.preventDefault();
-  const currentId = event.target.id;
-  console.log(currentId);
-
-  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
-  console.log(dataStorage);
-
-localStorage.removeItem('exercises');
-
 let allfav = [];
 
 function dataToStorage(data) {
@@ -651,6 +642,13 @@ function dataToStorage(data) {
       allfav = [...localData];
 
       popModal.removeEventListener('click', clickHandler);
+
+      iziToast.success({
+        title: 'Excellent choice!',
+        message:
+          'The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!',
+        position: 'center',
+      });
     } else {
       return;
     }
@@ -684,7 +682,11 @@ exercisePartsList.addEventListener('click', async event => {
 
   popModal.addEventListener('click', event => {
     console.log(event.target);
-    if (event.target.tagName == 'BUTTON' || 'SVG' || 'USE') {
+    if (
+      event.target.tagName == 'BUTTON' ||
+      event.target.tagName == 'SVG' ||
+      event.target.tagName == 'USE'
+    ) {
       if (exPopClose) {
         modal.innerHTML = '';
       }
@@ -693,6 +695,8 @@ exercisePartsList.addEventListener('click', async event => {
 });
 
 // FAVORITES
+const savedCards = JSON.parse(localStorage.getItem('exercises'));
+console.log(savedCards);
 
 const favList = document.querySelector('.fav-list');
 const favoritesPage = document.querySelector('#Favorites');
@@ -701,6 +705,7 @@ favoritesPage.addEventListener('click', renderCardsFromStorage);
 
 function renderCardsFromStorage(e) {
   const savedCards = JSON.parse(localStorage.getItem('exercises'));
+  console.log(savedCards);
 
   favList.innerHTML = savedCards
     .map(

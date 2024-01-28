@@ -321,7 +321,7 @@ li:last-child .pop-ex-rate-icon use {
 
 @media screen and (max-width: 767px) {
   .pop-ex-modal {
-    min-width: 335px;
+    width: 335px;
     height: auto;
     padding: 14px;
   }
@@ -465,16 +465,8 @@ li:last-child .pop-ex-rate-icon use {
   }
 }
 
-@media screen and (min-width: 1158px) {
-  /* pop-rating */
+@media screen and (min-width: 1440px) {
 
-  .pop-up-input-email {
-    height: 48px;
-  }
-  .pop-up-message {
-    margin-bottom: 32px;
-  }
-  /* pop-rating */
   .pop-ex-modal {
     width: 732px;
   }
@@ -485,5 +477,14 @@ li:last-child .pop-ex-rate-icon use {
 
   .pop-btns-container {
     justify-content: space-between;
+  }
+  
+  /* pop-rating */
+  
+    .pop-up-input-email {
+    height: 48px;
+  }
+  .pop-up-message {
+    margin-bottom: 32px;
   }
 }
