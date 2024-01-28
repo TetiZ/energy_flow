@@ -1,9 +1,14 @@
-<body>
-  <section class="favorites container">
-    <h2 class="favorites-title">Favorites</h2>
+import '../css/favorites.css';
+import '../css/layout/daily-norm-favorites.css';
 
-    <ul class="exercise-parts-list fav-list">
-      <li class="exercise-parts">
+const favList = document.querySelector('.fav-list');
+
+function addFavExercises(event) {
+  favList.innerHTML = results.reduce(
+    (html, result) =>
+      html +
+      `
+  <li class="exercise-parts">
         <div class="part-container">
           <div class="exercise-head-container">
             <span class="exercise-badge">WORKOUT</span>
@@ -43,9 +48,7 @@
               <p class="exercise-describe-category">Target:</p>
               <p class="exercise-describing">Abs</p>
             </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </section>
-</body>
+  `,
+    ''
+  );
+}

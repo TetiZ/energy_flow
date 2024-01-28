@@ -6,4 +6,4 @@ import('./js/quote');
 import('./js/pop-ups');
 import('./js/header');
 import('./js/page-after-switch');
-import('./js/social-media-list');
+// import('./js/social-media-list');
