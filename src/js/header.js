@@ -1,6 +1,11 @@
 const homePage = document.querySelector('#Home');
 const favoritesPage = document.querySelector('#Favorites');
 
+document.addEventListener('DOMContentLoaded', function () {
+  const pageId = getPageIdFromUrl();
+  setActivePage(pageId);
+});
+
 function setActivePage(pageId) {
   homePage.classList.remove('heder-nav-link-active');
   favoritesPage.classList.remove('heder-nav-link-active');
