@@ -285,7 +285,7 @@ import{musclesGroup as O,bodyPart as E}from"./api-8d58433a.js";const M=document.
           <svg class="exercise-part-icon" width="24" height="24">
             <use href="./img/icons.svg#icon-running-man"></use>
           </svg>
-          <p class="exercise-name-text">${e}</p> <!-- Исправлено: обернуто в ${e} -->
+          <p class="exercise-name-text">${e}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
@@ -304,4 +304,4 @@ import{musclesGroup as O,bodyPart as E}from"./api-8d58433a.js";const M=document.
       </div>
     </li>
   `).join("")}
-//# sourceMappingURL=exersises-82cb0058.js.map
+//# sourceMappingURL=exersises-6ef85a21.js.map
