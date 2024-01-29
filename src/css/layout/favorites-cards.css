@@ -119,6 +119,22 @@
   line-height: 1.5;
 }
 
+.empty-content-fav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.dumbbell-favirites-img {
+}
+.no-card-in-storage {
+  text-align: center;
+  width: 247px;
+  font-size: 14px;
+  line-height: 1.28;
+}
+
 @media screen and (min-width: 768px) {
   .favorites.container {
     padding: 64px 48px;
@@ -131,6 +147,12 @@
 
   .favorites-title {
     margin-bottom: 32px;
+  }
+
+  .no-card-in-storage {
+    width: 554px;
+    font-size: 18px;
+    line-height: 1.33;
   }
 }
 

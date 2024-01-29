@@ -667,7 +667,6 @@ function renderCardsFromStorage(e) {
   `
     )
     .join('');
-
   updateTrashButtonListeners();
 }
 
@@ -686,46 +685,44 @@ function updateTrashButtonListeners() {
   });
 }
 
-if (savedCards.length === 0) {
-  favList.insertAdjacentHTML(
-    'beforeend',
-    ` <img
-      class="dumbbel-favorites-img"
-      srcset="
-        /src/img/favorites/dumbbell-tab-desc.png  704w,
-        /src/img/favorites/dumbbell-tab-desc@2x.png  1408w,
-        /src/img/favorites/dumbbell-tab-desc.png     736w,
-        /src/img/favorites/dumbbell-tab-desc@2x.png  1472w,
-        /src/img/favorites/dumbbell-mob.png    335w,
-        /src/img/favorites/dumbbell-mob@2x.png  670w
-      "
-      src="/src/img/favorites/dumbbell-mob.png"
-      sizes="(min-width:
-    1440px) 704px, (min-width: 768px) 736px, (max-width: 375px) 335px"
-      alt="dumbbell icon"
-    />
-      <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>`
-  );
-} else {
-  favoritesContainer.insertAdjacentHTML(
-    'beforeend',
-    `<ul class="exercise-pages-counter">
-         <li class="exercise-page-number">
-           <button id="1" class="exercise-number-button">
-             1
-           </button>
-         </li>
-         <li class="exercise-page-number">
-           <button id="2" class="exercise-number-button">
-             2
-           </button>
-         </li>
-         <li class="exercise-page-number">
-           <button id="3" class="exercise-number-button">
-             3
-           </button>
-         </li>
-       </ul>
-`
-  );
+renderCardsFromStorage();
+
+function emptyContent() {
+  favList.innerHTML = `
+      <div class="empty-content-fav">
+        <img
+        class="dumbbell-favorites-img"
+        srcset="
+          ./img/favorites/dumbbell-tab-desc.png     116w,
+          ./img/favorites/dumbbell-tab-desc@2x.png  231w,
+          ./img/favorites/dumbbell-mob.png    85w,
+          ./img/favorites/dumbbell-mob@2x.png  170w
+        "
+        src="./img/favorites/dumbbell-mob.png"
+        sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
+        alt="dumbbell icon"
+      />
+      <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
+      </div>`;
+}
+// emptyContent();
+
+function addPaginationBtns() {
+  favoritesContainer.innerHTML = `<ul class="exercise-pages-counter">
+       <li class="exercise-page-number">
+         <button id="1" class="exercise-number-button">
+           1
+         </button>
+       </li>
+       <li class="exercise-page-number">
+         <button id="2" class="exercise-number-button">
+           2
+         </button>
+       </li>
+       <li class="exercise-page-number">
+         <button id="3" class="exercise-number-button">
+           3
+         </button>
+       </li>
+     </ul>`;
 }
