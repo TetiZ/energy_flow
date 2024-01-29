@@ -547,33 +547,53 @@ function popUp(data) {
 let allfav = [];
 
 function dataToStorage(data) {
-  const clickHandler = event => {
+  function clickHandler(event) {
     console.log(event.target);
-    console.log(popAddFavButton);
+
+    const localData = JSON.parse(localStorage.getItem('exercises')) || [];
+    console.log(123);
+
+    localData.push(data);
+    localStorage.setItem('exercises', JSON.stringify(localData));
+
+    allfav = [...localData];
+
+    const popAddFavButton = document.querySelector('.pop-add-fav');
     if (popAddFavButton) {
-      const localData = JSON.parse(localStorage.getItem('exercises')) || [];
-      console.log(123);
-
-      localData.push(data);
-      localStorage.setItem('exercises', JSON.stringify(localData));
-
-      allfav = [...localData];
-
-      popModal.removeEventListener('click', clickHandler);
-
-      iziToast.success({
-        title: 'Excellent choice!',
-        message:
-          'The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!',
-        position: 'center',
-      });
-    } else {
-      return;
+      popAddFavButton.removeEventListener('click', clickHandler);
     }
-  };
 
-  popModal.addEventListener('click', clickHandler);
+    const exPopClose = document.querySelector('.pop-ex-close-btn');
+
+    iziToast.success({
+      title: 'Excellent choice!',
+      message:
+        'The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!',
+      position: 'center',
+    });
+  }
+
+  
+
+  const popAddFavButton = document.querySelector('.pop-add-fav');
+  if (popAddFavButton) {
+    popAddFavButton.addEventListener('click', clickHandler);
+  } else {
+    console.error('Button not found');
+  }
+
+  function closeHandler() {
+    modal.innerHTML = '';
+  }
+
+  const exPopClose = document.querySelector('.pop-ex-close-btn');
+  if (exPopClose) {
+    exPopClose.addEventListener('click', closeHandler);
+  } else {
+    console.error('Close button not found');
+  }
 }
+
 
 exercisePartsList.addEventListener('click', async event => {
   event.preventDefault();
@@ -586,26 +606,12 @@ exercisePartsList.addEventListener('click', async event => {
   }
   if (currentId == currentId) {
     const data = dataStorage.results[currentId];
-
+    
     popUp(data);
-
     dataToStorage(data);
   }
 
-  popModal.addEventListener('click', event => {
-    console.log(event.target);
-    if (
-      event.target.tagName == 'BUTTON' ||
-      event.target.tagName == 'SVG' ||
-      event.target.tagName == 'USE'
-    ) {
-      if (exPopClose) {
-        modal.innerHTML = '';
-      }
-    }
-  });
 });
-
 // FAVORITES
 
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
@@ -709,20 +715,20 @@ function emptyContent() {
 
 function addPaginationBtns() {
   favoritesContainer.innerHTML = `<ul class="exercise-pages-counter">
-       <li class="exercise-page-number">
-         <button id="1" class="exercise-number-button">
-           1
-         </button>
-       </li>
-       <li class="exercise-page-number">
-         <button id="2" class="exercise-number-button">
-           2
-         </button>
-       </li>
-       <li class="exercise-page-number">
-         <button id="3" class="exercise-number-button">
-           3
-         </button>
-       </li>
-     </ul>`;
+        <li class="exercise-page-number">
+            <button id="1" class="exercise-number-button">
+            1
+          </button>
+        </li>
+        <li class="exercise-page-number">
+          <button id="2" class="exercise-number-button">
+            2
+          </button>
+        </li>
+        <li class="exercise-page-number">
+          <button id="3" class="exercise-number-button">
+            3
+          </button>
+        </li>
+      </ul>`;
 }
