@@ -1,5 +1,8 @@
 .favorites {
   background-color: rgba(232, 232, 232, 1);
+  width: 335px;
+    height: 450px;
+    margin-bottom: 20px;
 }
 
 .favorites-title {
@@ -117,7 +120,28 @@
   line-height: 1.5;
 }
 
+@media screen and (min-width: 768px) {
+  .favorites.container {
+    padding: 64px 48px;
+  }
+
+    .favorites {
+      width: 736px;
+        height: 928px;
+      margin-bottom: 16px;
+    }
+
+    .favorites-title {
+      margin-bottom: 32px;
+    }
+}
+
 @media screen and (min-width: 1440px) {
+.favorites {
+    width: 1408px;
+      height: 687px;
+  }
+
   .quote-box-text {
     margin-right: 0;
     margin-left: 0;

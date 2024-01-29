@@ -52,12 +52,14 @@
   .heder-nav-list {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 16px;
     padding: 8px 16px;
     width: 211px;
     border-radius: 60px;
     background: var(--dark-grey);
   }
+  
   .heder-link-list {
     display: flex;
     gap: 12px;
@@ -74,6 +76,11 @@
     background-color: var(--white);
     color: var(--main-text-color);
   }
+
+.heder-nav-link-active#Favorites {
+padding: 6px 14px;
+}
+
   .heder-link-item {
     width: 44px;
     height: 44px;
