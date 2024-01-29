@@ -471,7 +471,7 @@ function popUp(data) {
           height="24"
           aria-label="close icon"
         >
-          <use href="./img/icons.svg#icon-close"></use>
+          <use href="/energy_flow/assets/icons-de67b048.svg#icon-close"></use>
         </svg>
       </button>
       <div class="pop-exercises-img">
@@ -573,8 +573,6 @@ function dataToStorage(data) {
     });
   }
 
-  
-
   const popAddFavButton = document.querySelector('.pop-add-fav');
   if (popAddFavButton) {
     popAddFavButton.addEventListener('click', clickHandler);
@@ -594,7 +592,6 @@ function dataToStorage(data) {
   }
 }
 
-
 exercisePartsList.addEventListener('click', async event => {
   event.preventDefault();
   const currentId = event.target.id;
@@ -606,11 +603,10 @@ exercisePartsList.addEventListener('click', async event => {
   }
   if (currentId == currentId) {
     const data = dataStorage.results[currentId];
-    
+
     popUp(data);
     dataToStorage(data);
   }
-
 });
 // FAVORITES
 
