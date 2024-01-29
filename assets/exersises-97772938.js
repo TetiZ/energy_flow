@@ -186,7 +186,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
           height="24"
           aria-label="close icon"
         >
-          <use href="./img/icons.svg#icon-close"></use>
+          <use href="/energy_flow/assets/icons-de67b048.svg#icon-close"></use>
         </svg>
       </button>
       <div class="pop-exercises-img">
@@ -301,4 +301,4 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
       </div>
     </li>
   `).join(""),A()}$();function A(){document.querySelectorAll(".exercise-trash-button").forEach(t=>{t.addEventListener("click",i=>{const s=i.currentTarget.getAttribute("data-index");S.splice(s,1),localStorage.setItem("exercises",JSON.stringify(S)),$()})})}$();
-//# sourceMappingURL=exersises-b7d9edd4.js.map
+//# sourceMappingURL=exersises-97772938.js.map
