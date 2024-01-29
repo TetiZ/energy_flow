@@ -53,6 +53,16 @@
   line-height: 0.89;
   letter-spacing: -1.12px;
   margin-bottom: 20px;
+  animation: anim 2s;
+  animation-duration: 4s;
+}
+@keyframes anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .title-span {
