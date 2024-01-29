@@ -1,140 +1,137 @@
-import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}from"./api-8d58433a.js";const C=document.querySelector(".exercise-cards-list"),f=document.querySelector(".exercise-cards-list"),h=document.querySelector(".exercise-pages-counter"),M=document.querySelector(".exercise-form"),m=document.querySelector(".exercise-input-button"),v=document.querySelector(".exercise-input"),N=document.querySelectorAll(".exercise-button"),a=document.querySelector(".exercise-parts-list"),x=document.querySelector(".exercise-log-span"),o=document.querySelector(".exercise-title-span");document.querySelector(".exercise-part-button");document.querySelector(".pop-add-fav");document.querySelector(".pop-ex-close-btn");document.querySelector(".pop-backdrop");document.querySelector(".backdrop");document.querySelector(".pop-rating-btn");document.querySelector(".pop-up-close-btn");document.querySelector(".pop-ex-info");document.querySelector(".modal123");document.querySelector(".pop-backdrop.is-open");let u,w="",b=[],y,T=0,q=0,I=0,L=0;localStorage.removeItem("searchInput");localStorage.removeItem("searchQuery");sessionStorage.removeItem("data");C.addEventListener("click",async e=>{e.preventDefault(),b=[],u=1;try{const i=(await E(e)).results;b=[...i],o.innerHTML="",o.textContent=`${i[0].target}`.charAt(0).toUpperCase()+`${i[0].target}`.slice(1),sessionStorage.setItem("data",JSON.stringify({results:i})),T=0;for(let s=0;s<8;s++)T++;if(i.length===0)throw new Error({title:"No Results",message:"No images found. Please try a different search term."});o.style.visibility="visible",f.style.display="none",a.style.display="flex",x.style.visibility="visible",a.innerHTML=i.reduce((s,r,c)=>s+`
+import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}from"./api-8d58433a.js";const _=document.querySelector(".exercise-cards-list"),f=document.querySelector(".exercise-cards-list"),b=document.querySelector(".exercise-pages-counter"),C=document.querySelector(".exercise-form"),m=document.querySelector(".exercise-input-button"),h=document.querySelector(".exercise-input"),M=document.querySelectorAll(".exercise-button"),c=document.querySelector(".exercise-parts-list"),x=document.querySelector(".exercise-log-span"),o=document.querySelector(".exercise-title-span");document.querySelector(".exercise-part-button");document.querySelector(".pop-add-fav");document.querySelector(".pop-ex-close-btn");document.querySelector(".pop-backdrop");document.querySelector(".backdrop");document.querySelector(".pop-rating-btn");document.querySelector(".pop-up-close-btn");document.querySelector(".pop-ex-info");document.querySelector(".modal123");document.querySelector(".pop-backdrop.is-open");let u,$="",y=[],v,T=0,q=0,I=0,L=0;localStorage.removeItem("searchInput");localStorage.removeItem("searchQuery");sessionStorage.removeItem("data");_.addEventListener("click",async e=>{e.preventDefault(),y=[],u=1;try{const t=(await E(e)).results;y=[...t],o.innerHTML="",o.textContent=`${t[0].target}`.charAt(0).toUpperCase()+`${t[0].target}`.slice(1),sessionStorage.setItem("data",JSON.stringify({results:t})),T=0;for(let s=0;s<8;s++)T++;if(t.length===0)throw new Error({title:"No Results",message:"No images found. Please try a different search term."});o.style.visibility="visible",f.style.display="none",c.style.display="flex",x.style.visibility="visible",c.innerHTML=t.reduce((s,i,a)=>s+`
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${Math.round(r.rating)}</p>
+                    <p class="exercise-rating-number">${Math.round(i.rating)}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="./img/icons.svg#icon-star"></use>
+                        <use href="/energy_flow/assets/icons-de67b048.svg#icon-star"></use>
                     </svg>
                     </span>
 
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
-                <button class="exercise-part-button"  id='${c}'>Start
+                <button class="exercise-part-button"  id='${a}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-man"></use>
+                    <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
                 </svg>
-                <p class="exercise-name-text">${r.name.substring(0,24)+"..."}</p>
+                <p class="exercise-name-text">${i.name.substring(0,24)+"..."}</p>
                 </span>
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${r.burnedCalories} / ${r.time}</p>
+                    <p class="exercise-describing">${i.burnedCalories} / ${i.time}</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
-                    <p class="exercise-describing">${r.bodyPart}</p>
+                    <p class="exercise-describing">${i.bodyPart}</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Target:</p>
-                    <p class="exercise-describing">${r.target}</p>
+                    <p class="exercise-describing">${i.target}</p>
                 </li>
                 </ul>
             </div>
             </li>
-        `,"")}catch(t){console.error("Error:",t)}});h.addEventListener("click",async e=>{u=e.target.textContent,console.log(u),y=8;try{const s=JSON.parse(localStorage.getItem("searchQuery")).searchQuery;console.log(s);const r=`https://energyflow.b.goit.study/api/exercises?muscles=${s}&page=${u}&limit=${y}`,c=await fetch(r);if(c.status!==200)throw new Error("Failed to fetch data. Please try again later.");const g=(await c.json()).results;sessionStorage.setItem("data",JSON.stringify({results:g})),q=0;for(let n=0;n<8;n++)q++;a.innerHTML=g.reduce((n,p,k)=>n+`
+        `,"")}catch(r){console.error("Error:",r)}});b.addEventListener("click",async e=>{u=e.target.textContent,console.log(u),v=8;try{const s=JSON.parse(localStorage.getItem("searchQuery")).searchQuery;console.log(s);const i=`https://energyflow.b.goit.study/api/exercises?muscles=${s}&page=${u}&limit=${v}`,a=await fetch(i);if(a.status!==200)throw new Error("Failed to fetch data. Please try again later.");const g=(await a.json()).results;sessionStorage.setItem("data",JSON.stringify({results:g})),q=0;for(let n=0;n<8;n++)q++;c.innerHTML=g.reduce((n,d,k)=>n+`
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${Math.round(p.rating)}</p>
+                    <p class="exercise-rating-number">${Math.round(d.rating)}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="./img/icons.svg#icon-star"></use>
+                        <use href="./energy_flow/assets/icons-de67b048.svg#icon-star"></use>
                     </svg>
                     </span>
                     <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${k}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="./energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
-                <!-- <svg class="exercise-btn-icon">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
-                </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-man"></use>
+                    <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
                 </svg>
-                <p class="exercise-name-text">${p.name.substring(0,24)+"..."}</p>
+                <p class="exercise-name-text">${d.name.substring(0,24)+"..."}</p>
                 </span>
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${p.burnedCalories} / ${p.time}</p>
+                    <p class="exercise-describing">${d.burnedCalories} / ${d.time}</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
-                    <p class="exercise-describing">${p.bodyPart}</p>
+                    <p class="exercise-describing">${d.bodyPart}</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Target:</p>
-                    <p class="exercise-describing">${p.target}</p>
+                    <p class="exercise-describing">${d.target}</p>
                 </li>
                 </ul>
             </div>
             </li>
-        `,"")}catch(i){console.error("Error:",i)}});N.forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const i=t.target.textContent;localStorage.removeItem("searchInput"),localStorage.removeItem("searchQuery"),i==="Muscles"?(v.style.display="none",m.style.display="none",a.style.display="none",f.style.display="flex",x.style.visibility="hidden",o.style.visibility="hidden"):i==="Body parts"?(x.style.visibility="hidden",a.innerHTML="",v.style.display="flex",m.style.display="flex",a.style.display="flex",f.style.display="none",h.style.display="none",o.style.visibility="hidden"):(v.style.display="none",m.style.display="none",a.style.display="none",x.style.visibility="hidden",o.style.visibility="hidden")})});M.addEventListener("submit",async function(e){e.preventDefault(),b=[],u=1;try{const t=v.value,s=(await B(t)).results;if(b=[...s],sessionStorage.setItem("data",JSON.stringify({results:s})),s.length===0){a.innerHTML="",console.log(s.length),a.insertAdjacentHTML("beforeend","<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"),h.style.display="none";return}else{o.innerHTML="",o.textContent=`${s[0].bodyPart}`.charAt(0).toUpperCase()+`${s[0].bodyPart}`.slice(1),o.style.visibility="visible",x.style.visibility="visible",h.style.display="flex",I=0;for(let r=0;r<8;r++)I++;a.innerHTML=s.reduce((r,c,l)=>r+`
+        `,"")}catch(t){console.error("Error:",t)}});M.forEach(e=>{e.addEventListener("click",r=>{r.preventDefault();const t=r.target.textContent;localStorage.removeItem("searchInput"),localStorage.removeItem("searchQuery"),t==="Muscles"?(h.style.display="none",m.style.display="none",c.style.display="none",f.style.display="flex",x.style.visibility="hidden",o.style.visibility="hidden"):t==="Body parts"?(x.style.visibility="hidden",c.innerHTML="",h.style.display="flex",m.style.display="flex",c.style.display="flex",f.style.display="none",b.style.display="none",o.style.visibility="hidden"):(h.style.display="none",m.style.display="none",c.style.display="none",x.style.visibility="hidden",o.style.visibility="hidden")})});C.addEventListener("submit",async function(e){e.preventDefault(),y=[],u=1;try{const r=h.value,s=(await B(r)).results;if(y=[...s],sessionStorage.setItem("data",JSON.stringify({results:s})),s.length===0){c.innerHTML="",console.log(s.length),c.insertAdjacentHTML("beforeend","<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"),b.style.display="none";return}else{o.innerHTML="",o.textContent=`${s[0].bodyPart}`.charAt(0).toUpperCase()+`${s[0].bodyPart}`.slice(1),o.style.visibility="visible",x.style.visibility="visible",b.style.display="flex",I=0;for(let i=0;i<8;i++)I++;c.innerHTML=s.reduce((i,a,l)=>i+`
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
                     <span class="exercise-badge">WORKOUT</span>
                     <span class="exercise-part-rating">
-                    <p class="exercise-rating-number">${Math.round(c.rating)}</p>
+                    <p class="exercise-rating-number">${Math.round(a.rating)}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="./img/icons.svg#icon-star"></use>
+                        <use href="./energy_flow/assets/icons-de67b048.svg#icon-star"></use>
                     </svg>
                     </span>
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${l}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
                 </div>
 
                 <!-- <svg class="exercise-btn-icon">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
                 </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-man"></use>
+                    <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
                 </svg>
-                <p class="exercise-name-text">${c.name.substring(0,24)+"..."}</p>
+                <p class="exercise-name-text">${a.name.substring(0,24)+"..."}</p>
                 </span>
                 <ul class="exercise-describes-list">
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Burned calories:</p>
-                    <p class="exercise-describing">${c.burnedCalories} / ${c.time}</p>
+                    <p class="exercise-describing">${a.burnedCalories} / ${a.time}</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Body part:</p>
-                    <p class="exercise-describing">${c.bodyPart}</p>
+                    <p class="exercise-describing">${a.bodyPart}</p>
                 </li>
                 <li class="exercise-describe">
                     <p class="exercise-describe-category">Target:</p>
-                    <p class="exercise-describing">${c.target}</p>
+                    <p class="exercise-describing">${a.target}</p>
                 </li>
                 </ul>
             </div>
             </li>
-        `,"")}}catch(t){console.error("Error:",t)}});h.addEventListener("click",async e=>{u=e.target.textContent,y=8;try{w=JSON.parse(localStorage.getItem("searchInput")).searchInput;const s=`https://energyflow.b.goit.study/api/exercises?bodypart=${w}&page=${u}&limit=${y}`,r=await fetch(s);if(r.status!==200)throw new Error("Failed to fetch data. Please try again later.");const d=(await r.json()).results;console.log(d.length),sessionStorage.setItem("data",JSON.stringify({results:d})),L=0;for(let g=0;g<8;g++)L++;a.innerHTML=d.reduce((g,n,p)=>g+`
+        `,"")}}catch(r){console.error("Error:",r)}});b.addEventListener("click",async e=>{u=e.target.textContent,v=8;try{$=JSON.parse(localStorage.getItem("searchInput")).searchInput;const s=`https://energyflow.b.goit.study/api/exercises?bodypart=${$}&page=${u}&limit=${v}`,i=await fetch(s);if(i.status!==200)throw new Error("Failed to fetch data. Please try again later.");const p=(await i.json()).results;console.log(p.length),sessionStorage.setItem("data",JSON.stringify({results:p})),L=0;for(let g=0;g<8;g++)L++;c.innerHTML=p.reduce((g,n,d)=>g+`
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
@@ -142,13 +139,13 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
                     <span class="exercise-part-rating">
                     <p class="exercise-rating-number">${Math.round(n.rating)}</p>
                     <svg class="exercise-rating-icon" width="18" height="18">
-                        <use href="./img/icons.svg#icon-star"></use>
+                        <use href="/energy_flow/assets/icons-de67b048.svg#icon-star"></use>
                     </svg>
                     </span>
                     <a class="exercise-part-link" href="./partials/pop-up-exersise-card.html">
-                <button class="exercise-part-button"  id='${p}'>Start
+                <button class="exercise-part-button"  id='${d}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
                 </svg>
                 </button>
                 </a>
@@ -156,7 +153,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
 
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
-                    <use href="./img/icons.svg#icon-running-man"></use>
+                    <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
                 </svg>
                 <p class="exercise-name-text">${n.name.substring(0,24)+"..."}</p>
                 </span>
@@ -176,7 +173,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
                 </ul>
             </div>
             </li>
-        `,"")}catch(i){console.error("Error:",i)}});const P=document.querySelector(".modal123");function H(e){P.innerHTML=`
+        `,"")}catch(t){console.error("Error:",t)}});const P=document.querySelector(".modal123");function N(e){P.innerHTML=`
     <div class="pop-backdrop is-open">
     <div class="pop-ex-modal">
       <button class="pop-ex-close-btn">
@@ -208,7 +205,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
                 width="18"
                 height="18"
                 aria-label="ratting">
-                <use href="./img/icons.svg#icon-star"></use>
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-star"></use>
               </svg>
             </li>
         </ul>
@@ -247,7 +244,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
         <div class="pop-btns-container">
           <button class="pop-add-fav">
             Add to favorites<svg class="heart-icon" width="18" height="18">
-              <use href="./img/icons.svg#icon-heart"></use>
+              <use href="/energy_flow/assets/icons-de67b048.svg#icon-heart"></use>
             </svg>
           </button>
 
@@ -256,14 +253,14 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
       </div>
     </div>
   </div>
-`}function J(e){function t(c){console.log(c.target);const l=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),l.push(e),localStorage.setItem("exercises",JSON.stringify(l)),[...l];const d=document.querySelector(".pop-add-fav");d&&d.removeEventListener("click",t),document.querySelector(".pop-ex-close-btn"),O.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}const i=document.querySelector(".pop-add-fav");i?i.addEventListener("click",t):console.error("Button not found");function s(){P.innerHTML=""}const r=document.querySelector(".pop-ex-close-btn");r?r.addEventListener("click",s):console.error("Close button not found")}a.addEventListener("click",async e=>{e.preventDefault();const t=e.target.id,i=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"&&t==t){const s=i.results[t];H(s),J(s)}});const S=JSON.parse(localStorage.getItem("exercises"));console.log(S);const U=document.querySelector(".fav-list");document.querySelector(".favorites");function $(e){const t=JSON.parse(localStorage.getItem("exercises"));console.log(t),U.innerHTML=t.map(({bodyPart:i,name:s,target:r,burnedCalories:c},l)=>`
+`}function H(e){function r(a){console.log(a.target);const l=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),l.push(e),localStorage.setItem("exercises",JSON.stringify(l)),[...l];const p=document.querySelector(".pop-add-fav");p&&p.removeEventListener("click",r),document.querySelector(".pop-ex-close-btn"),O.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}const t=document.querySelector(".pop-add-fav");t?t.addEventListener("click",r):console.error("Button not found");function s(){P.innerHTML=""}const i=document.querySelector(".pop-ex-close-btn");i?i.addEventListener("click",s):console.error("Close button not found")}c.addEventListener("click",async e=>{e.preventDefault();const r=e.target.id,t=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"&&r==r){const s=t.results[r];N(s),H(s)}});const S=JSON.parse(localStorage.getItem("exercises"));console.log(S);const J=document.querySelector(".fav-list");document.querySelector(".favorites");function w(e){const r=JSON.parse(localStorage.getItem("exercises"));console.log(r),J.innerHTML=r.map(({bodyPart:t,name:s,target:i,burnedCalories:a},l)=>`
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="./img/icons.svg#icon-trash"></use>
+              <use href="/energy_flow/assets/icons-de67b048.svg#icon-trash"></use>
             </svg>
           </button>
           <a
@@ -273,32 +270,32 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as E,bodyPart as B}
             <button class="exercise-part-button">
               Start
               <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
               </svg>
             </button>
           </a>
         </div>
         <span class="exercise-part-name">
           <svg class="exercise-part-icon" width="24" height="24">
-            <use href="./img/icons.svg#icon-running-man"></use>
+            <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
           </svg>
           <p class="exercise-name-text">${s}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
             <p class="exercise-describe-category">Burned calories:</p>
-            <p class="exercise-describing">${c} / 3 min</p>
+            <p class="exercise-describing">${a} / 3 min</p>
           </li>
           <li class="exercise-describe">
             <p class="exercise-describe-category">Body part:</p>
-            <p class="exercise-describing">${i}</p>
+            <p class="exercise-describing">${t}</p>
           </li>
           <li class="exercise-describe">
             <p class="exercise-describe-category">Target:</p>
-            <p class="exercise-describing">${r}</p>
+            <p class="exercise-describing">${i}</p>
           </li>
         </ul>
       </div>
     </li>
-  `).join(""),A()}$();function A(){document.querySelectorAll(".exercise-trash-button").forEach(t=>{t.addEventListener("click",i=>{const s=i.currentTarget.getAttribute("data-index");S.splice(s,1),localStorage.setItem("exercises",JSON.stringify(S)),$()})})}$();
-//# sourceMappingURL=exersises-97772938.js.map
+  `).join(""),U()}w();function U(){document.querySelectorAll(".exercise-trash-button").forEach(r=>{r.addEventListener("click",t=>{const s=t.currentTarget.getAttribute("data-index");S.splice(s,1),localStorage.setItem("exercises",JSON.stringify(S)),w()})})}w();
+//# sourceMappingURL=exersises-6960a6c7.js.map
