@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const popAddFavButton = document.querySelector('.pop-add-fav');
 const exPopClose = document.querySelector('.pop-ex-close-btn');
 const exPopUpWindow = document.querySelector('.pop-backdrop');
@@ -81,3 +83,29 @@ popAddFavButton.addEventListener('click', sendToFav);
 function sendToFav() {
   localStorage.setItem(addToFavoriteKey, exerciseCardValue);
 }
+const ratingForm = document.querySelector('.pop-up-rating');
+ratingForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  const inputEmail = document.querySelector('.pop-up-input-email');
+  const userMsg = document.querySelector('.pop-up-message');
+  const rateValue = document.querySelector('.pop-up-rating-value').innerHTML;
+
+  const formData = {
+    email: inputEmail.value,
+    message: userMsg.value,
+    rating: parseFloat(rateValue),
+  };
+
+  axios
+    .post(
+      'https://energyflow.b.goit.study/api/exercises/64f389465ae26083f39b17a5/rating',
+      formData
+    )
+    .then(response => {
+      console.log(response.data);
+      ratingPopUpWindow.classList.remove('is-open');
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
