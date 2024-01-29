@@ -59,13 +59,13 @@
     border-radius: 60px;
     background: var(--dark-grey);
   }
+  
   .heder-link-list {
     display: flex;
     gap: 12px;
   }
   .heder-nav-link {
     color: var(--secondary-text-color);
-    padding-right: 5px;
   }
   .heder-nav-link-active {
     display: flex;
@@ -76,6 +76,11 @@
     background-color: var(--white);
     color: var(--main-text-color);
   }
+
+.heder-nav-link-active#Favorites {
+padding: 6px 14px;
+}
+
   .heder-link-item {
     width: 44px;
     height: 44px;
