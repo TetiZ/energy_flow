@@ -612,7 +612,7 @@ const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
 
 const favList = document.querySelector('.fav-list');
-const favoritesPage = document.querySelector('#Favorites');
+const favoritesContainer = document.querySelector('.favorites');
 
 function renderCardsFromStorage(e) {
   const savedCards = JSON.parse(localStorage.getItem('exercises'));
@@ -689,7 +689,43 @@ function updateTrashButtonListeners() {
 if (savedCards.length === 0) {
   favList.insertAdjacentHTML(
     'beforeend',
-    `<img 
+    ` <img
+      class="dumbbel-favorites-img"
+      srcset="
+        /src/img/favorites/dumbbell-tab-desc.png  704w,
+        /src/img/favorites/dumbbell-tab-desc@2x.png  1408w,
+        /src/img/favorites/dumbbell-tab-desc.png     736w,
+        /src/img/favorites/dumbbell-tab-desc@2x.png  1472w,
+        /src/img/favorites/dumbbell-mob.png    335w,
+        /src/img/favorites/dumbbell-mob@2x.png  670w
+      "
+      src="/src/img/favorites/dumbbell-mob.png"
+      sizes="(min-width:
+    1440px) 704px, (min-width: 768px) 736px, (max-width: 375px) 335px"
+      alt="dumbbell icon"
+    />
       <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>`
+  );
+} else {
+  favoritesContainer.insertAdjacentHTML(
+    'beforeend',
+    `<ul class="exercise-pages-counter">
+         <li class="exercise-page-number">
+           <button id="1" class="exercise-number-button">
+             1
+           </button>
+         </li>
+         <li class="exercise-page-number">
+           <button id="2" class="exercise-number-button">
+             2
+           </button>
+         </li>
+         <li class="exercise-page-number">
+           <button id="3" class="exercise-number-button">
+             3
+           </button>
+         </li>
+       </ul>
+`
   );
 }
