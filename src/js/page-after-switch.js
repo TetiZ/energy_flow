@@ -16,7 +16,7 @@ function pageSwitch() {
   homePageMenu.classList.remove('active-menu-nav-list-item');
   favoritesPageMenu.classList.remove('active-menu-nav-list-item');
 
-  if (currentPath.includes('index.html')) {
+  if (!currentPath.includes('favorites.html')) {
     homePage.classList.add('heder-nav-link-active');
     homePageMenu.classList.add('active-menu-nav-list-item');
   } else {
