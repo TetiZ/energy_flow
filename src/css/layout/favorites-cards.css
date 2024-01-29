@@ -1,5 +1,7 @@
 .favorites {
   background-color: rgba(232, 232, 232, 1);
+  width: 335px;
+  margin-bottom: 20px;
 }
 
 .favorites-title {
@@ -117,7 +119,48 @@
   line-height: 1.5;
 }
 
+.empty-content-fav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.dumbbell-favirites-img {
+}
+.no-card-in-storage {
+  text-align: center;
+  width: 247px;
+  font-size: 14px;
+  line-height: 1.28;
+}
+
+@media screen and (min-width: 768px) {
+  .favorites.container {
+    padding: 64px 48px;
+  }
+
+  .favorites {
+    width: 736px;
+    margin-bottom: 16px;
+  }
+
+  .favorites-title {
+    margin-bottom: 32px;
+  }
+
+  .no-card-in-storage {
+    width: 554px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
 @media screen and (min-width: 1440px) {
+  .favorites {
+    width: 1408px;
+  }
+
   .quote-box-text {
     margin-right: 0;
     margin-left: 0;

@@ -374,14 +374,23 @@
   margin-bottom: 2px;
 }
 
+
 .exercise-part-icon {
   border-radius: 100%;
   background-color: #7e847f;
 }
 
 .exercise-name-text {
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 223px;
+  height: 32px;
   font-size: 20px;
   line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 .exercise-describes-list {
@@ -392,6 +401,7 @@
   column-gap: 16px;
   row-gap: 6px;
 }
+
 
 .exercise-describe {
   height: 18px;
@@ -407,6 +417,8 @@
 }
 
 .exercise-describing {
+  text-transform: capitalize;
+  
   font-size: 12px;
   line-height: 1.5;
 }
@@ -534,9 +546,13 @@
     width: 312px;
   }
 
-  .exercise-describes-list {
-    margin-top: 0;
-  }
+    .exercise-name-text {
+      width: 225px;
+    }
+
+        .exercise-describes-list {
+          margin-top: 8px;
+        }
 }
 
 /* Desktop Styles */
@@ -567,6 +583,10 @@
   .part-container {
     width: 424px;
   }
+
+    .exercise-name-text {
+      width: 294px;
+    }
 }
 
 .exercise-input {

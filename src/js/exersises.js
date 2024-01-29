@@ -60,7 +60,9 @@ exerciseList.addEventListener('click', async event => {
     const results = data.results;
     allResults = [...results];
     spanTitle.innerHTML = '';
-    spanTitle.textContent = `${results[0].target}`;
+    spanTitle.textContent =
+      `${results[0].target}`.charAt(0).toUpperCase() +
+      `${results[0].target}`.slice(1);
 
     sessionStorage.setItem('data', JSON.stringify({ results }));
 
@@ -292,7 +294,9 @@ exerciseForm.addEventListener('submit', async function (event) {
       return;
     } else {
       spanTitle.innerHTML = '';
-      spanTitle.textContent = `${results[0].bodyPart}`;
+      spanTitle.textContent =
+        `${results[0].bodyPart}`.charAt(0).toUpperCase() +
+        `${results[0].bodyPart}`.slice(1);
       spanTitle.style.visibility = 'visible';
       spanLog.style.visibility = 'visible';
       pageCounter.style.display = 'flex';
@@ -412,7 +416,7 @@ pageCounter.addEventListener('click', async event => {
                         <use href="./img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                    <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                    <a class="exercise-part-link" href="./partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${inputPagination}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="./img/icons.svg#icon-arrow-right"></use>
@@ -421,9 +425,6 @@ pageCounter.addEventListener('click', async event => {
                 </a>
                 </div>
 
-                <!-- <svg class="exercise-btn-icon">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
-                </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
                     <use href="./img/icons.svg#icon-running-man"></use>
@@ -606,13 +607,12 @@ exercisePartsList.addEventListener('click', async event => {
 });
 
 // FAVORITES
+
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
 
 const favList = document.querySelector('.fav-list');
-const favoritesPage = document.querySelector('#Favorites');
-
-favoritesPage.addEventListener('click', renderCardsFromStorage);
+const favoritesContainer = document.querySelector('.favorites');
 
 function renderCardsFromStorage(e) {
   const savedCards = JSON.parse(localStorage.getItem('exercises'));
@@ -620,7 +620,7 @@ function renderCardsFromStorage(e) {
 
   favList.innerHTML = savedCards
     .map(
-      ({ bodyPart, name, target, burnedCalories }) => `
+      ({ bodyPart, name, target, burnedCalories }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -667,4 +667,62 @@ function renderCardsFromStorage(e) {
   `
     )
     .join('');
+  updateTrashButtonListeners();
+}
+
+renderCardsFromStorage();
+
+function updateTrashButtonListeners() {
+  const trashBtns = document.querySelectorAll('.exercise-trash-button');
+
+  trashBtns.forEach(trashBtn => {
+    trashBtn.addEventListener('click', e => {
+      const indexToRemove = e.currentTarget.getAttribute('data-index');
+      savedCards.splice(indexToRemove, 1);
+      localStorage.setItem('exercises', JSON.stringify(savedCards));
+      renderCardsFromStorage();
+    });
+  });
+}
+
+renderCardsFromStorage();
+
+function emptyContent() {
+  favList.innerHTML = `
+      <div class="empty-content-fav">
+        <img
+        class="dumbbell-favorites-img"
+        srcset="
+          ./img/favorites/dumbbell-tab-desc.png     116w,
+          ./img/favorites/dumbbell-tab-desc@2x.png  231w,
+          ./img/favorites/dumbbell-mob.png    85w,
+          ./img/favorites/dumbbell-mob@2x.png  170w
+        "
+        src="./img/favorites/dumbbell-mob.png"
+        sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
+        alt="dumbbell icon"
+      />
+      <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
+      </div>`;
+}
+// emptyContent();
+
+function addPaginationBtns() {
+  favoritesContainer.innerHTML = `<ul class="exercise-pages-counter">
+       <li class="exercise-page-number">
+         <button id="1" class="exercise-number-button">
+           1
+         </button>
+       </li>
+       <li class="exercise-page-number">
+         <button id="2" class="exercise-number-button">
+           2
+         </button>
+       </li>
+       <li class="exercise-page-number">
+         <button id="3" class="exercise-number-button">
+           3
+         </button>
+       </li>
+     </ul>`;
 }
