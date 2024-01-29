@@ -1,7 +1,7 @@
 import '../css/favorites.css';
 import '../css/layout/daily-norm-favorites.css';
 
-const savedCards = JSON.parse(localStorage.getItem('exercises'));
+let savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
 
 const favList = document.querySelector('.fav-list');
@@ -60,3 +60,17 @@ function renderCardsFromStorage(e) {
 }
 
 renderCardsFromStorage();
+
+const trashBtns = document.querySelectorAll('.exercise-trash-button');
+
+trashBtns.forEach(trashBtn =>
+  trashBtn.addEventListener('click', removeHandler)
+);
+
+function removeHandler(e) {
+  const indexToRemove = e.currentTarget.getAttribute('data-index');
+  savedCards.splice(indexToRemove, 1);
+  console.log(savedCards);
+  localStorage.setItem('exercises', JSON.stringify(savedCards));
+  renderCardsFromStorage();
+}
