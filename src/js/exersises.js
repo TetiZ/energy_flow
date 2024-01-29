@@ -416,7 +416,7 @@ pageCounter.addEventListener('click', async event => {
                         <use href="./img/icons.svg#icon-star"></use>
                     </svg>
                     </span>
-                    <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                    <a class="exercise-part-link" href="./partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${inputPagination}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="./img/icons.svg#icon-arrow-right"></use>
@@ -425,9 +425,6 @@ pageCounter.addEventListener('click', async event => {
                 </a>
                 </div>
 
-                <!-- <svg class="exercise-btn-icon">
-                <use href="./img/icons.svg#icon-arrow-right"></use>
-                </svg> -->
                 <span class="exercise-part-name">
                 <svg class="exercise-part-icon" width="24" height="24">
                     <use href="./img/icons.svg#icon-running-man"></use>
@@ -610,13 +607,12 @@ exercisePartsList.addEventListener('click', async event => {
 });
 
 // FAVORITES
+
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
 
 const favList = document.querySelector('.fav-list');
 const favoritesPage = document.querySelector('#Favorites');
-
-favoritesPage.addEventListener('click', renderCardsFromStorage);
 
 function renderCardsFromStorage(e) {
   const savedCards = JSON.parse(localStorage.getItem('exercises'));
@@ -624,7 +620,7 @@ function renderCardsFromStorage(e) {
 
   favList.innerHTML = savedCards
     .map(
-      ({ bodyPart, name, target, burnedCalories }) => `
+      ({ bodyPart, name, target, burnedCalories }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -671,4 +667,29 @@ function renderCardsFromStorage(e) {
   `
     )
     .join('');
+
+  updateTrashButtonListeners();
+}
+
+renderCardsFromStorage();
+
+function updateTrashButtonListeners() {
+  const trashBtns = document.querySelectorAll('.exercise-trash-button');
+
+  trashBtns.forEach(trashBtn => {
+    trashBtn.addEventListener('click', e => {
+      const indexToRemove = e.currentTarget.getAttribute('data-index');
+      savedCards.splice(indexToRemove, 1);
+      localStorage.setItem('exercises', JSON.stringify(savedCards));
+      renderCardsFromStorage();
+    });
+  });
+}
+
+if (savedCards.length === 0) {
+  favList.insertAdjacentHTML(
+    'beforeend',
+    `<img 
+      <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>`
+  );
 }
