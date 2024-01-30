@@ -781,12 +781,12 @@ function emptyContent() {
         <img
         class="dumbbell-favorites-img"
         srcset="
-          ./img/favorites/dumbbell-tab-desc.png     116w,
-          ./img/favorites/dumbbell-tab-desc@2x.png  231w,
-          ./img/favorites/dumbbell-mob.png    85w,
-          ./img/favorites/dumbbell-mob@2x.png  170w
+          /energy_flow/assets//img/favorites/dumbbell-tab-desc.png     116w,
+          /energy_flow/assets//img/favorites/dumbbell-tab-desc@2x.png  231w,
+          /energy_flow/assets//img/favorites/dumbbell-mob.png    85w,
+          /energy_flow/assets//img/favorites/dumbbell-mob@2x.png  170w
         "
-        src="./img/favorites/dumbbell-mob.png"
+        src="/energy_flow/assets//img/favorites/dumbbell-mob.png"
         sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
         alt="dumbbell icon"
       />
