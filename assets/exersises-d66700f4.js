@@ -313,9 +313,7 @@ import{i as _}from"./vendor-db25513e.js";import{musclesGroup as H,bodyPart as N}
           >
             <button class="exercise-part-button">
               Start
-              <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
-              </svg>
+              
             </button>
           </a>
         </div>
@@ -373,4 +371,4 @@ import{i as _}from"./vendor-db25513e.js";import{musclesGroup as H,bodyPart as N}
     </button>
   </li>
 </ul>`)}
-//# sourceMappingURL=exersises-66f148e2.js.map
+//# sourceMappingURL=exersises-d66700f4.js.map
