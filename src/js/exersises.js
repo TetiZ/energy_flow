@@ -589,6 +589,12 @@ function dataToStorage(data) {
   }
 }
 
+window.addEventListener('keydown', function (e) {
+    if (e.key === "Escape") {
+        modal.innerHTML = '';
+    }
+});
+
 exercisePartsList.addEventListener('click', async event => {
   event.preventDefault();
   const currentId = event.target.id;
