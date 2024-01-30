@@ -636,7 +636,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   const useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
-  useElem.setAttributeNS(
+  await useElem.setAttributeNS(
     'http://www.w3.org/1999/xlink',
     'href',
     '/src/img/icons.svg#icon-trash'
