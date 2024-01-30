@@ -39,11 +39,17 @@
   background: #f6f6f6;
   font-size: 14px;
   line-height: 1.29;
+  transition: background-color 0.8s ease, transform 0.8s ease, color 0.8s ease;
 }
 
-.exercise-button:hover,
+/* .exercise-button:hover,
 .exercise-button:focus {
   background: #7e847f;
+  color: #f6f6f6;
+} */
+
+.exercise-button-active {
+  background-color: #7e847f;
   color: #f6f6f6;
 }
 
@@ -374,7 +380,6 @@
   margin-bottom: 2px;
 }
 
-
 .exercise-part-icon {
   border-radius: 100%;
   background-color: #7e847f;
@@ -402,7 +407,6 @@
   row-gap: 6px;
 }
 
-
 .exercise-describe {
   height: 18px;
   display: flex;
@@ -418,7 +422,7 @@
 
 .exercise-describing {
   text-transform: capitalize;
-  
+
   font-size: 12px;
   line-height: 1.5;
 }
@@ -546,13 +550,13 @@
     width: 312px;
   }
 
-    .exercise-name-text {
-      width: 225px;
-    }
+  .exercise-name-text {
+    width: 225px;
+  }
 
-        .exercise-describes-list {
-          margin-top: 8px;
-        }
+  .exercise-describes-list {
+    margin-top: 8px;
+  }
 }
 
 /* Desktop Styles */
@@ -584,9 +588,9 @@
     width: 424px;
   }
 
-    .exercise-name-text {
-      width: 294px;
-    }
+  .exercise-name-text {
+    width: 294px;
+  }
 }
 
 .exercise-input {
