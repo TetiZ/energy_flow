@@ -541,6 +541,25 @@ function popUp(data) {
 `;
 }
 
+// Save card to storage foo
+
+exercisePartsList.addEventListener('click', async event => {
+  event.preventDefault();
+  const currentId = event.target.id;
+
+  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
+
+  if (event.target.tagName != 'BUTTON') {
+    return;
+  }
+  if (currentId == currentId) {
+    const data = dataStorage.results[currentId];
+
+    popUp(data);
+    dataToStorage(data);
+  }
+});
+
 let allfav = [];
 
 function dataToStorage(data) {
@@ -577,6 +596,26 @@ function dataToStorage(data) {
     console.error('Button not found');
   }
 
+  // Close card foo's
+
+  const modalBackDrop = document.querySelector('.pop-backdrop.is-open');
+
+  async function closeWithBackDrop() {
+    await popUp(data);
+    modal.innerHTML = '';
+    modalBackDrop.classList.remove('is-open');
+  }
+
+  if (modalBackDrop) {
+    modalBackDrop.addEventListener('click', closeWithBackDrop);
+  }
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      modal.innerHTML = '';
+    }
+  });
+
   function closeHandler() {
     modal.innerHTML = '';
   }
@@ -588,29 +627,6 @@ function dataToStorage(data) {
     console.error('Close button not found');
   }
 }
-
-window.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    modal.innerHTML = '';
-  }
-});
-
-exercisePartsList.addEventListener('click', async event => {
-  event.preventDefault();
-  const currentId = event.target.id;
-
-  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
-
-  if (event.target.tagName != 'BUTTON') {
-    return;
-  }
-  if (currentId == currentId) {
-    const data = dataStorage.results[currentId];
-
-    popUp(data);
-    dataToStorage(data);
-  }
-});
 
 // FAVORITES
 
