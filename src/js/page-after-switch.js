@@ -7,6 +7,7 @@ const homePage = document.querySelector('#Home');
 const favoritesPage = document.querySelector('#Favorites');
 const homePageMenu = document.querySelector('#Home-menu');
 const favoritesPageMenu = document.querySelector('#Favorites-menu');
+const scrollButton = document.querySelector('.btn-scroll-top');
 
 document.addEventListener('DOMContentLoaded', pageSwitch());
 
@@ -19,9 +20,11 @@ function pageSwitch() {
   if (!currentPath.includes('favorites.html')) {
     homePage.classList.add('heder-nav-link-active');
     homePageMenu.classList.add('active-menu-nav-list-item');
+    scrollButton.href = './index.html#header';
   } else {
     favoritesPage.classList.add('heder-nav-link-active');
     favoritesPageMenu.classList.add('active-menu-nav-list-item');
+    scrollButton.href = './favorites.html#header';
   }
 }
 
