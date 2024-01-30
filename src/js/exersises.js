@@ -717,7 +717,7 @@ favoritesContainer.addEventListener('click', function (event) {
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="/energy_flow/assets/icons-de67b048.svg#icon-trash"></use>
+              <use xlink:href="./img/icons.svg#icon-trash"></use>
             </svg>
           </button>
           <a
