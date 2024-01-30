@@ -590,9 +590,9 @@ function dataToStorage(data) {
 }
 
 window.addEventListener('keydown', function (e) {
-    if (e.key === "Escape") {
-        modal.innerHTML = '';
-    }
+  if (e.key === 'Escape') {
+    modal.innerHTML = '';
+  }
 });
 
 exercisePartsList.addEventListener('click', async event => {
@@ -746,7 +746,8 @@ favoritesContainer.addEventListener('click', function (event) {
 function updateTrashButtonListeners() {
   const trashBtns = document.querySelectorAll('.exercise-trash-button');
 
-  trashBtns.forEach(trashBtn => {
+  trashBtns.forEach((trashBtn, index) => {
+    trashBtn.setAttribute('data-index', index);
     trashBtn.addEventListener('click', e => {
       const indexToRemove = e.currentTarget.getAttribute('data-index');
       savedCards.splice(indexToRemove, 1);
