@@ -481,7 +481,9 @@ function popUp(data) {
       </div>
 
       <div class="pop-ex-content-container">
-        <h2 class="pop-exercise-name">${data.name}</h2>
+        <h2 class="pop-exercise-name">${
+          data.name.charAt(0).toUpperCase() + data.name.slice(1)
+        }</h2>
         <ul class="pop-ex-stars-list">
         <li><p class="pop-ex-current-rating">${data.rating}</p></li>
             <li>
@@ -669,7 +671,7 @@ function renderCardsFromStorage(e) {
           <svg class="exercise-part-icon" width="24" height="24">
             <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
           </svg>
-          <p class="exercise-name-text">${name}</p> 
+          <p class="exercise-name-text">${name.substring(0, 24) + '...'}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
@@ -734,7 +736,7 @@ favoritesContainer.addEventListener('click', function (event) {
           <svg class="exercise-part-icon" width="24" height="24">
             <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
           </svg>
-          <p class="exercise-name-text">${name}</p> 
+          <p class="exercise-name-text">${name.substring(0, 24) + '...'}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
