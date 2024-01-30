@@ -346,10 +346,10 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as H}
         <img
         class="dumbbell-favorites-img"
         srcset="
-          /energy_flow/assets//img/favorites/dumbbell-tab-desc.png     116w,
-          /energy_flow/assets//img/favorites/dumbbell-tab-desc@2x.png  231w,
-          /energy_flow/assets//img/favorites/dumbbell-mob.png    85w,
-          /energy_flow/assets//img/favorites/dumbbell-mob@2x.png  170w
+          /energy_flow/assets/img/favorites/dumbbell-tab-desc.png     116w,
+          /energy_flow/assets/img/favorites/dumbbell-tab-desc@2x.png  231w,
+          /energy_flow/assets/img/favorites/dumbbell-mob.png    85w,
+          /energy_flow/assets/img/favorites/dumbbell-mob@2x.png  170w
         "
         src="/energy_flow/assets//img/favorites/dumbbell-mob.png"
         sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
@@ -373,4 +373,4 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as H}
     </button>
   </li>
 </ul>`)}
-//# sourceMappingURL=exersises-7f8e8351.js.map
+//# sourceMappingURL=exersises-aea7d4e9.js.map
