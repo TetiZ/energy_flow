@@ -639,7 +639,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   useElem.setAttributeNS(
     'http://www.w3.org/1999/xlink',
     'href',
-    './img/icons.svg#icon-trash'
+    '/img/icons.svg#icon-trash'
   );
   svgElem.appendChild(useElem);
 
