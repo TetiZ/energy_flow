@@ -738,9 +738,7 @@ favoritesContainer.addEventListener('click', function (event) {
           >
             <button class="exercise-part-button">
               Start
-              <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
-              </svg>
+              
             </button>
           </a>
         </div>
