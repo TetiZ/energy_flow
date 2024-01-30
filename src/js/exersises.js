@@ -644,6 +644,9 @@ useElem.setAttributeNS(
 
 svgElem.appendChild(useElem);
 
+const trashButton = document.querySelector('.exercise-trash-button');
+trashButton.appendChild(svgElem);
+
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
 
