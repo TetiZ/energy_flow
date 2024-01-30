@@ -669,7 +669,7 @@ function renderCardsFromStorage(e) {
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-    <use href="./img/icons.svg#icon-trash"></use>
+    <use href="/src/img/icons.svg#icon-trash"></use>
   </svg>
           </button>
           <a
