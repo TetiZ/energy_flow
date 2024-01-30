@@ -196,7 +196,7 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as H}
       </div>
 
       <div class="pop-ex-content-container">
-        <h2 class="pop-exercise-name">${e.name}</h2>
+        <h2 class="pop-exercise-name">${e.name.charAt(0).toUpperCase()+e.name.slice(1)}</h2>
         <ul class="pop-ex-stars-list">
         <li><p class="pop-ex-current-rating">${e.rating}</p></li>
             <li>
@@ -279,7 +279,7 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as H}
           <svg class="exercise-part-icon" width="24" height="24">
             <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
           </svg>
-          <p class="exercise-name-text">${t}</p> 
+          <p class="exercise-name-text">${t.substring(0,24)+"..."}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
@@ -323,7 +323,7 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as H}
           <svg class="exercise-part-icon" width="24" height="24">
             <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
           </svg>
-          <p class="exercise-name-text">${c}</p> 
+          <p class="exercise-name-text">${c.substring(0,24)+"..."}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
@@ -373,4 +373,4 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as H}
     </button>
   </li>
 </ul>`)}
-//# sourceMappingURL=exersises-d02f904f.js.map
+//# sourceMappingURL=exersises-71f39c0e.js.map
