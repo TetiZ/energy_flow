@@ -632,17 +632,22 @@ function dataToStorage(data) {
 
 // FAVORITES
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
   const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   const useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
-  useElem.setAttributeNS('http://www.w3.org/1999/xlink', 'href', '#icon-trash');
+  useElem.setAttributeNS(
+    'http://www.w3.org/1999/xlink',
+    'href',
+    './img/icons.svg#icon-trash'
+  );
+  svgElem.appendChild(useElem);
+
+  await renderCardsFromStorage();
+
+  const trashButton = document.querySelector('.exercise-trash-button');
+  trashButton.append(svgElem);
 });
-
-svgElem.appendChild(useElem);
-
-const trashButton = document.querySelector('.exercise-trash-button');
-trashButton.appendChild(svgElem);
 
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
@@ -663,8 +668,8 @@ function renderCardsFromStorage(e) {
         <div class="exercise-head-container">
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
-            <svg class="close-icon">
-    <use xlink:href="#icon-trash"></use>
+            <svg class="exercise-trash-icon" width="16" height="16">
+    <use href="./img/icons.svg#icon-trash"></use>
   </svg>
           </button>
           <a
