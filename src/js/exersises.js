@@ -783,10 +783,10 @@ function emptyContent() {
         srcset="
           ./img/favorites/dumbbell-tab-desc.png     116w,
           ./img/favorites/dumbbell-tab-desc@2x.png  231w,
-          src\img\favorites\dumbbell-mob.png   85w,
+          src/img/favorites/dumbbell-mob.png   85w,
           ./img/favorites/dumbbell-mob@2x.png  170w
         "
-        src="src\img\favorites\dumbbell-mob.png"
+        src="src/img/favorites/dumbbell-mob.png"
         sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
         alt="dumbbell icon"
       />
