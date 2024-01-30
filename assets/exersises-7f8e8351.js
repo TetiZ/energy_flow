@@ -197,8 +197,8 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as H}
 
       <div class="pop-ex-content-container">
         <h2 class="pop-exercise-name">${e.name}</h2>
-        <p class="pop-ex-current-rating">${e.rating}</p>
         <ul class="pop-ex-stars-list">
+        <li><p class="pop-ex-current-rating">${e.rating}</p></li>
             <li>
               <svg
                 class="pop-ex-rate-icon"
@@ -373,4 +373,4 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as H}
     </button>
   </li>
 </ul>`)}
-//# sourceMappingURL=exersises-742aa974.js.map
+//# sourceMappingURL=exersises-7f8e8351.js.map
