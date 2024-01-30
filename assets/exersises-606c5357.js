@@ -260,7 +260,7 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as H,bodyPart as N}
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-    <use href="./img/icons.svg#icon-trash"></use>
+    <use href="/src/img/icons.svg#icon-trash"></use>
   </svg>
           </button>
           <a
@@ -369,4 +369,4 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as H,bodyPart as N}
     </button>
   </li>
 </ul>`)}
-//# sourceMappingURL=exersises-2ef51476.js.map
+//# sourceMappingURL=exersises-606c5357.js.map
