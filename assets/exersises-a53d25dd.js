@@ -89,7 +89,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
                 </ul>
             </div>
             </li>
-        `,"")}catch(c){console.error("Error:",c)}});I.forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const c=t.target.textContent;localStorage.removeItem("searchInput"),localStorage.removeItem("searchQuery"),R(t),c==="Muscles"?(b.style.display="none",w.style.display="none",o.style.display="none",S.style.display="flex",h.style.visibility="hidden",p.style.visibility="hidden"):c==="Body parts"?(h.style.visibility="hidden",o.innerHTML="",b.style.display="flex",w.style.display="flex",o.style.display="flex",S.style.display="none",x.style.display="none",p.style.visibility="hidden"):(b.style.display="none",w.style.display="none",o.style.display="none",h.style.visibility="hidden",p.style.visibility="hidden")})});U.addEventListener("submit",async function(e){e.preventDefault(),y=[],f=1;try{const t=b.value,s=(await j(t)).results;if(y=[...s],sessionStorage.setItem("data",JSON.stringify({results:s})),s.length===0){o.innerHTML="",console.log(s.length),o.insertAdjacentHTML("beforeend","<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"),x.style.display="none";return}else{p.innerHTML="",p.textContent=`${s[0].bodyPart}`.charAt(0).toUpperCase()+`${s[0].bodyPart}`.slice(1),p.style.visibility="visible",h.style.visibility="visible",x.style.display="flex",T=0;for(let i=0;i<8;i++)T++;o.innerHTML=s.reduce((i,r,d)=>i+`
+        `,"")}catch(c){console.error("Error:",c)}});I.forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const c=t.target.textContent;localStorage.removeItem("searchInput"),localStorage.removeItem("searchQuery"),J(t),c==="Muscles"?(b.style.display="none",w.style.display="none",o.style.display="none",S.style.display="flex",h.style.visibility="hidden",p.style.visibility="hidden"):c==="Body parts"?(h.style.visibility="hidden",o.innerHTML="",b.style.display="flex",w.style.display="flex",o.style.display="flex",S.style.display="none",x.style.display="none",p.style.visibility="hidden"):(b.style.display="none",w.style.display="none",o.style.display="none",h.style.visibility="hidden",p.style.visibility="hidden")})});U.addEventListener("submit",async function(e){e.preventDefault(),y=[],f=1;try{const t=b.value,s=(await j(t)).results;if(y=[...s],sessionStorage.setItem("data",JSON.stringify({results:s})),s.length===0){o.innerHTML="",console.log(s.length),o.insertAdjacentHTML("beforeend","<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"),x.style.display="none";return}else{p.innerHTML="",p.textContent=`${s[0].bodyPart}`.charAt(0).toUpperCase()+`${s[0].bodyPart}`.slice(1),p.style.visibility="visible",h.style.visibility="visible",x.style.display="flex",T=0;for(let i=0;i<8;i++)T++;o.innerHTML=s.reduce((i,r,d)=>i+`
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
@@ -257,7 +257,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
       </div>
     </div>
   </div>
-`}o.addEventListener("click",async e=>{e.preventDefault();const t=e.target.id,c=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"&&t==t){const s=c.results[t];E(s),A(s)}});function A(e){function t(n){console.log(n.target);const l=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),l.push(e),localStorage.setItem("exercises",JSON.stringify(l)),[...l];const a=document.querySelector(".pop-add-fav");a&&a.removeEventListener("click",t),document.querySelector(".pop-ex-close-btn"),O.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}const c=document.querySelector(".pop-add-fav");c?c.addEventListener("click",t):console.error("Button not found");const s=document.querySelector(".pop-backdrop.is-open");async function i(){await E(e),v.innerHTML="",s.classList.remove("is-open")}s&&s.addEventListener("click",i),window.addEventListener("keydown",function(n){n.key==="Escape"&&(v.innerHTML="")});function r(){v.innerHTML=""}const d=document.querySelector(".pop-ex-close-btn");d?d.addEventListener("click",r):console.error("Close button not found")}const g=JSON.parse(localStorage.getItem("exercises"));console.log(g);const k=document.querySelector(".fav-list"),z=document.querySelector(".favorites");function $(e){g.length===0?J():(k.innerHTML=g.slice(0,8).map(({bodyPart:t,name:c,target:s,burnedCalories:i},r)=>`
+`}o.addEventListener("click",async e=>{e.preventDefault();const t=e.target.id,c=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"&&t==t){const s=c.results[t];E(s),A(s)}});function A(e){function t(n){console.log(n.target);const l=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),l.push(e),localStorage.setItem("exercises",JSON.stringify(l)),[...l];const a=document.querySelector(".pop-add-fav");a&&a.removeEventListener("click",t),document.querySelector(".pop-ex-close-btn"),O.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}const c=document.querySelector(".pop-add-fav");c?c.addEventListener("click",t):console.error("Button not found");const s=document.querySelector(".pop-backdrop.is-open");async function i(){await E(e),v.innerHTML="",s.classList.remove("is-open")}s&&s.addEventListener("click",i),window.addEventListener("keydown",function(n){n.key==="Escape"&&(v.innerHTML="")});function r(){v.innerHTML=""}const d=document.querySelector(".pop-ex-close-btn");d?d.addEventListener("click",r):console.error("Close button not found")}function J(e){I.forEach(t=>{t.classList.remove("exercise-button-active"),e.target.classList.add("exercise-button-active")})}const g=JSON.parse(localStorage.getItem("exercises"));console.log(g);const k=document.querySelector(".fav-list"),z=document.querySelector(".favorites");function $(e){g.length===0?V():(k.innerHTML=g.slice(0,8).map(({bodyPart:t,name:c,target:s,burnedCalories:i},r)=>`
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -305,7 +305,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
         </ul>
       </div>
     </li>
-  `).join(""),P())}$();g.length>8&&V();z.addEventListener("click",function(e){if(e.target.classList.contains("exercise-number-button")){const t=parseInt(e.target.id),c=(t-1)*8,s=t*8;k.innerHTML=g.slice(c,s).map(({bodyPart:i,name:r,target:d,burnedCalories:n},l)=>`
+  `).join(""),P())}$();g.length>8&&R();z.addEventListener("click",function(e){if(e.target.classList.contains("exercise-number-button")){const t=parseInt(e.target.id),c=(t-1)*8,s=t*8;k.innerHTML=g.slice(c,s).map(({bodyPart:i,name:r,target:d,burnedCalories:n},l)=>`
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -355,7 +355,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
         </ul>
       </div>
     </li>
-  `).join(""),P()}});function P(){document.querySelectorAll(".exercise-trash-button").forEach((t,c)=>{t.setAttribute("data-index",c),t.addEventListener("click",s=>{const i=s.currentTarget.getAttribute("data-index");g.splice(i,1),localStorage.setItem("exercises",JSON.stringify(g)),$()})})}$();function J(){k.innerHTML=`
+  `).join(""),P()}});function P(){document.querySelectorAll(".exercise-trash-button").forEach((t,c)=>{t.setAttribute("data-index",c),t.addEventListener("click",s=>{const i=s.currentTarget.getAttribute("data-index");g.splice(i,1),localStorage.setItem("exercises",JSON.stringify(g)),$()})})}$();function V(){k.innerHTML=`
       <div class="empty-content-fav">
         <img
         class="dumbbell-favorites-img"
@@ -372,7 +372,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
         alt="dumbbell icon"
       />
       <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
-      </div>`}function V(){z.insertAdjacentHTML("beforeend",`<ul class="exercise-pages-counter">
+      </div>`}function R(){z.insertAdjacentHTML("beforeend",`<ul class="exercise-pages-counter">
   <li class="exercise-page-number">
       <button id="1" class="exercise-number-button first-btn">
       1
@@ -388,5 +388,5 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
       3
     </button>
   </li>
-</ul>`)}function R(e){I.forEach(t=>{t.classList.remove("exercise-button-active"),e.target.classList.add("exercise-button-active")})}
-//# sourceMappingURL=exersises-d0dfab3a.js.map
+</ul>`)}document.querySelector(".favorite-modal");
+//# sourceMappingURL=exersises-a53d25dd.js.map
