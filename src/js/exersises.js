@@ -241,6 +241,7 @@ exercise.forEach(elem => {
     const targetElement = event.target.textContent;
     localStorage.removeItem('searchInput');
     localStorage.removeItem('searchQuery');
+    filtersSwitch(event);
     if (targetElement === 'Muscles') {
       exerciseInput.style.display = 'none';
       exerciseInputButton.style.display = 'none';
@@ -819,4 +820,11 @@ function addPaginationBtns() {
   </li>
 </ul>`
   );
+}
+
+function filtersSwitch(event) {
+  exercise.forEach(item => {
+    item.classList.remove('exercise-button-active');
+    event.target.classList.add('exercise-button-active');
+  });
 }
