@@ -541,7 +541,7 @@ function popUp(data) {
             </svg>
           </button>
 
-          <button class="pop-rating-btn">Give a rating</button>
+          // <button class="pop-rating-btn">Give a rating</button>
         </div>
       </div>
     </div>
@@ -863,7 +863,7 @@ function favPopUp(data) {
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6667" d="M27.788 6.147c-.681-.681-1.49-1.222-2.38-1.591s-1.844-.559-2.807-.559c-.963 0-1.917.19-2.807.559s-1.699.909-2.38 1.591L16.001 7.56l-1.413-1.413c-1.376-1.376-3.241-2.148-5.187-2.148s-3.811.773-5.187 2.148c-1.376 1.376-2.148 3.241-2.148 5.187s.773 3.811 2.148 5.187l11.787 11.787 11.787-11.787a7.3288 7.3288 0 0 0 2.149-5.187c0-.963-.19-1.917-.558-2.807a7.3292 7.3292 0 0 0-1.591-2.38z"/>
             </svg>
           </button>
-<button class="pop-rating-btn">Give a rating</button>
+// <button class="pop-rating-btn">Give a rating</button>
         </div>
       </div>
     </div>
