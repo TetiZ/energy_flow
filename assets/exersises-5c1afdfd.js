@@ -253,15 +253,16 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as H,bodyPart as N}
       </div>
     </div>
   </div>
-`}o.addEventListener("click",async e=>{e.preventDefault();const t=e.target.id,i=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"&&t==t){const s=i.results[t];B(s),J(s)}});function J(e){function t(l){console.log(l.target);const n=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),n.push(e),localStorage.setItem("exercises",JSON.stringify(n)),[...n];const a=document.querySelector(".pop-add-fav");a&&a.removeEventListener("click",t),document.querySelector(".pop-ex-close-btn"),M.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}const i=document.querySelector(".pop-add-fav");i?i.addEventListener("click",t):console.error("Button not found");const s=document.querySelector(".pop-backdrop.is-open");async function r(){await B(e),v.innerHTML="",s.classList.remove("is-open")}s&&s.addEventListener("click",r),window.addEventListener("keydown",function(l){l.key==="Escape"&&(v.innerHTML="")});function c(){v.innerHTML=""}const p=document.querySelector(".pop-ex-close-btn");p?p.addEventListener("click",c):console.error("Close button not found")}document.addEventListener("DOMContentLoaded",async function(){const e=document.createElementNS("http://www.w3.org/2000/svg","svg"),t=document.createElementNS("http://www.w3.org/2000/svg","use");await t.setAttributeNS("http://www.w3.org/1999/xlink","href","/src/img/icons.svg#icon-trash"),e.appendChild(t),await w(),document.querySelector(".exercise-trash-button").append(e)});const b=JSON.parse(localStorage.getItem("exercises"));console.log(b);const L=document.querySelector(".fav-list"),O=document.querySelector(".favorites");function w(e){b.length===0?R():(L.innerHTML=b.slice(0,8).map(({bodyPart:t,name:i,target:s,burnedCalories:r},c)=>`
+`}o.addEventListener("click",async e=>{e.preventDefault();const t=e.target.id,i=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"&&t==t){const s=i.results[t];B(s),J(s)}});function J(e){function t(l){console.log(l.target);const n=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),n.push(e),localStorage.setItem("exercises",JSON.stringify(n)),[...n];const a=document.querySelector(".pop-add-fav");a&&a.removeEventListener("click",t),document.querySelector(".pop-ex-close-btn"),M.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}const i=document.querySelector(".pop-add-fav");i?i.addEventListener("click",t):console.error("Button not found");const s=document.querySelector(".pop-backdrop.is-open");async function r(){await B(e),v.innerHTML="",s.classList.remove("is-open")}s&&s.addEventListener("click",r),window.addEventListener("keydown",function(l){l.key==="Escape"&&(v.innerHTML="")});function c(){v.innerHTML=""}const p=document.querySelector(".pop-ex-close-btn");p?p.addEventListener("click",c):console.error("Close button not found")}document.addEventListener("DOMContentLoaded",async function(){const e=document.createElementNS("http://www.w3.org/2000/svg","svg"),t=document.createElementNS("http://www.w3.org/2000/svg","use");await t.setAttributeNS("http://www.w3.org/1999/xlink","href","icons.svg#icon-trash"),e.appendChild(t),await w(),document.querySelector(".exercise-trash-button").append(e)});const b=JSON.parse(localStorage.getItem("exercises"));console.log(b);const L=document.querySelector(".fav-list"),O=document.querySelector(".favorites");function w(e){b.length===0?R():(L.innerHTML=b.slice(0,8).map(({bodyPart:t,name:i,target:s,burnedCalories:r},c)=>`
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
-            <svg class="exercise-trash-icon" width="16" height="16">
-    <use href="/src/img/icons.svg#icon-trash"></use>
-  </svg>
+           <svg class="exercise-trash-icon" width="16" height="16">
+              <use href="/icons.svg#icon-trash"></use>
+            </svg>
+
           </button>
           <a
             class="exercise-part-link"
@@ -369,4 +370,4 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as H,bodyPart as N}
     </button>
   </li>
 </ul>`)}
-//# sourceMappingURL=exersises-606c5357.js.map
+//# sourceMappingURL=exersises-5c1afdfd.js.map
