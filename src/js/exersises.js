@@ -595,6 +595,8 @@ window.addEventListener('keydown', function (e) {
   }
 });
 
+const exercisePartButton = document.querySelector('.exercise-part-button');
+
 exercisePartsList.addEventListener('click', async event => {
   event.preventDefault();
   const currentId = event.target.id;
@@ -611,6 +613,7 @@ exercisePartsList.addEventListener('click', async event => {
     dataToStorage(data);
   }
 });
+
 // FAVORITES
 
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
@@ -625,7 +628,7 @@ function renderCardsFromStorage(e) {
 
   favList.innerHTML = savedCards
     .map(
-      ({ bodyPart, name, target, burnedCalories }, index) => `
+      ({ bodyPart, name, target, burnedCalories, _id }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -639,7 +642,7 @@ function renderCardsFromStorage(e) {
             class="exercise-part-link"
             href="./partials/pop-up-exercise-card.html"
           >
-            <button class="exercise-part-button">
+            <button class="favorite-button" id="${_id}">
               Start
               <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
@@ -677,6 +680,8 @@ function renderCardsFromStorage(e) {
 
 renderCardsFromStorage();
 
+const pagesCounter = document.querySelector('.exercise-pages-counter');
+
 function updateTrashButtonListeners() {
   const trashBtns = document.querySelectorAll('.exercise-trash-button');
 
@@ -686,11 +691,36 @@ function updateTrashButtonListeners() {
       savedCards.splice(indexToRemove, 1);
       localStorage.setItem('exercises', JSON.stringify(savedCards));
       renderCardsFromStorage();
+      if (savedCards.length < 8) {
+        pagesCounter.classList.add('visually-hidden');
+      }
     });
   });
 }
 
 renderCardsFromStorage();
+
+const favBtn = document.querySelector('.favorite-button');
+
+favList.addEventListener('click', async event => {
+  if (event.target === favBtn) {
+    event.preventDefault();
+    const currentId = event.target.id;
+
+    for (const card of savedCards) {
+      if (card._id === currentId) {
+        console.log(card);
+        favPopUp(card);
+      }
+    }
+
+    // if (currentId === currentId) {
+    //   const data = ;
+
+    //   // popUp(data);
+    // }
+  }
+});
 
 function emptyContent() {
   favList.innerHTML = `
@@ -730,4 +760,105 @@ function addPaginationBtns() {
           </button>
         </li>
       </ul>`;
+}
+
+const favModal = document.querySelector('.favorite-modal');
+function favPopUp(data) {
+  favModal.innerHTML = `
+    <div class="pop-backdrop is-open">
+    <div class="pop-ex-modal">
+      <button class="pop-ex-close-btn fav-close-btn">
+        <svg
+          class="pop-ex-close-btn-icon"
+          width="24"
+          height="24"
+          aria-label="close icon"
+        >
+          <use href="/energy_flow/assets/icons-de67b048.svg#icon-close"></use>
+        </svg>
+      </button>
+      <div class="pop-exercises-img">
+        <img
+          src="${data.gifUrl}"
+          class="img-ex"
+          width="295"
+          height="258"
+        />
+      </div>
+
+      <div class="pop-ex-content-container">
+        <h2 class="pop-exercise-name">${data.name}</h2>
+        <p class="pop-ex-current-rating">${data.rating}</p>
+        <ul class="pop-ex-stars-list">
+            <li>
+              <svg
+                class="pop-ex-rate-icon"
+                width="18"
+                height="18"
+                aria-label="ratting">
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-star"></use>
+              </svg>
+            </li>
+        </ul>
+
+        <hr class="decorate-elem" />
+
+        <div class="pop-ex-info">
+          <div class="field">
+            <span class="value">Target</span>
+            <span class="label">${data.target}</span>
+          </div>
+          <div class="field">
+            <span class="value">Body Part</span>
+            <span class="label">${data.bodyPart}</span>
+          </div>
+          <div class="field">
+            <span class="value">Equipment</span>
+            <span class="label">${data.equipment}</span>
+          </div>
+          <div class="field">
+            <span class="value">Popular</span>
+            <span class="label">${data.popularity}</span>
+          </div>
+          <div class="field">
+            <span class="value">Burned Calories</span>
+            <span class="label">${data.burnedCalories}</span>
+          </div>
+        </div>
+
+        <hr class="decorate-elem" />
+
+        <p class="pop-desc-exercise">
+          ${data.description}
+        </p>
+
+        <div class="pop-btns-container">
+          <button class="pop-add-fav fav-remove-btn">
+            Remove from<svg class="heart-icon" width="18" height="18">
+              <use href="/energy_flow/assets/icons-de67b048.svg#icon-heart"></use>
+            </svg>
+          </button>
+
+          <button class="pop-rating-btn">Give a rating</button>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+  const removeBtn = document.querySelector('.fav-remove-btn');
+
+  removeBtn.addEventListener('click', function (event) {
+    console.log('clicked');
+    const indexToRemove = event.currentTarget.getAttribute('data-index');
+    savedCards.splice(indexToRemove, 1);
+    localStorage.setItem('exercises', JSON.stringify(savedCards));
+    renderCardsFromStorage();
+    favModal.innerHTML = '';
+  });
+
+  const closeBtn = document.querySelector('.fav-close-btn');
+
+  closeBtn.addEventListener('click', function () {
+    favModal.innerHTML = '';
+  });
 }
