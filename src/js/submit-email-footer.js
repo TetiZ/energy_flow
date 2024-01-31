@@ -5,7 +5,12 @@ const form = document.querySelector('.subs-form');
 const localStorageKey = 'user-email';
 
 const savedEmail = localStorage.getItem(localStorageKey);
-form.elements.email.value = savedEmail ? savedEmail : '';
+
+if (savedEmail) {
+  form.elements.email.value = savedEmail;
+} else {
+  form.elements.email.value = '';
+}
 
 form.addEventListener('input', saveToLocalStorage);
 
