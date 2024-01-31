@@ -637,10 +637,6 @@ function dataToStorage(data) {
 
 const spriteURL = '../img/icons.svg';
 
-{
-  spriteURL;
-}
-
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
 
@@ -661,7 +657,7 @@ function renderCardsFromStorage(e) {
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
              <svg class="exercise-trash-icon" width="16" height="16">
-              <use href=""${spriteURL}#icon-trash""></use>
+              <use href="${spriteURL}#icon-trash""></use>
             </svg>
 
           </button>
@@ -727,7 +723,7 @@ favoritesContainer.addEventListener('click', function (event) {
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-              <use href=""${spriteURL}#icon-trash"></use>
+              <use href="${spriteURL}#icon-trash"></use>
             </svg>
 
           </button>
