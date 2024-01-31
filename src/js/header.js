@@ -2,8 +2,6 @@
 // const favoritesPage = document.querySelector('#Favorites');
 
 // function setActivePage(pageId) {
-//   homePage.classList.remove('heder-nav-link-active');
-//   favoritesPage.classList.remove('heder-nav-link-active');
 //   if (pageId === 'Home') {
 //     homePage.classList.add('heder-nav-link-active');
 //   } else if (pageId === 'Favorites') {

@@ -481,9 +481,11 @@ function popUp(data) {
       </div>
 
       <div class="pop-ex-content-container">
-        <h2 class="pop-exercise-name">${data.name}</h2>
-        <p class="pop-ex-current-rating">${data.rating}</p>
+        <h2 class="pop-exercise-name">${
+          data.name.charAt(0).toUpperCase() + data.name.slice(1)
+        }</h2>
         <ul class="pop-ex-stars-list">
+        <li><p class="pop-ex-current-rating">${data.rating}</p></li>
             <li>
               <svg
                 class="pop-ex-rate-icon"
@@ -541,6 +543,25 @@ function popUp(data) {
 `;
 }
 
+// Save card to storage foo
+
+exercisePartsList.addEventListener('click', async event => {
+  event.preventDefault();
+  const currentId = event.target.id;
+
+  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
+
+  if (event.target.tagName != 'BUTTON') {
+    return;
+  }
+  if (currentId == currentId) {
+    const data = dataStorage.results[currentId];
+
+    popUp(data);
+    dataToStorage(data);
+  }
+});
+
 let allfav = [];
 
 function dataToStorage(data) {
@@ -577,6 +598,26 @@ function dataToStorage(data) {
     console.error('Button not found');
   }
 
+  // Close card foo's
+
+  const modalBackDrop = document.querySelector('.pop-backdrop.is-open');
+
+  async function closeWithBackDrop() {
+    await popUp(data);
+    modal.innerHTML = '';
+    modalBackDrop.classList.remove('is-open');
+  }
+
+  if (modalBackDrop) {
+    modalBackDrop.addEventListener('click', closeWithBackDrop);
+  }
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      modal.innerHTML = '';
+    }
+  });
+
   function closeHandler() {
     modal.innerHTML = '';
   }
@@ -589,28 +630,6 @@ function dataToStorage(data) {
   }
 }
 
-window.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    modal.innerHTML = '';
-  }
-});
-
-exercisePartsList.addEventListener('click', async event => {
-  event.preventDefault();
-  const currentId = event.target.id;
-
-  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
-
-  if (event.target.tagName != 'BUTTON') {
-    return;
-  }
-  if (currentId == currentId) {
-    const data = dataStorage.results[currentId];
-
-    popUp(data);
-    dataToStorage(data);
-  }
-});
 // FAVORITES
 
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
@@ -620,12 +639,13 @@ const favList = document.querySelector('.fav-list');
 const favoritesContainer = document.querySelector('.favorites');
 
 function renderCardsFromStorage(e) {
-  const savedCards = JSON.parse(localStorage.getItem('exercises'));
-  console.log(savedCards);
-
-  favList.innerHTML = savedCards
-    .map(
-      ({ bodyPart, name, target, burnedCalories }, index) => `
+  if (savedCards.length === 0) {
+    emptyContent();
+  } else {
+    favList.innerHTML = savedCards
+      .slice(0, 8)
+      .map(
+        ({ bodyPart, name, target, burnedCalories }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -651,7 +671,7 @@ function renderCardsFromStorage(e) {
           <svg class="exercise-part-icon" width="24" height="24">
             <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
           </svg>
-          <p class="exercise-name-text">${name}</p> 
+          <p class="exercise-name-text">${name.substring(0, 24) + '...'}</p> 
         </span>
         <ul class="exercise-describes-list">
           <li class="exercise-describe">
@@ -670,17 +690,82 @@ function renderCardsFromStorage(e) {
       </div>
     </li>
   `
-    )
-    .join('');
-  updateTrashButtonListeners();
+      )
+      .join('');
+    updateTrashButtonListeners();
+  }
 }
 
 renderCardsFromStorage();
 
+if (savedCards.length > 8) {
+  addPaginationBtns();
+}
+
+favoritesContainer.addEventListener('click', function (event) {
+  if (event.target.classList.contains('exercise-number-button')) {
+    const pageNumber = parseInt(event.target.id);
+    const start = (pageNumber - 1) * 8;
+    const end = pageNumber * 8;
+    favList.innerHTML = savedCards
+      .slice(start, end)
+      .map(
+        ({ bodyPart, name, target, burnedCalories }, index) => `
+    <li class="exercise-parts">
+      <div class="part-container">
+        <div class="exercise-head-container">
+          <span class="exercise-badge">WORKOUT</span>
+          <button class="exercise-trash-button">
+            <svg class="exercise-trash-icon" width="16" height="16">
+              <use href="/energy_flow/assets/icons-de67b048.svg#icon-trash"></use>
+            </svg>
+          </button>
+          <a
+            class="exercise-part-link"
+            href="./partials/pop-up-exercise-card.html"
+          >
+            <button class="exercise-part-button">
+              Start
+              <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </a>
+        </div>
+        <span class="exercise-part-name">
+          <svg class="exercise-part-icon" width="24" height="24">
+            <use href="/energy_flow/assets/icons-de67b048.svg#icon-running-man"></use>
+          </svg>
+          <p class="exercise-name-text">${name.substring(0, 24) + '...'}</p> 
+        </span>
+        <ul class="exercise-describes-list">
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Burned calories:</p>
+            <p class="exercise-describing">${burnedCalories} / 3 min</p>
+          </li>
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Body part:</p>
+            <p class="exercise-describing">${bodyPart}</p>
+          </li>
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Target:</p>
+            <p class="exercise-describing">${target}</p>
+          </li>
+        </ul>
+      </div>
+    </li>
+  `
+      )
+      .join('');
+    updateTrashButtonListeners();
+  }
+});
+
 function updateTrashButtonListeners() {
   const trashBtns = document.querySelectorAll('.exercise-trash-button');
 
-  trashBtns.forEach(trashBtn => {
+  trashBtns.forEach((trashBtn, index) => {
+    trashBtn.setAttribute('data-index', index);
     trashBtn.addEventListener('click', e => {
       const indexToRemove = e.currentTarget.getAttribute('data-index');
       savedCards.splice(indexToRemove, 1);
@@ -698,36 +783,40 @@ function emptyContent() {
         <img
         class="dumbbell-favorites-img"
         srcset="
+
           /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc.png?raw=true   116w,
           /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
           /energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true   85w,
           /energy_flow/blob/main/src/img/favorites/dumbbell-mob@2x.png?raw=true  170w
         "
         src="/energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true"
+
         sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
         alt="dumbbell icon"
       />
       <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
       </div>`;
 }
-// emptyContent();
 
 function addPaginationBtns() {
-  favoritesContainer.innerHTML = `<ul class="exercise-pages-counter">
-        <li class="exercise-page-number">
-            <button id="1" class="exercise-number-button">
-            1
-          </button>
-        </li>
-        <li class="exercise-page-number">
-          <button id="2" class="exercise-number-button">
-            2
-          </button>
-        </li>
-        <li class="exercise-page-number">
-          <button id="3" class="exercise-number-button">
-            3
-          </button>
-        </li>
-      </ul>`;
+  favoritesContainer.insertAdjacentHTML(
+    'beforeend',
+    `<ul class="exercise-pages-counter">
+  <li class="exercise-page-number">
+      <button id="1" class="exercise-number-button first-btn">
+      1
+    </button>
+  </li>
+  <li class="exercise-page-number">
+    <button id="2" class="exercise-number-button second-btn">
+      2
+    </button>
+  </li>
+  <li class="exercise-page-number">
+    <button id="3" class="exercise-number-button third-btn">
+      3
+    </button>
+  </li>
+</ul>`
+  );
 }
