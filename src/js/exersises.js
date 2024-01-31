@@ -668,10 +668,6 @@ function renderCardsFromStorage(e) {
             </svg>
 
           </button>
-          <a
-            class="exercise-part-link"
-            href="./partials/pop-up-exercise-card.html"
-          >
             <button class="exercise-part-button">
               Start
               <svg class="exercise-btn-icon" width="14" height="14" viewBox="0 0 32 32">
@@ -738,10 +734,6 @@ favoritesContainer.addEventListener('click', function (event) {
             </svg>
 
           </button>
-          <a
-            class="exercise-part-link"
-            href="./partials/pop-up-exercise-card.html"
-          >
             <button class="exercise-part-button">
               Start
               <svg class="exercise-btn-icon" width="14" height="14"  viewBox="0 0 32 32">
