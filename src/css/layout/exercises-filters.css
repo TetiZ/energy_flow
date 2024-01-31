@@ -39,11 +39,17 @@
   background: #f6f6f6;
   font-size: 14px;
   line-height: 1.29;
+  transition: background-color 0.8s ease, transform 0.8s ease, color 0.8s ease;
 }
 
-.exercise-button:hover,
+/* .exercise-button:hover,
 .exercise-button:focus {
   background: #7e847f;
+  color: #f6f6f6;
+} */
+
+.exercise-button-active {
+  background-color: #7e847f;
   color: #f6f6f6;
 }
 

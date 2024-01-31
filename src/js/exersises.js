@@ -241,6 +241,7 @@ exercise.forEach(elem => {
     const targetElement = event.target.textContent;
     localStorage.removeItem('searchInput');
     localStorage.removeItem('searchQuery');
+    filtersSwitch(event);
     if (targetElement === 'Muscles') {
       exerciseInput.style.display = 'none';
       exerciseInputButton.style.display = 'none';
@@ -481,9 +482,11 @@ function popUp(data) {
       </div>
 
       <div class="pop-ex-content-container">
-        <h2 class="pop-exercise-name">${data.name}</h2>
-        <p class="pop-ex-current-rating">${data.rating}</p>
+        <h2 class="pop-exercise-name">${
+          data.name.charAt(0).toUpperCase() + data.name.slice(1)
+        }</h2>
         <ul class="pop-ex-stars-list">
+        <li><p class="pop-ex-current-rating">${data.rating}</p></li>
             <li>
               <svg
                 class="pop-ex-rate-icon"
@@ -541,6 +544,25 @@ function popUp(data) {
 `;
 }
 
+// Save card to storage foo
+
+exercisePartsList.addEventListener('click', async event => {
+  event.preventDefault();
+  const currentId = event.target.id;
+
+  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
+
+  if (event.target.tagName != 'BUTTON') {
+    return;
+  }
+  if (currentId == currentId) {
+    const data = dataStorage.results[currentId];
+
+    popUp(data);
+    dataToStorage(data);
+  }
+});
+
 let allfav = [];
 
 function dataToStorage(data) {
@@ -577,6 +599,26 @@ function dataToStorage(data) {
     console.error('Button not found');
   }
 
+  // Close card foo's
+
+  const modalBackDrop = document.querySelector('.pop-backdrop.is-open');
+
+  async function closeWithBackDrop() {
+    await popUp(data);
+    modal.innerHTML = '';
+    modalBackDrop.classList.remove('is-open');
+  }
+
+  if (modalBackDrop) {
+    modalBackDrop.addEventListener('click', closeWithBackDrop);
+  }
+
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      modal.innerHTML = '';
+    }
+  });
+
   function closeHandler() {
     modal.innerHTML = '';
   }
@@ -588,31 +630,6 @@ function dataToStorage(data) {
     console.error('Close button not found');
   }
 }
-
-window.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape') {
-    modal.innerHTML = '';
-  }
-});
-
-const exercisePartButton = document.querySelector('.exercise-part-button');
-
-exercisePartsList.addEventListener('click', async event => {
-  event.preventDefault();
-  const currentId = event.target.id;
-
-  const dataStorage = JSON.parse(sessionStorage.getItem('data'));
-
-  if (event.target.tagName != 'BUTTON') {
-    return;
-  }
-  if (currentId == currentId) {
-    const data = dataStorage.results[currentId];
-
-    popUp(data);
-    dataToStorage(data);
-  }
-});
 
 // FAVORITES
 
@@ -713,12 +730,6 @@ favList.addEventListener('click', async event => {
         favPopUp(card);
       }
     }
-
-    // if (currentId === currentId) {
-    //   const data = ;
-
-    //   // popUp(data);
-    // }
   }
 });
 
@@ -740,7 +751,6 @@ function emptyContent() {
       <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
       </div>`;
 }
-// emptyContent();
 
 function addPaginationBtns() {
   favoritesContainer.innerHTML = `<ul class="exercise-pages-counter">
@@ -838,8 +848,7 @@ function favPopUp(data) {
               <use href="/energy_flow/assets/icons-de67b048.svg#icon-heart"></use>
             </svg>
           </button>
-
-          <button class="pop-rating-btn">Give a rating</button>
+<button class="pop-rating-btn">Give a rating</button>
         </div>
       </div>
     </div>
