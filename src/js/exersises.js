@@ -655,9 +655,9 @@ function renderCardsFromStorage(e) {
     emptyContent();
   } else {
     favList.innerHTML = savedCards
-      .slice(0, 8)
+      // .slice(0, 8)
       .map(
-        ({ bodyPart, name, target, burnedCalories }, index) => `
+        ({ bodyPart, name, target, burnedCalories, _id }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -666,13 +666,12 @@ function renderCardsFromStorage(e) {
              <svg class="exercise-trash-icon" width="16" height="16" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M21.333 8V6.933c0-1.493 0-2.24-.291-2.811a2.666 2.666 0 0 0-1.165-1.165c-.57-.291-1.317-.291-2.811-.291h-2.133c-1.493 0-2.24 0-2.811.291-.502.256-.91.664-1.165 1.165-.291.57-.291 1.317-.291 2.811V8m2.667 7.333V22m5.334-6.667V22M4 8h24m-2.667 0v14.933c0 2.24 0 3.36-.436 4.216a3.9962 3.9962 0 0 1-1.748 1.748c-.856.436-1.976.436-4.216.436h-5.867c-2.24 0-3.36 0-4.216-.436a3.9962 3.9962 0 0 1-1.748-1.748c-.436-.856-.436-1.976-.436-4.216V8"/>
             </svg>
-
           </button>
-            <button class="exercise-part-button">
+            <button class="favorite-button" id="${_id}">
               Start
               <svg class="exercise-btn-icon" width="14" height="14" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="m15 28 13-13m0 0L15 2m13 13H2"/>
-              </svg>
+   </svg>
             </button>
           </a>
         </div>
@@ -713,70 +712,6 @@ renderCardsFromStorage();
 if (savedCards.length > 8) {
   addPaginationBtns();
 }
-
-favoritesContainer.addEventListener('click', function (event) {
-  if (event.target.classList.contains('exercise-number-button')) {
-    const pageNumber = parseInt(event.target.id);
-    const start = (pageNumber - 1) * 8;
-    const end = pageNumber * 8;
-    favList.innerHTML = savedCards
-      .slice(start, end)
-      .map(
-        ({ bodyPart, name, target, burnedCalories }, index) => `
-    <li class="exercise-parts">
-      <div class="part-container">
-        <div class="exercise-head-container">
-          <span class="exercise-badge">WORKOUT</span>
-          <button class="exercise-trash-button">
-            <svg class="exercise-trash-icon" width="16" height="16"  viewBox="0 0 32 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M21.333 8V6.933c0-1.493 0-2.24-.291-2.811a2.666 2.666 0 0 0-1.165-1.165c-.57-.291-1.317-.291-2.811-.291h-2.133c-1.493 0-2.24 0-2.811.291-.502.256-.91.664-1.165 1.165-.291.57-.291 1.317-.291 2.811V8m2.667 7.333V22m5.334-6.667V22M4 8h24m-2.667 0v14.933c0 2.24 0 3.36-.436 4.216a3.9962 3.9962 0 0 1-1.748 1.748c-.856.436-1.976.436-4.216.436h-5.867c-2.24 0-3.36 0-4.216-.436a3.9962 3.9962 0 0 1-1.748-1.748c-.436-.856-.436-1.976-.436-4.216V8"/>
-    
-            </svg>
-
-          </button>
-            <button class="exercise-part-button">
-              Start
-              <svg class="exercise-btn-icon" width="14" height="14"  viewBox="0 0 32 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="m15 28 13-13m0 0L15 2m13 13H2"/>
-    
-              </svg>
-            </button>
-          </a>
-        </div>
-        <span class="exercise-part-name">
-          <svg class="exercise-part-icon" width="24" height="24" viewBox="0 0 34 32">
-<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" opacity="0.1" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
-<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M24.729 11.907c-0.268-0.313-0.746-0.354-1.066-0.093l-2.099 1.723-0.965-2.337c-0.034-0.088-0.086-0.161-0.146-0.226-0.197-0.429-0.54-0.797-1.012-1.011-0.205-0.091-0.417-0.14-0.628-0.164-0.047-0.024-0.089-0.055-0.142-0.071l-3.694-1.006c-0.207-0.055-0.416-0.020-0.586 0.078-0.203 0.067-0.377 0.211-0.46 0.42l-1.391 3.495c-0.151 0.38 0.042 0.809 0.432 0.959 0.388 0.147 0.828-0.042 0.98-0.423l1.175-2.951 1.683 0.457c-0.041 0.065-0.085 0.126-0.119 0.195l-2.157 4.568c-0.031 0.067-0.048 0.135-0.070 0.205l-2.621 4.294-4.387 1.434c-0.497 0.363-0.602 1.046-0.235 1.531 0.369 0.486 1.071 0.589 1.566 0.231l4.489-1.511c0.137-0.098 0.237-0.225 0.313-0.363 0.056-0.058 0.121-0.105 0.164-0.178l1.563-2.56 2.774 2.31-2.968 3.268c-0.409 0.451-0.368 1.145 0.095 1.543 0.462 0.402 1.17 0.36 1.582-0.093l3.704-4.078c0.115-0.126 0.184-0.271 0.23-0.422 0.028-0.082 0.028-0.168 0.034-0.253 0-0.043 0.017-0.082 0.013-0.122-0.010-0.299-0.134-0.589-0.385-0.796l-2.553-2.127c0.184-0.171 0.34-0.375 0.453-0.614l1.654-3.499 0.53 1.379c0.022 0.122 0.064 0.243 0.153 0.343 0.080 0.093 0.182 0.155 0.29 0.198 0.011 0.005 0.024 0.007 0.038 0.010 0.069 0.024 0.139 0.047 0.211 0.050 0.085 0.008 0.172-0.003 0.259-0.027 0.002-0.001 0.003-0.001 0.003-0.001 0.023-0.005 0.047-0.001 0.070-0.011 0.123-0.046 0.217-0.122 0.298-0.212l3.013-2.498c0.32-0.263 0.185-0.729-0.084-1.042z"></path>
-<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M20.919 10.126c1.166 0 2.111-0.924 2.111-2.063s-0.945-2.063-2.111-2.063c-1.166 0-2.111 0.924-2.111 2.063s0.945 2.063 2.111 2.063z"></path>
-
-          </svg>
-          <p class="exercise-name-text">${name.substring(0, 24) + '...'}</p> 
-        </span>
-        <ul class="exercise-describes-list">
-          <li class="exercise-describe">
-            <p class="exercise-describe-category">Burned calories:</p>
-            <p class="exercise-describing">${burnedCalories} / 3 min</p>
-          </li>
-          <li class="exercise-describe">
-            <p class="exercise-describe-category">Body part:</p>
-            <p class="exercise-describing">${bodyPart}</p>
-          </li>
-          <li class="exercise-describe">
-            <p class="exercise-describe-category">Target:</p>
-            <p class="exercise-describing">${target}</p>
-          </li>
-        </ul>
-      </div>
-    </li>
-  `
-      )
-      .join('');
-    updateTrashButtonListeners();
-  }
-});
-
-renderCardsFromStorage();
-
 const pagesCounter = document.querySelector('.exercise-pages-counter');
 
 function updateTrashButtonListeners() {
@@ -819,14 +754,12 @@ function emptyContent() {
         <img
         class="dumbbell-favorites-img"
         srcset="
-
-          ../img/favorites/dumbbell-tab-desc.png   116w,
-          ../img/favorites/dumbbell-tab-desc@2x.png    231w,
-          ../img/favorites/dumbbell-mob.png   85w,
-          ../img/favorites/dumbbell-mob@2x.png  170w
+          /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc.png?raw=true   116w,
+          /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
+          /energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true   85w,
+          /energy_flow/blob/main/src/img/favorites/dumbbell-mob@2x.png?raw=true  170w
         "
-        src="../img/favorites/dumbbell-mob.png"
-
+        src="/energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true"
         sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
         alt="dumbbell icon"
       />
@@ -838,25 +771,24 @@ function addPaginationBtns() {
   favoritesContainer.insertAdjacentHTML(
     'beforeend',
     `<ul class="exercise-pages-counter">
-  <li class="exercise-page-number">
-      <button id="1" class="exercise-number-button first-btn">
-      1
-    </button>
-  </li>
-  <li class="exercise-page-number">
-    <button id="2" class="exercise-number-button second-btn">
-      2
-    </button>
-  </li>
-  <li class="exercise-page-number">
-    <button id="3" class="exercise-number-button third-btn">
-      3
-    </button>
-  </li>
-</ul>`
+        <li class="exercise-page-number">
+            <button id="1" class="exercise-number-button">
+            1
+          </button>
+        </li>
+        <li class="exercise-page-number">
+          <button id="2" class="exercise-number-button">
+            2
+          </button>
+        </li>
+        <li class="exercise-page-number">
+          <button id="3" class="exercise-number-button">
+            3
+          </button>
+        </li>
+      </ul>`
   );
 }
-
 // FAVORITES MODAL
 const favModal = document.querySelector('.favorite-modal');
 function favPopUp(data) {
@@ -932,7 +864,6 @@ function favPopUp(data) {
           <button class="pop-add-fav fav-remove-btn">
             Remove from<svg class="heart-icon" width="18" height="18" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6667" d="M27.788 6.147c-.681-.681-1.49-1.222-2.38-1.591s-1.844-.559-2.807-.559c-.963 0-1.917.19-2.807.559s-1.699.909-2.38 1.591L16.001 7.56l-1.413-1.413c-1.376-1.376-3.241-2.148-5.187-2.148s-3.811.773-5.187 2.148c-1.376 1.376-2.148 3.241-2.148 5.187s.773 3.811 2.148 5.187l11.787 11.787 11.787-11.787a7.3288 7.3288 0 0 0 2.149-5.187c0-.963-.19-1.917-.558-2.807a7.3292 7.3292 0 0 0-1.591-2.38z"/>
-    
             </svg>
           </button>
   <button class="pop-rating-btn">Give a rating</button>
@@ -958,3 +889,66 @@ function favPopUp(data) {
     favModal.innerHTML = '';
   });
 }
+
+favoritesContainer.addEventListener('click', function (event) {
+  if (event.target.classList.contains('exercise-number-button')) {
+    const pageNumber = parseInt(event.target.id);
+    const start = (pageNumber - 1) * 8;
+    const end = pageNumber * 8;
+    favList.innerHTML = savedCards
+      .slice(start, end)
+      .map(
+        ({ bodyPart, name, target, burnedCalories }, index) => `
+    <li class="exercise-parts">
+      <div class="part-container">
+        <div class="exercise-head-container">
+          <span class="exercise-badge">WORKOUT</span>
+          <button class="exercise-trash-button">
+            <svg class="exercise-trash-icon" width="16" height="16"  viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M21.333 8V6.933c0-1.493 0-2.24-.291-2.811a2.666 2.666 0 0 0-1.165-1.165c-.57-.291-1.317-.291-2.811-.291h-2.133c-1.493 0-2.24 0-2.811.291-.502.256-.91.664-1.165 1.165-.291.57-.291 1.317-.291 2.811V8m2.667 7.333V22m5.334-6.667V22M4 8h24m-2.667 0v14.933c0 2.24 0 3.36-.436 4.216a3.9962 3.9962 0 0 1-1.748 1.748c-.856.436-1.976.436-4.216.436h-5.867c-2.24 0-3.36 0-4.216-.436a3.9962 3.9962 0 0 1-1.748-1.748c-.436-.856-.436-1.976-.436-4.216V8"/>
+
+            </svg>
+
+          </button>
+            <button class="exercise-part-button">
+              Start
+              <svg class="exercise-btn-icon" width="14" height="14"  viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="m15 28 13-13m0 0L15 2m13 13H2"/>
+
+              </svg>
+            </button>
+          </a>
+        </div>
+        <span class="exercise-part-name">
+          <svg class="exercise-part-icon" width="24" height="24" viewBox="0 0 34 32">
+<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" opacity="0.1" d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z"></path>
+<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M24.729 11.907c-0.268-0.313-0.746-0.354-1.066-0.093l-2.099 1.723-0.965-2.337c-0.034-0.088-0.086-0.161-0.146-0.226-0.197-0.429-0.54-0.797-1.012-1.011-0.205-0.091-0.417-0.14-0.628-0.164-0.047-0.024-0.089-0.055-0.142-0.071l-3.694-1.006c-0.207-0.055-0.416-0.020-0.586 0.078-0.203 0.067-0.377 0.211-0.46 0.42l-1.391 3.495c-0.151 0.38 0.042 0.809 0.432 0.959 0.388 0.147 0.828-0.042 0.98-0.423l1.175-2.951 1.683 0.457c-0.041 0.065-0.085 0.126-0.119 0.195l-2.157 4.568c-0.031 0.067-0.048 0.135-0.070 0.205l-2.621 4.294-4.387 1.434c-0.497 0.363-0.602 1.046-0.235 1.531 0.369 0.486 1.071 0.589 1.566 0.231l4.489-1.511c0.137-0.098 0.237-0.225 0.313-0.363 0.056-0.058 0.121-0.105 0.164-0.178l1.563-2.56 2.774 2.31-2.968 3.268c-0.409 0.451-0.368 1.145 0.095 1.543 0.462 0.402 1.17 0.36 1.582-0.093l3.704-4.078c0.115-0.126 0.184-0.271 0.23-0.422 0.028-0.082 0.028-0.168 0.034-0.253 0-0.043 0.017-0.082 0.013-0.122-0.010-0.299-0.134-0.589-0.385-0.796l-2.553-2.127c0.184-0.171 0.34-0.375 0.453-0.614l1.654-3.499 0.53 1.379c0.022 0.122 0.064 0.243 0.153 0.343 0.080 0.093 0.182 0.155 0.29 0.198 0.011 0.005 0.024 0.007 0.038 0.010 0.069 0.024 0.139 0.047 0.211 0.050 0.085 0.008 0.172-0.003 0.259-0.027 0.002-0.001 0.003-0.001 0.003-0.001 0.023-0.005 0.047-0.001 0.070-0.011 0.123-0.046 0.217-0.122 0.298-0.212l3.013-2.498c0.32-0.263 0.185-0.729-0.084-1.042z"></path>
+<path fill="#f6f6f6" style="fill: var(--color1, #f6f6f6)" d="M20.919 10.126c1.166 0 2.111-0.924 2.111-2.063s-0.945-2.063-2.111-2.063c-1.166 0-2.111 0.924-2.111 2.063s0.945 2.063 2.111 2.063z"></path>
+
+          </svg>
+          <p class="exercise-name-text">${name.substring(0, 24) + '...'}</p>
+        </span>
+        <ul class="exercise-describes-list">
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Burned calories:</p>
+            <p class="exercise-describing">${burnedCalories} / 3 min</p>
+          </li>
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Body part:</p>
+            <p class="exercise-describing">${bodyPart}</p>
+          </li>
+          <li class="exercise-describe">
+            <p class="exercise-describe-category">Target:</p>
+            <p class="exercise-describing">${target}</p>
+          </li>
+        </ul>
+      </div>
+    </li>
+  `
+      )
+      .join('');
+    updateTrashButtonListeners();
+  }
+});
+
+renderCardsFromStorage();
