@@ -635,7 +635,7 @@ function dataToStorage(data) {
 
 // SVG
 
-const spriteURL = '../img/icons.svg';
+const spriteURL = './img/icons.svg';
 
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
