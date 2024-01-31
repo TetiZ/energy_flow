@@ -1,6 +1,4 @@
 const currentPath = window.location.pathname;
-console.log(currentPath);
-
 const homePage = document.querySelector('#Home');
 const favoritesPage = document.querySelector('#Favorites');
 const homePageMenu = document.querySelector('#Home-menu');
