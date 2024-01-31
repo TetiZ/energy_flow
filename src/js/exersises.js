@@ -590,9 +590,9 @@ function dataToStorage(data) {
 }
 
 window.addEventListener('keydown', function (e) {
-    if (e.key === "Escape") {
-        modal.innerHTML = '';
-    }
+  if (e.key === 'Escape') {
+    modal.innerHTML = '';
+  }
 });
 
 exercisePartsList.addEventListener('click', async event => {
@@ -698,13 +698,12 @@ function emptyContent() {
         <img
         class="dumbbell-favorites-img"
         srcset="
-          ./img/favorites/dumbbell-tab-desc.png     116w,
           /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc.png?raw=true   116w,
           /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
           /energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true   85w,
           /energy_flow/blob/main/src/img/favorites/dumbbell-mob@2x.png?raw=true  170w
         "
-        src="./img/favorites/dumbbell-mob.png"
+        src="/energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true"
         sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
         alt="dumbbell icon"
       />
