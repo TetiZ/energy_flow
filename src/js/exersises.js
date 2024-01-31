@@ -100,8 +100,6 @@ exerciseList.addEventListener('click', async event => {
                         <use href="/energy_flow/assets/icons-de67b048.svg#icon-star"></use>
                     </svg>
                     </span>
-
-                <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${currentId}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
@@ -192,7 +190,7 @@ pageCounter.addEventListener('click', async event => {
                         <use href="./energy_flow/assets/icons-de67b048.svg#icon-star"></use>
                     </svg>
                     </span>
-                    <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+                    
                 <button class="exercise-part-button"  id='${paginationId}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="./energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
@@ -321,7 +319,7 @@ exerciseForm.addEventListener('submit', async function (event) {
                         <use href="./energy_flow/assets/icons-de67b048.svg#icon-star"></use>
                     </svg>
                     </span>
-                <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
+            
                 <button class="exercise-part-button"  id='${inputId}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
@@ -414,7 +412,6 @@ pageCounter.addEventListener('click', async event => {
                         <use href="/energy_flow/assets/icons-de67b048.svg#icon-star"></use>
                     </svg>
                     </span>
-                    <a class="exercise-part-link" href="./partials/pop-up-exersise-card.html">
                 <button class="exercise-part-button"  id='${inputPagination}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14">
                 <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
@@ -633,7 +630,6 @@ function dataToStorage(data) {
 
 // ICONS
 
-const spriteURL = './img/icons.svg';
 document.addEventListener('DOMContentLoaded', async function () {
   const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   const useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
@@ -678,14 +674,10 @@ function renderCardsFromStorage(e) {
         <div class="exercise-head-container">
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
-            <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="${spriteURL}#icon-trash"></use>
+            <svg class="exercise-trash-icon" width="16" height="16"viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="M21.333 8V6.933c0-1.493 0-2.24-.291-2.811a2.666 2.666 0 0 0-1.165-1.165c-.57-.291-1.317-.291-2.811-.291h-2.133c-1.493 0-2.24 0-2.811.291-.502.256-.91.664-1.165 1.165-.291.57-.291 1.317-.291 2.811V8m2.667 7.333V22m5.334-6.667V22M4 8h24m-2.667 0v14.933c0 2.24 0 3.36-.436 4.216a3.9962 3.9962 0 0 1-1.748 1.748c-.856.436-1.976.436-4.216.436h-5.867c-2.24 0-3.36 0-4.216-.436a3.9962 3.9962 0 0 1-1.748-1.748c-.436-.856-.436-1.976-.436-4.216V8"/>
             </svg>
           </button>
-          <a
-            class="exercise-part-link"
-            href="./partials/pop-up-exercise-card.html"
-          >
             <button class="favorite-button" id="${_id}">
               Start
               <svg class="exercise-btn-icon" width="14" height="14">
@@ -766,12 +758,12 @@ function emptyContent() {
         <img
         class="dumbbell-favorites-img"
         srcset="
-          /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc.png?raw=true   116w,
-          /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
-          /energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true   85w,
-          /energy_flow/blob/main/src/img/favorites/dumbbell-mob@2x.png?raw=true  170w
+          ./img/favorites/dumbbell-tab-desc.png   116w,
+          ./img/favorites/dumbbell-tab-desc@2x.png    231w,
+          ./img/favorites/dumbbell-mob.png   85w,
+          ./img/favorites/dumbbell-mob@2x.png  170w
         "
-        src="/energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true"
+        src="./img/favorites/dumbbell-mob.png"
         sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
         alt="dumbbell icon"
       />
