@@ -605,19 +605,24 @@ function dataToStorage(data) {
   }
 
   // Close card foo's
-
   const modalBackDrop = document.querySelector('.pop-backdrop.is-open');
 
-  async function closeWithBackDrop() {
-    await popUp(data);
-    modal.innerHTML = '';
-    modalBackDrop.classList.remove('is-open');
+  async function closeWithBackDrop(event) {
+    if (
+      event.target.classList.contains('pop-ex-close-btn') ||
+      event.key === 'Escape' 
+    ) {
+      await popUp(data);
+      modal.innerHTML = '';
+      modalBackDrop.classList.remove('is-open');
+    }
   }
 
   if (modalBackDrop) {
     modalBackDrop.addEventListener('click', closeWithBackDrop);
-  }
 
+    document.addEventListener('keydown', closeWithBackDrop);
+  }
   window.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       modal.innerHTML = '';
