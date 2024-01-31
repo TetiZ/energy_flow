@@ -305,7 +305,7 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as H,bodyPart as N}
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="/icons.svg#icon-trash"></use>
+              <use href="./img/icons.svg#icon-trash"></use>
             </svg>
 
           </button>
@@ -376,5 +376,5 @@ import{i as M}from"./vendor-db25513e.js";import{musclesGroup as H,bodyPart as N}
       3
     </button>
   </li>
-</ul>`)}document.addEventListener("DOMContentLoaded",async function(){const e=document.createElementNS("http://www.w3.org/2000/svg","svg"),s=document.createElementNS("http://www.w3.org/2000/svg","use");await s.setAttributeNS("http://www.w3.org/1999/xlink","href","icons.svg#icon-trash"),e.appendChild(s),await w(),document.querySelector(".exercise-trash-button").append(e)});function W(e){B.forEach(s=>{s.classList.remove("exercise-button-active"),e.target.classList.add("exercise-button-active")})}
-//# sourceMappingURL=exersises-935ae5c1.js.map
+</ul>`)}document.addEventListener("DOMContentLoaded",async function(){const e=document.createElementNS("http://www.w3.org/2000/svg","svg"),s=document.createElementNS("http://www.w3.org/2000/svg","use");await s.setAttributeNS("http://www.w3.org/1999/xlink","href","./img/icons.svg#icon-trash"),e.appendChild(s),await w(),document.querySelector(".exercise-trash-button").append(e)});function W(e){B.forEach(s=>{s.classList.remove("exercise-button-active"),e.target.classList.add("exercise-button-active")})}
+//# sourceMappingURL=exersises-d8dbd255.js.map
