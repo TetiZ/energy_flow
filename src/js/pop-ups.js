@@ -107,3 +107,4 @@ ratingForm.addEventListener('submit', function (evt) {
       console.log(error);
     });
 });
+
