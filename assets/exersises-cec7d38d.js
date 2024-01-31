@@ -354,8 +354,9 @@ import{i as z}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as O}
 
       <div class="pop-ex-content-container">
         <h2 class="pop-exercise-name">${e.name}</h2>
-        <p class="pop-ex-current-rating">${e.rating}</p>
+        
         <ul class="pop-ex-stars-list">
+        <li><p class="pop-ex-current-rating">${e.rating}</p></li>
             <li>
               <svg
                 class="pop-ex-rate-icon"
@@ -410,4 +411,4 @@ import{i as z}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as O}
     </div>
   </div>
 `,document.querySelector(".fav-remove-btn").addEventListener("click",function(s){console.log("clicked");const i=s.currentTarget.getAttribute("data-index");n.splice(i,1),localStorage.setItem("exercises",JSON.stringify(n)),w(),k.innerHTML=""}),document.querySelector(".fav-close-btn").addEventListener("click",function(){k.innerHTML=""})}
-//# sourceMappingURL=exersises-4c0c7d5b.js.map
+//# sourceMappingURL=exersises-cec7d38d.js.map
