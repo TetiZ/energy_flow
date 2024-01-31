@@ -633,6 +633,14 @@ function dataToStorage(data) {
 
 // FAVORITES
 
+// SVG
+
+const spriteURL = '../img/icons.svg';
+
+{
+  spriteURL;
+}
+
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
 
@@ -653,7 +661,7 @@ function renderCardsFromStorage(e) {
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
              <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="/energy_flow/src/img/icons.svg#icon-trash""></use>
+              <use href=""${spriteURL}#icon-trash""></use>
             </svg>
 
           </button>
@@ -719,7 +727,7 @@ favoritesContainer.addEventListener('click', function (event) {
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="/energy_flow/src/img/icons.svg#icon-trash"></use>
+              <use href=""${spriteURL}#icon-trash"></use>
             </svg>
 
           </button>
@@ -730,7 +738,7 @@ favoritesContainer.addEventListener('click', function (event) {
             <button class="exercise-part-button">
               Start
               <svg class="exercise-btn-icon" width="14" height="14">
-                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
+                <use href="${spriteURL}#icon-arrow-right"></use>
               </svg>
             </button>
           </a>
@@ -824,22 +832,22 @@ function addPaginationBtns() {
   );
 }
 
-document.addEventListener('DOMContentLoaded', async function () {
-  const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  const useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+// document.addEventListener('DOMContentLoaded', async function () {
+//   const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+//   const useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
-  useElem.setAttributeNS(
-    'http://www.w3.org/1999/xlink',
-    'href',
-    '/energy_flow/src/img/icons.svg#icon-trash"'
-  );
-  svgElem.appendChild(useElem);
+//   useElem.setAttributeNS(
+//     'http://www.w3.org/1999/xlink',
+//     'href',
+//     '/energy_flow/src/img/icons.svg#icon-trash"'
+//   );
+//   svgElem.appendChild(useElem);
 
-  await renderCardsFromStorage();
+//   await renderCardsFromStorage();
 
-  const trashButton = document.querySelector('.exercise-trash-button');
-  trashButton.append(svgElem);
-});
+//   const trashButton = document.querySelector('.exercise-trash-button');
+//   trashButton.append(svgElem);
+// });
 
 function filtersSwitch(event) {
   exercise.forEach(item => {
