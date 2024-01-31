@@ -292,7 +292,7 @@ li:last-child .pop-ex-rate-icon use {
   justify-content: center;
   transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     border 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: auto;
+  pointer-events: auto;
 }
 
 .pop-add-fav:hover,
@@ -308,7 +308,6 @@ li:last-child .pop-ex-rate-icon use {
   color: var(--main-text-color);
   transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
     border 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    
 }
 
 .pop-rating-btn:hover,
@@ -321,6 +320,13 @@ li:last-child .pop-ex-rate-icon use {
   stroke: var(--secondary-text-color);
   fill: transparent;
   margin-left: 6px;
+}
+
+/* Favorites */
+.favorite-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 @media screen and (max-width: 767px) {
