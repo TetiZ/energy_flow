@@ -741,22 +741,31 @@ favBtns.forEach(favBtn => {
 });
 
 function emptyContent() {
-  favList.innerHTML = `
-      <div class="empty-content-fav">
-        <img
-        class="dumbbell-favorites-img"
-        srcset="
-          /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc.png?raw=true   116w,
-          /energy_flow/blob/main/src/img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
-          /energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true   85w,
-          /energy_flow/blob/main/src/img/favorites/dumbbell-mob@2x.png?raw=true  170w
-        "
-        src="/energy_flow/blob/main/src/img/favorites/dumbbell-mob.png?raw=true"
-        sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
-        alt="dumbbell icon"
-      />
-      <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
-      </div>`;
+  const emptyContentDiv = document.createElement('div');
+  emptyContentDiv.classList.add('empty-content-fav');
+
+  const dumbbellImg = document.createElement('img');
+  dumbbellImg.classList.add('dumbbell-favorites-img');
+  dumbbellImg.srcset = `
+      ../img/favorites/dumbbell-tab-desc.png   116w,
+      ../img/favorites/dumbbell-tab-desc@2x.png    231w,
+      ../img/favorites/dumbbell-mob.png   85w,
+      ../img/favorites/dumbbell-mob@2x.png  170w
+  `;
+  dumbbellImg.src = '../img/favorites/dumbbell-mob.png';
+  dumbbellImg.sizes = '(min-width: 768px) 116px, (max-width: 767px) 85px';
+  dumbbellImg.alt = 'dumbbell icon';
+
+  const noCardText = document.createElement('p');
+  noCardText.classList.add('no-card-in-storage');
+  noCardText.textContent =
+    "It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.";
+
+  emptyContentDiv.appendChild(dumbbellImg);
+  emptyContentDiv.appendChild(noCardText);
+
+  favList.innerHTML = '';
+  favList.appendChild(emptyContentDiv);
 }
 
 if (savedCards.length > 8) {
