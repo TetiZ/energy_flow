@@ -1,4 +1,4 @@
-import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}from"./api-8d58433a.js";const N=document.querySelector(".exercise-cards-list"),S=document.querySelector(".exercise-cards-list"),x=document.querySelector(".exercise-pages-counter"),U=document.querySelector(".exercise-form"),w=document.querySelector(".exercise-input-button"),b=document.querySelector(".exercise-input"),I=document.querySelectorAll(".exercise-button"),o=document.querySelector(".exercise-parts-list"),h=document.querySelector(".exercise-log-span"),p=document.querySelector(".exercise-title-span");document.querySelector(".exercise-part-button");document.querySelector(".pop-add-fav");document.querySelector(".pop-ex-close-btn");document.querySelector(".pop-backdrop");document.querySelector(".backdrop");document.querySelector(".pop-rating-btn");document.querySelector(".pop-up-close-btn");document.querySelector(".pop-ex-info");document.querySelector(".modal123");document.querySelector(".pop-backdrop.is-open");let f,M="",y=[],m,L=0,B=0,T=0,q=0;localStorage.removeItem("searchInput");localStorage.removeItem("searchQuery");sessionStorage.removeItem("data");N.addEventListener("click",async e=>{e.preventDefault(),y=[],f=1;try{const c=(await C(e)).results;y=[...c],p.innerHTML="",p.textContent=`${c[0].target}`.charAt(0).toUpperCase()+`${c[0].target}`.slice(1),sessionStorage.setItem("data",JSON.stringify({results:c})),L=0;for(let s=0;s<8;s++)L++;if(c.length===0)throw new Error({title:"No Results",message:"No images found. Please try a different search term."});p.style.visibility="visible",S.style.display="none",o.style.display="flex",h.style.visibility="visible",o.innerHTML=c.reduce((s,i,r)=>s+`
+import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}from"./api-8d58433a.js";const N=document.querySelector(".exercise-cards-list"),S=document.querySelector(".exercise-cards-list"),x=document.querySelector(".exercise-pages-counter"),U=document.querySelector(".exercise-form"),w=document.querySelector(".exercise-input-button"),b=document.querySelector(".exercise-input"),I=document.querySelectorAll(".exercise-button"),o=document.querySelector(".exercise-parts-list"),h=document.querySelector(".exercise-log-span"),d=document.querySelector(".exercise-title-span");document.querySelector(".exercise-part-button");document.querySelector(".pop-add-fav");document.querySelector(".pop-ex-close-btn");document.querySelector(".pop-backdrop");document.querySelector(".backdrop");document.querySelector(".pop-rating-btn");document.querySelector(".pop-up-close-btn");document.querySelector(".pop-ex-info");document.querySelector(".modal123");document.querySelector(".pop-backdrop.is-open");let f,M="",y=[],m,L=0,B=0,T=0,q=0;localStorage.removeItem("searchInput");localStorage.removeItem("searchQuery");sessionStorage.removeItem("data");N.addEventListener("click",async e=>{e.preventDefault(),y=[],f=1;try{const c=(await C(e)).results;y=[...c],d.innerHTML="",d.textContent=`${c[0].target}`.charAt(0).toUpperCase()+`${c[0].target}`.slice(1),sessionStorage.setItem("data",JSON.stringify({results:c})),L=0;for(let s=0;s<8;s++)L++;if(c.length===0)throw new Error({title:"No Results",message:"No images found. Please try a different search term."});d.style.visibility="visible",S.style.display="none",o.style.display="flex",h.style.visibility="visible",o.innerHTML=c.reduce((s,i,r)=>s+`
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
@@ -89,7 +89,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
                 </ul>
             </div>
             </li>
-        `,"")}catch(c){console.error("Error:",c)}});I.forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const c=t.target.textContent;localStorage.removeItem("searchInput"),localStorage.removeItem("searchQuery"),J(t),c==="Muscles"?(b.style.display="none",w.style.display="none",o.style.display="none",S.style.display="flex",h.style.visibility="hidden",p.style.visibility="hidden"):c==="Body parts"?(h.style.visibility="hidden",o.innerHTML="",b.style.display="flex",w.style.display="flex",o.style.display="flex",S.style.display="none",x.style.display="none",p.style.visibility="hidden"):(b.style.display="none",w.style.display="none",o.style.display="none",h.style.visibility="hidden",p.style.visibility="hidden")})});U.addEventListener("submit",async function(e){e.preventDefault(),y=[],f=1;try{const t=b.value,s=(await j(t)).results;if(y=[...s],sessionStorage.setItem("data",JSON.stringify({results:s})),s.length===0){o.innerHTML="",console.log(s.length),o.insertAdjacentHTML("beforeend","<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"),x.style.display="none";return}else{p.innerHTML="",p.textContent=`${s[0].bodyPart}`.charAt(0).toUpperCase()+`${s[0].bodyPart}`.slice(1),p.style.visibility="visible",h.style.visibility="visible",x.style.display="flex",T=0;for(let i=0;i<8;i++)T++;o.innerHTML=s.reduce((i,r,d)=>i+`
+        `,"")}catch(c){console.error("Error:",c)}});I.forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const c=t.target.textContent;localStorage.removeItem("searchInput"),localStorage.removeItem("searchQuery"),J(t),c==="Muscles"?(b.style.display="none",w.style.display="none",o.style.display="none",S.style.display="flex",h.style.visibility="hidden",d.style.visibility="hidden"):c==="Body parts"?(h.style.visibility="hidden",o.innerHTML="",b.style.display="flex",w.style.display="flex",o.style.display="flex",S.style.display="none",x.style.display="none",d.style.visibility="hidden"):(b.style.display="none",w.style.display="none",o.style.display="none",h.style.visibility="hidden",d.style.visibility="hidden")})});U.addEventListener("submit",async function(e){e.preventDefault(),y=[],f=1;try{const t=b.value,s=(await j(t)).results;if(y=[...s],sessionStorage.setItem("data",JSON.stringify({results:s})),s.length===0){o.innerHTML="",console.log(s.length),o.insertAdjacentHTML("beforeend","<li class='no-result-list'><p class='no-result'>Unfortunately,<span class='no-result-span'> no results</span> were found.You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>"),x.style.display="none";return}else{d.innerHTML="",d.textContent=`${s[0].bodyPart}`.charAt(0).toUpperCase()+`${s[0].bodyPart}`.slice(1),d.style.visibility="visible",h.style.visibility="visible",x.style.display="flex",T=0;for(let i=0;i<8;i++)T++;o.innerHTML=s.reduce((i,r,p)=>i+`
         <li class="exercise-parts">
             <div class="part-container">
                 <div class="exercise-head-container">
@@ -101,7 +101,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
                     </svg>
                     </span>
                 <a class="exercise-part-link" href="../partials/pop-up-exersise-card.html">
-                <button class="exercise-part-button"  id='${d}'>Start
+                <button class="exercise-part-button"  id='${p}'>Start
                 <svg class="exercise-btn-icon" width="14" height="14" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6" d="m15 28 13-13m0 0L15 2m13 13H2"/>
                 </button>
@@ -257,7 +257,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
       </div>
     </div>
   </div>
-`}o.addEventListener("click",async e=>{e.preventDefault();const t=e.target.id,c=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"&&t==t){const s=c.results[t];E(s),A(s)}});function A(e){function t(n){console.log(n.target);const l=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),l.push(e),localStorage.setItem("exercises",JSON.stringify(l)),[...l];const a=document.querySelector(".pop-add-fav");a&&a.removeEventListener("click",t),document.querySelector(".pop-ex-close-btn"),O.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}const c=document.querySelector(".pop-add-fav");c?c.addEventListener("click",t):console.error("Button not found");const s=document.querySelector(".pop-backdrop.is-open");async function i(){await E(e),v.innerHTML="",s.classList.remove("is-open")}s&&s.addEventListener("click",i),window.addEventListener("keydown",function(n){n.key==="Escape"&&(v.innerHTML="")});function r(){v.innerHTML=""}const d=document.querySelector(".pop-ex-close-btn");d?d.addEventListener("click",r):console.error("Close button not found")}function J(e){I.forEach(t=>{t.classList.remove("exercise-button-active"),e.target.classList.add("exercise-button-active")})}const g=JSON.parse(localStorage.getItem("exercises"));console.log(g);const k=document.querySelector(".fav-list"),z=document.querySelector(".favorites");function $(e){g.length===0?V():(k.innerHTML=g.slice(0,8).map(({bodyPart:t,name:c,target:s,burnedCalories:i},r)=>`
+`}o.addEventListener("click",async e=>{e.preventDefault();const t=e.target.id,c=JSON.parse(sessionStorage.getItem("data"));if(e.target.tagName=="BUTTON"&&t==t){const s=c.results[t];E(s),A(s)}});function A(e){function t(n){console.log(n.target);const l=JSON.parse(localStorage.getItem("exercises"))||[];console.log(123),l.push(e),localStorage.setItem("exercises",JSON.stringify(l)),[...l];const a=document.querySelector(".pop-add-fav");a&&a.removeEventListener("click",t),document.querySelector(".pop-ex-close-btn"),O.success({title:"Excellent choice!",message:"The exercise has been successfully added to your favorites. Get ready for endless inspiration and great results!",position:"center"})}const c=document.querySelector(".pop-add-fav");c?c.addEventListener("click",t):console.error("Button not found");const s=document.querySelector(".pop-backdrop.is-open");async function i(){await E(e),v.innerHTML="",s.classList.remove("is-open")}s&&s.addEventListener("click",i),window.addEventListener("keydown",function(n){n.key==="Escape"&&(v.innerHTML="")});function r(){v.innerHTML=""}const p=document.querySelector(".pop-ex-close-btn");p?p.addEventListener("click",r):console.error("Close button not found")}function J(e){I.forEach(t=>{t.classList.remove("exercise-button-active"),e.target.classList.add("exercise-button-active")})}const g=JSON.parse(localStorage.getItem("exercises"));console.log(g);const k=document.querySelector(".fav-list"),z=document.querySelector(".favorites");function $(e){g.length===0?V():(k.innerHTML=g.slice(0,8).map(({bodyPart:t,name:c,target:s,burnedCalories:i},r)=>`
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -268,10 +268,6 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
             </svg>
 
           </button>
-          <a
-            class="exercise-part-link"
-            href="./partials/pop-up-exercise-card.html"
-          >
             <button class="exercise-part-button">
               Start
               <svg class="exercise-btn-icon" width="14" height="14" viewBox="0 0 32 32">
@@ -305,7 +301,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
         </ul>
       </div>
     </li>
-  `).join(""),P())}$();g.length>8&&R();z.addEventListener("click",function(e){if(e.target.classList.contains("exercise-number-button")){const t=parseInt(e.target.id),c=(t-1)*8,s=t*8;k.innerHTML=g.slice(c,s).map(({bodyPart:i,name:r,target:d,burnedCalories:n},l)=>`
+  `).join(""),P())}$();g.length>8&&R();z.addEventListener("click",function(e){if(e.target.classList.contains("exercise-number-button")){const t=parseInt(e.target.id),c=(t-1)*8,s=t*8;k.innerHTML=g.slice(c,s).map(({bodyPart:i,name:r,target:p,burnedCalories:n},l)=>`
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -317,10 +313,6 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
             </svg>
 
           </button>
-          <a
-            class="exercise-part-link"
-            href="./partials/pop-up-exercise-card.html"
-          >
             <button class="exercise-part-button">
               Start
               <svg class="exercise-btn-icon" width="14" height="14"  viewBox="0 0 32 32">
@@ -350,7 +342,7 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
           </li>
           <li class="exercise-describe">
             <p class="exercise-describe-category">Target:</p>
-            <p class="exercise-describing">${d}</p>
+            <p class="exercise-describing">${p}</p>
           </li>
         </ul>
       </div>
@@ -389,4 +381,4 @@ import{i as O}from"./vendor-db25513e.js";import{musclesGroup as C,bodyPart as j}
     </button>
   </li>
 </ul>`)}document.querySelector(".favorite-modal");
-//# sourceMappingURL=exersises-a53d25dd.js.map
+//# sourceMappingURL=exersises-4c3a209e.js.map
