@@ -78,6 +78,22 @@
   padding-left: 46px;
 }
 
+.tracking-in-expand {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 5s steps(50, end) infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .quote-section {
     padding-top: 8px;
