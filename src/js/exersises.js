@@ -632,23 +632,6 @@ function dataToStorage(data) {
 
 // FAVORITES
 
-document.addEventListener('DOMContentLoaded', async function () {
-  const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  const useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-
-  await useElem.setAttributeNS(
-    'http://www.w3.org/1999/xlink',
-    'href',
-    'icons.svg#icon-trash'
-  );
-  svgElem.appendChild(useElem);
-
-  await renderCardsFromStorage();
-
-  const trashButton = document.querySelector('.exercise-trash-button');
-  trashButton.append(svgElem);
-});
-
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
 console.log(savedCards);
 
@@ -668,10 +651,9 @@ function renderCardsFromStorage(e) {
         <div class="exercise-head-container">
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
-           <svg class="exercise-trash-icon" width="16" height="16">
-              <use href="/icons.svg#icon-trash"></use>
+            <svg class="exercise-trash-icon" width="16" height="16">
+              <use href="/energy_flow/assets/icons-de67b048.svg#icon-trash"></use>
             </svg>
-
           </button>
           <a
             class="exercise-part-link"
@@ -679,7 +661,9 @@ function renderCardsFromStorage(e) {
           >
             <button class="exercise-part-button">
               Start
-              
+              <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
+              </svg>
             </button>
           </a>
         </div>
@@ -732,9 +716,9 @@ favoritesContainer.addEventListener('click', function (event) {
         <div class="exercise-head-container">
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
-             <svg class="close-icon">
-    <use xlink:href="#icon-trash"></use>
-  </svg>
+            <svg class="exercise-trash-icon" width="16" height="16">
+              <use href="/energy_flow/assets/icons-de67b048.svg#icon-trash"></use>
+            </svg>
           </button>
           <a
             class="exercise-part-link"
@@ -742,7 +726,9 @@ favoritesContainer.addEventListener('click', function (event) {
           >
             <button class="exercise-part-button">
               Start
-              
+              <svg class="exercise-btn-icon" width="14" height="14">
+                <use href="/energy_flow/assets/icons-de67b048.svg#icon-arrow-right"></use>
+              </svg>
             </button>
           </a>
         </div>
