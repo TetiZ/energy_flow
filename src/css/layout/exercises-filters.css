@@ -525,6 +525,13 @@
   .exercise-card {
     width: calc((100% - 30px) / 2);
     height: 250px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .exercise-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #0f0e0eb3;
   }
 
   .exercise-form {
@@ -576,6 +583,13 @@
 
   .part-container {
     width: 312px;
+    transition: transform 0.4s cubic-bezier(0.3, 0, 0.2, 1),
+      box-shadow 0.4s cubic-bezier(0.3, 0, 0.2, 1);
+  }
+
+  .part-container:hover {
+    box-shadow: 0 0 25px #0f0e0eb3;
+    transform: scale(1.03);
   }
 
   .exercise-name-text {
