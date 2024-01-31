@@ -639,7 +639,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   await useElem.setAttributeNS(
     'http://www.w3.org/1999/xlink',
     'href',
-    '/src/img/icons.svg#icon-trash'
+    'icons.svg#icon-trash'
   );
   svgElem.appendChild(useElem);
 
@@ -668,9 +668,10 @@ function renderCardsFromStorage(e) {
         <div class="exercise-head-container">
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
-            <svg class="exercise-trash-icon" width="16" height="16">
-    <use href="/src/img/icons.svg#icon-trash"></use>
-  </svg>
+           <svg class="exercise-trash-icon" width="16" height="16">
+              <use href="/icons.svg#icon-trash"></use>
+            </svg>
+
           </button>
           <a
             class="exercise-part-link"
