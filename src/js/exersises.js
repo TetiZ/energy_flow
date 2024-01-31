@@ -249,6 +249,7 @@ exercise.forEach(elem => {
       cardList.style.display = 'flex';
       spanLog.style.visibility = 'hidden';
       spanTitle.style.visibility = 'hidden';
+      pageCounter.style.display = 'flex';
     } else if (targetElement === 'Body parts') {
       spanLog.style.visibility = 'hidden';
       exercisePartsList.innerHTML = '';
