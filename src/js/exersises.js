@@ -629,6 +629,7 @@ function dataToStorage(data) {
   }
 
   const exPopClose = document.querySelector('.pop-ex-close-btn');
+
   if (exPopClose) {
     exPopClose.addEventListener('click', closeHandler);
   } else {
@@ -740,21 +741,23 @@ favBtns.forEach(favBtn => {
   });
 });
 
+//  <img
+//    class="dumbbell-favorites-img"
+//    srcset="
+//           ../img/favorites/dumbbell-tab-desc.png?raw=true   116w,
+//           ../img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
+//           ../img/favorites/dumbbell-mob.png?raw=true   85w,
+//           ../img/favorites/dumbbell-mob@2x.png?raw=true  170w
+//         "
+//    src="../img/favorites/dumbbell-mob.png?raw=true"
+//    sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
+//    alt="dumbbell icon"
+// />;
+
 function emptyContent() {
   favList.innerHTML = `
       <div class="empty-content-fav">
-        <img
-        class="dumbbell-favorites-img"
-        srcset="
-          ../img/favorites/dumbbell-tab-desc.png?raw=true   116w,
-          ../img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
-          ../img/favorites/dumbbell-mob.png?raw=true   85w,
-          ../img/favorites/dumbbell-mob@2x.png?raw=true  170w
-        "
-        src="../img/favorites/dumbbell-mob.png?raw=true"
-        sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
-        alt="dumbbell icon"
-      />
+       
       <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
       </div>`;
 }

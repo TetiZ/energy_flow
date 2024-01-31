@@ -67,8 +67,7 @@
   background: var(--white);
   color: var(--black);
 }
-.mobile-menu-bottom {
-}
+
 .mobile-menu-lik-list {
   display: flex;
   column-gap: 12px;

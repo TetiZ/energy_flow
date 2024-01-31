@@ -152,6 +152,10 @@
     gap: 32px;
   }
 
+  .subs-form {
+    width: 358px;
+  }
+
   .copywrite-text,
   .pp-wrapper {
     margin-bottom: unset;
@@ -171,7 +175,7 @@
   .footer-second-half-wrapper {
     display: flex;
     flex-direction: row;
-    gap: 160px;
+    gap: 155px;
   }
 
   .footer-main-wrapper {
@@ -179,6 +183,9 @@
     padding: 66px 48px;
   }
 
+  .form-container {
+    width: 360px;
+  }
   .footer-text {
     width: 488px;
     font-size: 64px;
@@ -189,7 +196,7 @@
     font-size: 64px;
   }
   .subs-form {
-    width: 345px;
+    width: 360px;
   }
   .copywrite-wrapper {
     font-size: 14px;
@@ -201,7 +208,7 @@
   screen and (min-resolution: 2dppx) and (max-width: 767px),
   screen and (min-device-pixel-ratio: 2) and (max-width: 767px) {
   .collection-section {
-    background-image: url(/src/img/footer/footer-bg-mob@2x.png);
+    background-image: url(/img/footer/footer-bg-mob@2x.png);
   }
 }
 
@@ -209,7 +216,7 @@
   screen and (min-resolution: 2dppx) and (min-width: 768px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 768px) {
   .collection-section {
-    background-image: url(/src/img/footer/footer-bg-tablet@2x.png);
+    background-image: url(/img/footer/footer-bg-tablet@2x.png);
   }
 }
 
@@ -217,6 +224,6 @@
   screen and (min-resolution: 2dppx) and (min-width: 1440px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .collection-section {
-    background-image: url(/src/img/footer/footer-bg-desktop@2x.png);
+    background-image: url(/img/footer/footer-bg-desktop@2x.png);
   }
 }

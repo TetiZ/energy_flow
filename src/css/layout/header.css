@@ -100,11 +100,6 @@
     height: 28px;
     /* fill: var(--dark-grey); */
   }
-
-  .heder-link-icon:hover,
-  .heder-link-icon:focus {
-    /* fill: #5f6560; */
-  }
 }
 @media screen and (min-width: 1280px) {
   .heder-items {
