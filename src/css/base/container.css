@@ -38,18 +38,11 @@ html {
   }
 }
 
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1120px;
-    padding-left: 16px;
-    padding-right: 16px;
-    border-radius: 50px;
-  }
-}
-
 @media screen and (min-width: 1440px) {
   .container {
     width: 1408px;
+    padding-left: 16px;
+    padding-right: 16px;
     border-radius: 50px;
   }
 }
