@@ -811,7 +811,9 @@ function favPopUp(data) {
       </div>
 
       <div class="pop-ex-content-container">
-        <h2 class="pop-exercise-name">${data.name}</h2>
+        <h2 class="pop-exercise-name">${
+          data.name.charAt(0).toUpperCase() + data.name.slice(1)
+        }</h2>
         
         <ul class="pop-ex-stars-list">
         <li><p class="pop-ex-current-rating">${data.rating}</p></li>
