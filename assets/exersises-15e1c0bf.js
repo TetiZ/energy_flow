@@ -260,7 +260,7 @@ import{i as H}from"./vendor-db25513e.js";import{musclesGroup as N,bodyPart as U}
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
              <svg class="exercise-trash-icon" width="16" height="16">
-              <use href=""${$}#icon-trash""></use>
+              <use href="${$}#icon-trash""></use>
             </svg>
 
           </button>
@@ -305,7 +305,7 @@ import{i as H}from"./vendor-db25513e.js";import{musclesGroup as N,bodyPart as U}
           <span class="exercise-badge">WORKOUT</span>
           <button class="exercise-trash-button">
             <svg class="exercise-trash-icon" width="16" height="16">
-              <use href=""${$}#icon-trash"></use>
+              <use href="${$}#icon-trash"></use>
             </svg>
 
           </button>
@@ -377,4 +377,4 @@ import{i as H}from"./vendor-db25513e.js";import{musclesGroup as N,bodyPart as U}
     </button>
   </li>
 </ul>`)}function j(e){B.forEach(t=>{t.classList.remove("exercise-button-active"),e.target.classList.add("exercise-button-active")})}
-//# sourceMappingURL=exersises-1862fc1c.js.map
+//# sourceMappingURL=exersises-15e1c0bf.js.map
