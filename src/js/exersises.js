@@ -775,21 +775,43 @@ favoritesContainer.addEventListener('click', function (event) {
   }
 });
 
+renderCardsFromStorage();
+
+const pagesCounter = document.querySelector('.exercise-pages-counter');
+
 function updateTrashButtonListeners() {
   const trashBtns = document.querySelectorAll('.exercise-trash-button');
 
-  trashBtns.forEach((trashBtn, index) => {
-    trashBtn.setAttribute('data-index', index);
+  trashBtns.forEach(trashBtn => {
     trashBtn.addEventListener('click', e => {
       const indexToRemove = e.currentTarget.getAttribute('data-index');
       savedCards.splice(indexToRemove, 1);
       localStorage.setItem('exercises', JSON.stringify(savedCards));
       renderCardsFromStorage();
+      if (savedCards.length < 8) {
+        pagesCounter.classList.add('visually-hidden');
+      }
     });
   });
 }
 
 renderCardsFromStorage();
+
+const favBtn = document.querySelector('.favorite-button');
+
+favList.addEventListener('click', async event => {
+  if (event.target === favBtn) {
+    event.preventDefault();
+    const currentId = event.target.id;
+
+    for (const card of savedCards) {
+      if (card._id === currentId) {
+        console.log(card);
+        favPopUp(card);
+      }
+    }
+  }
+});
 
 function emptyContent() {
   favList.innerHTML = `
