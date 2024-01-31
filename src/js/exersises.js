@@ -635,6 +635,13 @@ function dataToStorage(data) {
   }
 }
 
+function filtersSwitch(event) {
+  exercise.forEach(item => {
+    item.classList.remove('exercise-button-active');
+    event.target.classList.add('exercise-button-active');
+  });
+}
+
 // FAVORITES
 
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
@@ -836,9 +843,104 @@ function addPaginationBtns() {
   );
 }
 
-function filtersSwitch(event) {
-  exercise.forEach(item => {
-    item.classList.remove('exercise-button-active');
-    event.target.classList.add('exercise-button-active');
+// FAVORITES MODAL
+const favModal = document.querySelector('.favorite-modal');
+function favPopUp(data) {
+  favModal.innerHTML = `
+    <div class="pop-backdrop is-open">
+    <div class="pop-ex-modal">
+      <button class="pop-ex-close-btn fav-close-btn">
+        <svg
+          class="pop-ex-close-btn-icon"
+          width="24"
+          height="24"
+          aria-label="close icon"
+    viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M24 8 8 24M8 8l16 16"/>
+        </svg>
+      </button>
+      <div class="pop-exercises-img">
+        <img
+          src="${data.gifUrl}"
+          class="img-ex"
+          width="295"
+          height="258"
+        />
+      </div>
+
+      <div class="pop-ex-content-container">
+        <h2 class="pop-exercise-name">${data.name}</h2>
+        <p class="pop-ex-current-rating">${data.rating}</p>
+        <ul class="pop-ex-stars-list">
+            <li>
+              <svg
+                class="pop-ex-rate-icon"
+                width="18"
+                height="18"
+                aria-label="ratting" viewBox="0 0 34 32">
+      <path d="M15.24 1.561c.504-1.552 2.699-1.552 3.204 0l2.558 7.872c.225.694.872 1.164 1.602 1.164h8.277c1.632 0 2.31 2.088.99 3.047l-6.696 4.865c-.59.429-.837 1.189-.612 1.883l2.558 7.872c.504 1.552-1.272 2.842-2.592 1.883l-6.696-4.865a1.684 1.684 0 0 0-1.98 0l-6.696 4.865c-1.32.959-3.096-.331-2.592-1.883l2.558-7.872a1.6855 1.6855 0 0 0-.612-1.883l-6.696-4.865c-1.32-.959-.642-3.047.99-3.047h8.277c.73 0 1.376-.47 1.602-1.164l2.558-7.872z"/>
+              </svg>
+            </li>
+        </ul>
+
+        <hr class="decorate-elem" />
+
+        <div class="pop-ex-info">
+          <div class="field">
+            <span class="value">Target</span>
+            <span class="label">${data.target}</span>
+          </div>
+          <div class="field">
+            <span class="value">Body Part</span>
+            <span class="label">${data.bodyPart}</span>
+          </div>
+          <div class="field">
+            <span class="value">Equipment</span>
+            <span class="label">${data.equipment}</span>
+          </div>
+          <div class="field">
+            <span class="value">Popular</span>
+            <span class="label">${data.popularity}</span>
+          </div>
+          <div class="field">
+            <span class="value">Burned Calories</span>
+            <span class="label">${data.burnedCalories}</span>
+          </div>
+        </div>
+
+        <hr class="decorate-elem" />
+
+        <p class="pop-desc-exercise">
+          ${data.description}
+        </p>
+
+        <div class="pop-btns-container">
+          <button class="pop-add-fav fav-remove-btn">
+            Remove from<svg class="heart-icon" width="18" height="18" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6667" d="M27.788 6.147c-.681-.681-1.49-1.222-2.38-1.591s-1.844-.559-2.807-.559c-.963 0-1.917.19-2.807.559s-1.699.909-2.38 1.591L16.001 7.56l-1.413-1.413c-1.376-1.376-3.241-2.148-5.187-2.148s-3.811.773-5.187 2.148c-1.376 1.376-2.148 3.241-2.148 5.187s.773 3.811 2.148 5.187l11.787 11.787 11.787-11.787a7.3288 7.3288 0 0 0 2.149-5.187c0-.963-.19-1.917-.558-2.807a7.3292 7.3292 0 0 0-1.591-2.38z"/>
+    
+            </svg>
+          </button>
+  <button class="pop-rating-btn">Give a rating</button>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+  const removeBtn = document.querySelector('.fav-remove-btn');
+
+  removeBtn.addEventListener('click', function (event) {
+    console.log('clicked');
+    const indexToRemove = event.currentTarget.getAttribute('data-index');
+    savedCards.splice(indexToRemove, 1);
+    localStorage.setItem('exercises', JSON.stringify(savedCards));
+    renderCardsFromStorage();
+    favModal.innerHTML = '';
+  });
+
+  const closeBtn = document.querySelector('.fav-close-btn');
+
+  closeBtn.addEventListener('click', function () {
+    favModal.innerHTML = '';
   });
 }
