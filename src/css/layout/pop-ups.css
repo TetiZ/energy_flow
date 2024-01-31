@@ -329,6 +329,10 @@ li:last-child .pop-ex-rate-icon use {
   right: 16px;
 }
 
+.pop-ex-rate-icon {
+  fill: #eea10c;
+}
+
 @media screen and (max-width: 767px) {
   .pop-ex-modal {
     min-width: 335px;
