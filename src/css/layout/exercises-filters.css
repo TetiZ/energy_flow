@@ -42,11 +42,10 @@
   transition: background-color 0.8s ease, transform 0.8s ease, color 0.8s ease;
 }
 
-/* .exercise-button:hover,
-.exercise-button:focus {
-  background: #7e847f;
-  color: #f6f6f6;
-} */
+.exercise-button:hover {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 4px 4px rgba(97, 97, 97, 0.425);
+}
 
 .exercise-button-active {
   background-color: #7e847f;
@@ -73,6 +72,13 @@
   font-size: 14px;
   line-height: 1.29;
   border: none;
+  outline: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.exercise-input:hover,
+.exercise-input:focus {
+  box-shadow: 0px 4px 4px rgba(97, 97, 97, 0.425);
 }
 
 .exercise-close-button {
