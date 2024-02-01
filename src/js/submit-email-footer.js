@@ -50,4 +50,3 @@ form.addEventListener('submit', async e => {
     console.log('Електронна пошта не введена.');
   }
 });
-const form = document.querySelector('.subs-form');
