@@ -90,8 +90,6 @@ export async function bodyPart(event) {
         searchInput = encodeURIComponent(event.toLowerCase());
 
         localStorage.setItem('searchInput', JSON.stringify({ searchInput }));
-        
-        console.log(searchInput);
 
         const url = `https://energyflow.b.goit.study/api/exercises?bodypart=${searchInput}&page=${currentPage}&limit=${limit}`;
         const response = await fetch(url);
@@ -103,7 +101,6 @@ export async function bodyPart(event) {
         const resultPromise = response.json();
         const results = await resultPromise;
 
-        console.log(results);
 
         if (results.length === 0) {
             throw new Error('No data found. Please try a different search term.');
@@ -141,8 +138,6 @@ export async function equipment(event) {
 
         const resultPromise = response.json();
         const results = await resultPromise;
-
-        console.log(results);
 
         if (results.length === 0) {
             throw new Error('No data found. Please try a different search term.');

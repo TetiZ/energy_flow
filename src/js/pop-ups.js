@@ -8,19 +8,6 @@ const ratingPopUpClose = document.querySelector('.pop-up-close-btn');
 
 const popExerciseInfo = document.querySelector('.pop-ex-info');
 
-exPopClose.addEventListener('click', function () {
-  exPopUpWindow.classList.remove('is-open');
-});
-
-ratingPopUpOpen.addEventListener('click', function () {
-  ratingPopUpWindow.classList.toggle('is-open');
-  exPopUpWindow.classList.remove('is-open');
-});
-
-ratingPopUpClose.addEventListener('click', function () {
-  ratingPopUpWindow.classList.remove('is-open');
-});
-
 const ratingStarsWrapper = document.querySelectorAll('.rating-stars-wrapper');
 if (ratingStarsWrapper.length > 0) {
   initRatings();

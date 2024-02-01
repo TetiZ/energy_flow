@@ -1,5 +1,4 @@
 const currentPath = window.location.pathname;
-console.log(currentPath);
 
 // 1 варіант
 

@@ -5,7 +5,7 @@ const form = document.querySelector('.subs-form');
 const localStorageKey = 'user-email';
 
 const savedEmail = localStorage.getItem(localStorageKey);
-form.elements.email.value = savedEmail ? savedEmail : '';
+// form.elements.email.value = savedEmail ? savedEmail : '';
 
 form.addEventListener('input', saveToLocalStorage);
 
@@ -26,11 +26,9 @@ async function postEmail(userEmail) {
       }
     );
     if (!response.ok) {
-      console.error('Код помилки:', response.status);
       throw new Error('Мережевий запит не був успішним');
     }
     const data = await response.json();
-    console.log('Дані успішно відправлені', data);
 
     iziToast.success({
       title: 'We are excited to have you on board!',
@@ -39,7 +37,6 @@ async function postEmail(userEmail) {
       position: 'center',
     });
   } catch (error) {
-    console.error('Помилка при відправленні даних', error);
   }
 }
 

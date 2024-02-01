@@ -143,20 +143,17 @@ exerciseList.addEventListener('click', async event => {
       ''
     );
   } catch (error) {
-    console.error('Error:', error);
   }
 });
 
 pageCounter.addEventListener('click', async event => {
   const clickedPage = event.target.textContent;
   currentPage = clickedPage;
-  console.log(currentPage);
   limit = 8;
 
   try {
     const localSearch = JSON.parse(localStorage.getItem('searchQuery'));
     const searchQuery = localSearch.searchQuery;
-    console.log(searchQuery);
     const url = `https://energyflow.b.goit.study/api/exercises?muscles=${searchQuery}&page=${currentPage}&limit=${limit}`;
     const response = await fetch(url);
 
@@ -234,7 +231,6 @@ pageCounter.addEventListener('click', async event => {
       ''
     );
   } catch (error) {
-    console.error('Error:', error);
   }
 });
 
@@ -366,7 +362,6 @@ exerciseForm.addEventListener('submit', async function (event) {
       );
     }
   } catch (error) {
-    console.error('Error:', error);
   }
 });
 
@@ -455,7 +450,6 @@ pageCounter.addEventListener('click', async event => {
       ''
     );
   } catch (error) {
-    console.error('Error:', error);
   }
 });
 
@@ -548,10 +542,8 @@ let allfav = [];
 
 function dataToStorage(data) {
   function clickHandler(event) {
-    console.log(event.target);
 
     const localData = JSON.parse(localStorage.getItem('exercises')) || [];
-    console.log(123);
 
     localData.push(data);
     localStorage.setItem('exercises', JSON.stringify(localData));
@@ -579,7 +571,6 @@ function dataToStorage(data) {
   if (popAddFavButton) {
     popAddFavButton.addEventListener('click', clickHandler);
   } else {
-    console.error('Button not found');
   }
 
   function closeHandler() {
@@ -615,14 +606,12 @@ exercisePartsList.addEventListener('click', async event => {
 // FAVORITES
 
 const savedCards = JSON.parse(localStorage.getItem('exercises'));
-console.log(savedCards);
 
 const favList = document.querySelector('.fav-list');
 const favoritesContainer = document.querySelector('.favorites');
 
 function renderCardsFromStorage(e) {
   const savedCards = JSON.parse(localStorage.getItem('exercises'));
-  console.log(savedCards);
 
   favList.innerHTML = savedCards
     .map(
