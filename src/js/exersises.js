@@ -619,7 +619,7 @@ function dataToStorage(data) {
   async function closeWithBackDrop(event) {
     if (
       event.target.classList.contains('pop-ex-close-btn') ||
-      event.key === 'Escape' 
+      event.key === 'Escape'
     ) {
       await popUp(data);
       modal.innerHTML = '';
@@ -669,10 +669,12 @@ function renderCardsFromStorage(e) {
   if (savedCards.length != 0) {
     emptyContainer.classList.add('visually-hidden');
   }
-  favList.innerHTML = savedCards
-    .slice(0, 8)
-    .map(
-      ({ bodyPart, name, target, burnedCalories, _id }, index) => `
+
+  if (favList) {
+    favList.innerHTML = savedCards
+      .slice(0, 8)
+      .map(
+        ({ bodyPart, name, target, burnedCalories, _id }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -715,8 +717,10 @@ function renderCardsFromStorage(e) {
       </div>
     </li>
   `
-    )
-    .join('');
+      )
+      .join('');
+  }
+
   updateTrashButtonListeners();
 }
 
@@ -754,20 +758,6 @@ favBtns.forEach(favBtn => {
     }
   });
 });
-
-
-//  <img
-//    class="dumbbell-favorites-img"
-//    srcset="
-//           ../img/favorites/dumbbell-tab-desc.png?raw=true   116w,
-//           ../img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
-//           ../img/favorites/dumbbell-mob.png?raw=true   85w,
-//           ../img/favorites/dumbbell-mob@2x.png?raw=true  170w
-//         "
-//    src="../img/favorites/dumbbell-mob.png?raw=true"
-//    sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
-//    alt="dumbbell icon"
-// />;
 
 function emptyContent() {
   favList.innerHTML = `
