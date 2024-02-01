@@ -4,4 +4,3 @@ import('./js/exersises');
 import('./js/submit-email-footer');
 import('./js/quote');
 import('./js/page-after-switch');
-import('./js/darkmode');
