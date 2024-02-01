@@ -772,7 +772,8 @@ if (savedCards.length > 8) {
 }
 
 function addPaginationBtns() {
-  pagesCounter.innerHTML = `
+  if (pagesCounter) {
+    pagesCounter.innerHTML = `
         <li class="exercise-page-number">
             <button id="0" class="exercise-number-button first">
             1
@@ -788,6 +789,7 @@ function addPaginationBtns() {
             3
           </button>
         </li>`;
+  }
 }
 
 pagesCounter.addEventListener('click', async e => {
