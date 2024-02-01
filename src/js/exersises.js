@@ -156,9 +156,7 @@ exerciseList.addEventListener('click', async event => {
         `,
       ''
     );
-  } catch (error) {
-    console.error('Error:', error);
-  }
+  } catch (error) {}
 });
 
 pageCounter.addEventListener('click', async event => {
@@ -246,9 +244,7 @@ pageCounter.addEventListener('click', async event => {
         `,
       ''
     );
-  } catch (error) {
-    console.error('Error:', error);
-  }
+  } catch (error) {}
 });
 
 exercise.forEach(elem => {
@@ -377,9 +373,7 @@ exerciseForm.addEventListener('submit', async function (event) {
         ''
       );
     }
-  } catch (error) {
-    console.error('Error:', error);
-  }
+  } catch (error) {}
 });
 
 pageCounter.addEventListener('click', async event => {
@@ -468,9 +462,7 @@ pageCounter.addEventListener('click', async event => {
         `,
       ''
     );
-  } catch (error) {
-    console.error('Error:', error);
-  }
+  } catch (error) {}
 });
 
 const modal = document.querySelector('.modal123');
@@ -609,7 +601,6 @@ function dataToStorage(data) {
   if (popAddFavButton) {
     popAddFavButton.addEventListener('click', clickHandler);
   } else {
-    console.error('Button not found');
   }
 
   // Close card foo's
@@ -659,6 +650,7 @@ const pagesCounter = document.querySelector('.fav-counter');
 const emptyContainer = document.querySelector('.empty-content-fav');
 
 function renderCardsFromStorage(e) {
+  const savedCards = JSON.parse(localStorage.getItem('exercises'));
   if (savedCards.length != 0) {
     emptyContainer.classList.add('visually-hidden');
   }

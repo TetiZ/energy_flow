@@ -7,7 +7,6 @@ const currentDate = new Date().toDateString();
 if (storedDate === currentDate) {
   const storedQuote = localStorage.getItem(QUOTE_KEY);
   const storedAuthor = localStorage.getItem(AUTHOR_KEY);
-  console.log(`Збережена цитата: ${storedQuote} - ${storedAuthor}`);
   displayQuote({ quote: storedQuote, author: storedAuthor });
 } else {
   async function fetchData() {
@@ -21,8 +20,6 @@ if (storedDate === currentDate) {
         localStorage.setItem(QUOTE_KEY, quote);
         localStorage.setItem(AUTHOR_KEY, author || 'автор невідомий');
         localStorage.setItem('date', currentDate);
-
-        console.log(`Нова цитата: ${quote} - ${author || 'автор невідомий'}`);
 
         displayQuote({ quote, author: author || 'автор невідомий' });
       } else {
