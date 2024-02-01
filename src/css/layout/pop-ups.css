@@ -92,7 +92,8 @@
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.pop-ex-close-btn {
+.pop-ex-close-btn,
+.footer-close-btn {
   position: absolute;
   display: flex;
   justify-content: center;
