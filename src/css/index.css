@@ -8,6 +8,7 @@
 /* Utils */
 
 @import url(./utils/variables.css);
+@import url(./utils/hidden-in-main.css);
 
 /* Layout */
 @import url(./layout/izitoast.css);
