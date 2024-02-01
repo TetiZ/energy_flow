@@ -47,8 +47,7 @@
 .mobile-close-icon {
   stroke: var(--secondary-text-color);
 }
-.mobile-menu-nav {
-}
+
 .mobile-menu-nav-list {
   display: flex;
   flex-direction: column;
@@ -67,8 +66,7 @@
   background: var(--white);
   color: var(--black);
 }
-.mobile-menu-bottom {
-}
+
 .mobile-menu-lik-list {
   display: flex;
   column-gap: 12px;

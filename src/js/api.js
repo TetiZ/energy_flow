@@ -1,51 +1,3 @@
-
-// функція musclesGroup() для того щоб знайти мязи що на першій кнопці Muscles у exercises
-
-
-
-// те що нижче виділене крапками те як має працювати у потрібному файлі ця функція нам потрібно поставити айдішки на img і при кліку на них відповідна айді abs виводить усі можливі вправи де target element є abs ознайомтесь з json кодом нижче
-
-// 0:
-//     bodyPart: "waist"
-//     burnedCalories: 220
-//     description: "This refers to your core muscles, which include the rectus abdominis, obliques, and transverse abdominis. They're essential for maintaining posture, stability, and generating force in many movements. Exercises that target the abs include crunches, leg raises, and planks."
-//     equipment: "body weight"
-//     gifUrl: "https://ftp.goit.study/img/power-pulse/gifs/0001.gif"
-//     name: "3/4 sit-up"
-//     popularity: 7640
-//     rating: 3.18
-//     target: "abs"
-//     time: 3
-//     _id: "64f389465ae26083f39b17a2"
-//     [[Prototype]]: Object
-
-// це один з багатьох елементів що виводиться в консоль при кліку на елемент в якого айді abs
-
-//...............................................................
-
-// import { musclesGroup } from 'шлях до api файла';
-
-// const button = document.querySelector('.buttons');
-// це був просто список (ul) кнопок у моєму тестовому репозиторії а вже в цьому списку знаходились елементи з айдішками мязів
-
-
-// button.addEventListener('click', async (event) => {
-//     event.preventDefault();
-
-//     try {
-//         const results = await musclesGroup(event);
-//         // You can now work with the 'results' variable here
-
-//     } catch (error) {
-//         console.error('Error in musclesGroup:', error);
-//     }
-// });
-//...............................................................
-
-
-// muscleGroup---------------------------------------------------------
-
-
 export async function musclesGroup(event) {
     let currentPage = 1;
     const limit = 8;
@@ -76,8 +28,6 @@ export async function musclesGroup(event) {
         throw error;
     }
 }
-
-// muscleGroup---------------------------------------------------------
 
 
 // bodyPart------------------------------------------------------------
@@ -113,10 +63,6 @@ export async function bodyPart(event) {
         throw error;
     }
 }
-
-
-// логіка додавання функції bodyPart в інший файл така сама як muscleGroup
-// bodyPart------------------------------------------------------------
 
 
 // equipment------------------------------------------------------------
@@ -188,10 +134,3 @@ export async function updateQuoteBlock() {
     }
     }
 }
-
-// ось так виглядає імпорт функції після then уже робите потрібні вам операції замість console.log()
-
-// import { updateQuoteBlock } from 'шлях до api файла'
-
-// updateQuoteBlock()
-//     .then(result => console.log(result));

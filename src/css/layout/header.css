@@ -91,6 +91,9 @@
   }
   .heder-link:hover,
   .heder-link:focus {
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+    box-shadow: 0 0 5px #5f656073;
     fill: #5f6560;
     border: 1px solid rgba(95, 101, 96, 0.2);
   }
@@ -99,11 +102,6 @@
     width: 28px;
     height: 28px;
     /* fill: var(--dark-grey); */
-  }
-
-  .heder-link-icon:hover,
-  .heder-link-icon:focus {
-    /* fill: #5f6560; */
   }
 }
 @media screen and (min-width: 1280px) {
@@ -114,7 +112,6 @@
 @media screen and (min-width: 1440px) {
   .header-section {
     top: 40px;
-    padding: 0 48px;
   }
   .heder-items {
     width: 1408px;

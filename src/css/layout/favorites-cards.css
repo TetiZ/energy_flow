@@ -126,8 +126,33 @@
   gap: 28px;
 }
 
-.dumbbell-favirites-img {
+
+.fav-counter {
+  display: flex;
+  gap: 8px;
+  width: 92px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.fav-list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 14px;
+  margin-bottom: 32px;
+}
+
+.favorite-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 1.29;
+}
+
 .no-card-in-storage {
   text-align: center;
   width: 247px;
