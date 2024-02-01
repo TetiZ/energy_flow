@@ -60,5 +60,5 @@ if (form) {
     }
   });
 } else {
-  console.error('Форма не найдена.');
+  console.error('Форма не знайдена.');
 }
