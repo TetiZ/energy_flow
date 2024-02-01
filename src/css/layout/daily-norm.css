@@ -26,8 +26,7 @@
   width: 335px;
   height: 269px;
   border-radius: 30px;
-  background: url(<path-to-image>),
-    lightgray 6.659px 10.025px / 93.932% 155.972% no-repeat, #e8e8e8;
+  background: url(<path-to-image>), no-repeat, #e8e8e8;
 }
 
 .dumbell-svg-div {

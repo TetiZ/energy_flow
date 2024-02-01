@@ -39,8 +39,7 @@
   width: 335px;
   height: 272px;
   border-radius: 30px;
-  background: url(<path-to-image>),
-    lightgray -84.669px -221.268px / 153.069% 251.363% no-repeat, #e8e8e8;
+  background: url(<path-to-image>), no-repeat, #e8e8e8;
 }
 
 .quote-title {
