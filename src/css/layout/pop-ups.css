@@ -6,7 +6,6 @@
   width: 100%;
   height: 100%;
   background: rgba(27, 27, 27, 0.6);
-  /* background: rgba(46, 47, 66, 0.4); */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -16,81 +15,8 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
-.pop-up-rating {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f6f6f6;
-  padding: 20px 40px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-radius: 20px;
-}
-/*stars*/
-
-.form-item {
-  margin: 0px 0px 30px 0px;
-}
-
-.rating-stars-wrapper {
-  display: flex;
-  align-items: center;
-  font-size: 30px;
-  height: 24px;
-  margin-bottom: 20px;
-}
-.rating-stars-body {
-  position: relative;
-}
-.rating-stars-body::before {
-  content: '★★★★★';
-  display: block;
-  color: rgba(27, 27, 27, 0.2);
-}
-.rating-stars-line-active {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-.rating-stars-line-active::before {
-  content: '★★★★★';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  color: rgba(238, 161, 12, 1);
-}
-.rating-stars-items {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-.rating-stars-item {
-  flex: 0 0 20%;
-  height: 100%;
-  opacity: 0;
-}
-
-.pop-up-rating-value {
-  font-size: 50%;
-  padding-right: 3px;
-  transform: translateY(5%);
-}
-/*stars*/
 .pop-up-close-btn {
   position: absolute;
   display: flex;
@@ -115,10 +41,7 @@
   font-size: 12px;
   color: rgba(27, 27, 27, 0.4);
 }
-/* .pop-up-rating-value {
-  margin-right: 2px;
-  transform: translateY(10%);
-} */
+
 .pop-up-stars-list {
   display: flex;
   flex-wrap: wrap;
@@ -129,40 +52,6 @@
   fill: rgba(27, 27, 27, 0.2);
   width: 24px;
   height: 24px;
-}
-.pop-up-input-email {
-  margin-bottom: 10px;
-  width: 246px;
-  height: 40px;
-  padding: 14px;
-  border-radius: 30px;
-  border: 1px solid rgba(27, 27, 27, 0.4);
-}
-.pop-up-message {
-  resize: none;
-  padding: 14px;
-  margin-bottom: 20px;
-  border-radius: 15px;
-  width: 246px;
-  border: 1px solid rgba(27, 27, 27, 0.4);
-}
-.pop-up-send-btn {
-  width: 100%;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border-radius: 30px;
-  background: #7e847f;
-  border: none;
-  color: #f6f6f6;
-}
-
-.pop-up-send-btn:hover,
-.pop-up-send-btn:focus {
-  background: rgba(95, 101, 96, 1);
-}
-.pop-up-input-email,
-.pop-up-message {
-  outline: none;
 }
 /* <------------ exercises styles - -----------> */
 
@@ -186,7 +75,6 @@
   /* z-index: 99999999999999; */
   width: 100%;
   height: 100%;
-  /* background: rgba(46, 47, 66, 0.4); */
   background: rgba(27, 27, 27, 0.6);
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -275,10 +163,16 @@ li:last-child .pop-ex-rate-icon use {
 }
 
 .pop-desc-exercise {
+  margin-bottom: 30px;
   color: rgba(27, 27, 27, 0.6);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
+}
+
+.pop-btns-container {
+  display: flex;
+  justify-content: center;
 }
 
 .pop-add-fav {
@@ -362,17 +256,6 @@ li:last-child .pop-ex-rate-icon use {
     margin-bottom: 10px;
   }
 
-  .pop-desc-exercise {
-    margin-bottom: 40px;
-    height: 125px;
-  }
-
-  .pop-btns-container {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-  }
-
   .pop-add-fav {
     padding-left: 83px;
     padding-right: 83px;
@@ -382,15 +265,7 @@ li:last-child .pop-ex-rate-icon use {
     justify-content: center;
     line-height: 1.28;
     font-size: 14px;
-  }
-
-  .pop-rating-btn {
-    padding-left: 107px;
-    padding-right: 107px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin-bottom: 26px;
-    font-size: 14px;
+    margin-bottom: 30px;
   }
 
   .img-ex {
@@ -435,16 +310,6 @@ li:last-child .pop-ex-rate-icon use {
     flex: 1;
   }
 
-  .pop-btns-container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .pop-desc-exercise {
-    margin-bottom: 32px;
-    height: 108px;
-  }
-
   .pop-add-fav,
   .pop-rating-btn {
     padding-left: 24px;
@@ -467,9 +332,5 @@ li:last-child .pop-ex-rate-icon use {
 
   .pop-exercises-img {
     margin-right: 40px;
-  }
-
-  .pop-btns-container {
-    justify-content: space-between;
   }
 }

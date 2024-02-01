@@ -612,18 +612,26 @@ function dataToStorage(data) {
     console.error('Button not found');
   }
 
+  // Close card foo's
+
   const modalBackDrop = document.querySelector('.pop-backdrop.is-open');
 
-  async function closeWithBackDrop() {
-    await popUp(data);
-    modal.innerHTML = '';
-    modalBackDrop.classList.remove('is-open');
+  async function closeWithBackDrop(event) {
+    if (
+      event.target.classList.contains('pop-ex-close-btn') ||
+      event.key === 'Escape' 
+    ) {
+      await popUp(data);
+      modal.innerHTML = '';
+      modalBackDrop.classList.remove('is-open');
+    }
   }
 
   if (modalBackDrop) {
     modalBackDrop.addEventListener('click', closeWithBackDrop);
-  }
 
+    document.addEventListener('keydown', closeWithBackDrop);
+  }
   window.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       modal.innerHTML = '';
@@ -635,6 +643,7 @@ function dataToStorage(data) {
   }
 
   const exPopClose = document.querySelector('.pop-ex-close-btn');
+
   if (exPopClose) {
     exPopClose.addEventListener('click', closeHandler);
   } else {
@@ -745,6 +754,28 @@ favBtns.forEach(favBtn => {
     }
   });
 });
+
+
+//  <img
+//    class="dumbbell-favorites-img"
+//    srcset="
+//           ../img/favorites/dumbbell-tab-desc.png?raw=true   116w,
+//           ../img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
+//           ../img/favorites/dumbbell-mob.png?raw=true   85w,
+//           ../img/favorites/dumbbell-mob@2x.png?raw=true  170w
+//         "
+//    src="../img/favorites/dumbbell-mob.png?raw=true"
+//    sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
+//    alt="dumbbell icon"
+// />;
+
+function emptyContent() {
+  favList.innerHTML = `
+      <div class="empty-content-fav">
+       
+      <p class='no-card-in-storage'>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p>
+      </div>`;
+}
 
 if (savedCards.length > 8) {
   addPaginationBtns();
