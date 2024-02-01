@@ -2,16 +2,16 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.subs-form');
-// const localStorageKey = 'user-email';
+const localStorageKey = 'user-email';
 
-// function saveToLocalStorage(evt) {
-//   localStorage.setItem(localStorageKey, evt.target.value);
-// }
-// form.addEventListener('input', saveToLocalStorage);
+const savedEmail = localStorage.getItem(localStorageKey);
 
-// const savedEmail = localStorage.getItem(localStorageKey);
+function saveToLocalStorage(evt) {
+  localStorage.setItem(localStorageKey, evt.target.value);
+}
+form.addEventListener('input', saveToLocalStorage);
 
-// form.elements.email.value = savedEmail ? savedEmail : '';
+form.elements.email.value = savedEmail ? savedEmail : '';
 
 async function postEmail(userEmail) {
   try {
@@ -45,14 +45,14 @@ async function postEmail(userEmail) {
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  const userEmail = localStorage.getItem(localStorageKey);
+  const userEmail = savedEmail;
   if (userEmail) {
     try {
       await postEmail(userEmail);
       localStorage.removeItem(localStorageKey);
       form.reset();
     } catch (error) {
-      console.log('Помилка при відправленні електронної пошти.');
+      console.error('Помилка при відправленні електронної пошти.', error);
     }
   } else {
     console.log('Електронна пошта не введена.');
