@@ -1,5 +1,3 @@
-
-// Визначаємо константу для збереження ключа у localStorage 
 const QUOTE_KEY = 'quote';
 const AUTHOR_KEY = 'author';
 
@@ -21,7 +19,7 @@ if (storedDate === currentDate) {
         const author = data.author;
 
         localStorage.setItem(QUOTE_KEY, quote);
-        localStorage.setItem(AUTHOR_KEY, author || 'автор невідомий'); // Зберігаємо значення "автор невідомий", якщо автор не доступний
+        localStorage.setItem(AUTHOR_KEY, author || 'автор невідомий');
         localStorage.setItem('date', currentDate);
 
         console.log(`Нова цитата: ${quote} - ${author || 'автор невідомий'}`);

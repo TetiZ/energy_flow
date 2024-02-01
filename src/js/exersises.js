@@ -792,13 +792,12 @@ function addPaginationBtns() {
   }
 }
 
-if (pagesCounter) {
-  pagesCounter.addEventListener('click', async e => {
-    const buttonId = e.target.id;
-    favList.innerHTML = savedCards
-      .slice(buttonId, buttonId + 8)
-      .map(
-        ({ bodyPart, name, target, burnedCalories, _id }, index) => `
+pagesCounter.addEventListener('click', async e => {
+  const buttonId = e.target.id;
+  favList.innerHTML = savedCards
+    .slice(buttonId, buttonId + 8)
+    .map(
+      ({ bodyPart, name, target, burnedCalories, _id }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -841,13 +840,10 @@ if (pagesCounter) {
       </div>
     </li>
   `
-      )
-      .join('');
-    updateTrashButtonListeners();
-  });
-} else {
-  console.error('pagesCounter не знайдено.');
-}
+    )
+    .join('');
+  updateTrashButtonListeners();
+});
 
 const favModal = document.querySelector('.favorite-modal');
 function favPopUp(data) {
