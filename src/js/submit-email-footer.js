@@ -4,11 +4,10 @@ import 'izitoast/dist/css/iziToast.min.css';
 const form = document.querySelector('.subs-form');
 const localStorageKey = 'user-email';
 
-form.addEventListener('input', saveToLocalStorage);
-
 function saveToLocalStorage(evt) {
   localStorage.setItem(localStorageKey, evt.target.value);
 }
+form.addEventListener('input', saveToLocalStorage);
 
 const savedEmail = localStorage.getItem(localStorageKey);
 
