@@ -381,16 +381,6 @@
   line-height: 1.29;
 }
 
-.favorite-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background-color: transparent;
-  font-size: 14px;
-  line-height: 1.29;
-}
-
 .exercise-part-name {
   display: flex;
   justify-content: center;
@@ -559,14 +549,6 @@
   }
 
   .exercise-parts-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    column-gap: 14px;
-    margin-bottom: 32px;
-  }
-
-  .fav-list {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 20px;
