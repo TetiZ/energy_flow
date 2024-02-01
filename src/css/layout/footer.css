@@ -66,6 +66,13 @@
   background-color: transparent;
   width: 100%;
   margin-bottom: 12px;
+  outline: none;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.subs-input:hover,
+.subs-input:focus {
+  border: 1px solid #5f6560;
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.034);
 }
 
 .subs-input::placeholder {
@@ -92,6 +99,13 @@
   color: var(--secondary-text-color);
   font-size: 14px;
   line-height: 1.28;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-form-btn:hover,
+.footer-form-btn:focus {
+  background: #5f6560;
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.034);
 }
 
 .copywrite-text,
