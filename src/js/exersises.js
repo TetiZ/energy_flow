@@ -616,22 +616,16 @@ function dataToStorage(data) {
 
   const modalBackDrop = document.querySelector('.pop-backdrop.is-open');
 
-  async function closeWithBackDrop(event) {
-    if (
-      event.target.classList.contains('pop-ex-close-btn') ||
-      event.key === 'Escape' 
-    ) {
-      await popUp(data);
-      modal.innerHTML = '';
-      modalBackDrop.classList.remove('is-open');
-    }
+  async function closeWithBackDrop() {
+    await popUp(data);
+    modal.innerHTML = '';
+    modalBackDrop.classList.remove('is-open');
   }
 
   if (modalBackDrop) {
     modalBackDrop.addEventListener('click', closeWithBackDrop);
-
-    document.addEventListener('keydown', closeWithBackDrop);
   }
+
   window.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') {
       modal.innerHTML = '';
@@ -643,7 +637,6 @@ function dataToStorage(data) {
   }
 
   const exPopClose = document.querySelector('.pop-ex-close-btn');
-
   if (exPopClose) {
     exPopClose.addEventListener('click', closeHandler);
   } else {
@@ -669,10 +662,12 @@ function renderCardsFromStorage(e) {
   if (savedCards.length != 0) {
     emptyContainer.classList.add('visually-hidden');
   }
-  favList.innerHTML = savedCards
-    .slice(0, 8)
-    .map(
-      ({ bodyPart, name, target, burnedCalories, _id }, index) => `
+
+  if (favList) {
+    favList.innerHTML = savedCards
+      .slice(0, 8)
+      .map(
+        ({ bodyPart, name, target, burnedCalories, _id }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -715,8 +710,10 @@ function renderCardsFromStorage(e) {
       </div>
     </li>
   `
-    )
-    .join('');
+      )
+      .join('');
+  }
+
   updateTrashButtonListeners();
 }
 
@@ -755,20 +752,6 @@ favBtns.forEach(favBtn => {
   });
 });
 
-
-//  <img
-//    class="dumbbell-favorites-img"
-//    srcset="
-//           ../img/favorites/dumbbell-tab-desc.png?raw=true   116w,
-//           ../img/favorites/dumbbell-tab-desc@2x.png?raw=true    231w,
-//           ../img/favorites/dumbbell-mob.png?raw=true   85w,
-//           ../img/favorites/dumbbell-mob@2x.png?raw=true  170w
-//         "
-//    src="../img/favorites/dumbbell-mob.png?raw=true"
-//    sizes="(min-width: 768px) 116px, (max-width: 767px) 85px"
-//    alt="dumbbell icon"
-// />;
-
 function emptyContent() {
   favList.innerHTML = `
       <div class="empty-content-fav">
@@ -782,7 +765,8 @@ if (savedCards.length > 8) {
 }
 
 function addPaginationBtns() {
-  pagesCounter.innerHTML = `
+  if (pagesCounter) {
+    pagesCounter.innerHTML = `
         <li class="exercise-page-number">
             <button id="0" class="exercise-number-button first">
             1
@@ -798,14 +782,16 @@ function addPaginationBtns() {
             3
           </button>
         </li>`;
+  }
 }
 
-pagesCounter.addEventListener('click', async e => {
-  const buttonId = e.target.id;
-  favList.innerHTML = savedCards
-    .slice(buttonId, buttonId + 8)
-    .map(
-      ({ bodyPart, name, target, burnedCalories, _id }, index) => `
+if (pagesCounter) {
+  pagesCounter.addEventListener('click', async e => {
+    const buttonId = e.target.id;
+    favList.innerHTML = savedCards
+      .slice(buttonId, buttonId + 8)
+      .map(
+        ({ bodyPart, name, target, burnedCalories, _id }, index) => `
     <li class="exercise-parts">
       <div class="part-container">
         <div class="exercise-head-container">
@@ -848,10 +834,13 @@ pagesCounter.addEventListener('click', async e => {
       </div>
     </li>
   `
-    )
-    .join('');
-  updateTrashButtonListeners();
-});
+      )
+      .join('');
+    updateTrashButtonListeners();
+  });
+} else {
+  console.error('Елемент pagesCounter не знайдено.');
+}
 
 const favModal = document.querySelector('.favorite-modal');
 function favPopUp(data) {

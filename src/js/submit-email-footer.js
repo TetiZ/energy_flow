@@ -4,15 +4,19 @@ import 'izitoast/dist/css/iziToast.min.css';
 const form = document.querySelector('.subs-form');
 const localStorageKey = 'user-email';
 
+const savedEmail = localStorage.getItem(localStorageKey);
+
+if (savedEmail) {
+  form.elements.email.value = savedEmail;
+} else {
+  form.elements.email.value = '';
+}
+
 form.addEventListener('input', saveToLocalStorage);
 
 function saveToLocalStorage(evt) {
   localStorage.setItem(localStorageKey, evt.target.value);
 }
-
-const savedEmail = localStorage.getItem(localStorageKey);
-
-form.elements.email.value = savedEmail ? savedEmail : '';
 
 async function postEmail(userEmail) {
   try {
@@ -58,4 +62,17 @@ form.addEventListener('submit', async e => {
   } else {
     console.log('Електронна пошта не введена.');
   }
+});
+
+// MODAL
+const closeBtnFooter = document.querySelector('.footer-close-btn');
+const backDropFooter = document.querySelector('.footer-modal-backdrop');
+
+const openFooterModalBtn = document.querySelector('.footer-team-link');
+openFooterModalBtn.addEventListener('click', function () {
+  backDropFooter.classList.add('is-open');
+});
+
+closeBtnFooter.addEventListener('click', function () {
+  backDropFooter.classList.remove('is-open');
 });
